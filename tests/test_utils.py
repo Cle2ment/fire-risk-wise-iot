@@ -118,6 +118,11 @@ class TestSetupLogger:
         os.close(fd)
         os.remove(path)  # remove so setup_logger creates it fresh
         yield path
+        # Close logger handlers that hold the file lock (Windows fix)
+        logger = logging.getLogger(path)
+        for h in logger.handlers[:]:
+            h.close()
+            logger.removeHandler(h)
         if os.path.exists(path):
             os.remove(path)
 
