@@ -1,51 +1,24 @@
 #!/usr/bin/env python3
-"""End-to-end fine-tuning pipeline: extract frames, auto-label, train, deploy."""
-import os, shutil, sys
+"""Fine-tune YOLOv8n on static.mp4 using COCO pseudo-labels mapped to fire-risk classes."""
+import os
+import shutil
+import sys
 from pathlib import Path
 
 import cv2
-import numpy as np
 from ultralytics import YOLO
 
 ROOT = Path(__file__).resolve().parent.parent
 VIDEO = ROOT / "demo" / "input" / "static.mp4"
 DS = ROOT / "datasets" / "fire_risk"
 
-# COCO class → our fire-risk class mapping (only relevant classes)
-COCO_TO_FIRE: dict[int, int] = {
-    2: 0,   # car → vehicle
-    3: 0,   # motorcycle → vehicle
-    5: 0,   # bus → vehicle
-    7: 0,   # truck → vehicle
-    56: 6,  # chair → congested_space (furniture blocking)
-    57: 6,  # couch → congested_space
-    59: 6,  # bed → congested_space
-    60: 6,  # dining table → congested_space
-    61: 6,  # toilet → congested_space
-    62: 3,  # tv → debris_mixed (electronics clutter)
-    63: 4,  # laptop → debris_mixed
-    64: 4,  # mouse → debris_mixed
-    65: 4,  # remote → debris_mixed
-    66: 4,  # keyboard → debris_mixed
-    67: 4,  # cell phone → debris_mixed
-    68: 3,  # microwave → debris_mixed
-    69: 3,  # oven → debris_mixed
-    70: 3,  # toaster → debris_mixed
-    71: 3,  # sink → debris_mixed
-    72: 4,  # refrigerator → debris_mixed
-    73: 4,  # book → debris_paper
-    74: 3,  # clock → debris_mixed
-    75: 4,  # vase → debris_mixed
-    76: 4,  # scissors → debris_mixed
-    77: 4,  # teddy bear → debris_mixed
-    78: 4,  # hair drier → electrical_hazard
-    79: 4,  # toothbrush → debris_mixed
-    84: 4,  # book → debris_paper
-}
+# Import COCO→fire mapping from detector (single source of truth)
+sys.path.insert(0, str(ROOT))
+from src.detector import COCO_TO_FIRE  # noqa: E402
 
 
-def extract_frames(video_path: Path, output_dir: Path, step: int = 5) -> list[Path]:
-    """Extract every Nth frame from video."""
+def extract_frames(video_path: Path, output_dir: Path, step: int = 2) -> list[Path]:
+    """Extract every Nth frame from video (step=2 for denser sampling)."""
     output_dir.mkdir(parents=True, exist_ok=True)
     cap = cv2.VideoCapture(str(video_path))
     total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
@@ -66,20 +39,20 @@ def extract_frames(video_path: Path, output_dir: Path, step: int = 5) -> list[Pa
 
 
 def auto_label(frames: list[Path], label_dir: Path, base_model: YOLO) -> int:
-    """Generate YOLO-format pseudo-labels using the base COCO model."""
+    """Generate YOLO-format pseudo-labels, mapping ALL detected COCO objects."""
     label_dir.mkdir(parents=True, exist_ok=True)
     count = 0
     for fp in frames:
-        results = base_model(str(fp), conf=0.25, verbose=False)
+        results = base_model(str(fp), conf=0.15, verbose=False)
         labels: list[str] = []
         for r in results:
             if r.boxes is None:
                 continue
-            for box, cls_id, conf in zip(r.boxes.xyxy, r.boxes.cls, r.boxes.conf):
+            for box, cls_id in zip(r.boxes.xyxy, r.boxes.cls):
                 cid = int(cls_id.item())
-                if cid not in COCO_TO_FIRE:
+                fire_cls = COCO_TO_FIRE.get(cid, -1)
+                if fire_cls < 0:
                     continue
-                fire_cls = COCO_TO_FIRE[cid]
                 x1, y1, x2, y2 = box.tolist()
                 h_img, w_img = r.orig_shape
                 xc = (x1 + x2) / 2.0 / w_img
@@ -91,54 +64,55 @@ def auto_label(frames: list[Path], label_dir: Path, base_model: YOLO) -> int:
             lbl_path = label_dir / f"{fp.stem}.txt"
             lbl_path.write_text("\n".join(labels))
             count += 1
-    print(f"  Auto-labeled {count} frames → {label_dir}")
+    print(f"  Auto-labeled {count} frames with {sum(1 for p in label_dir.iterdir() if p.suffix=='.txt')} label files")
     return count
 
 
-def split_train_val(frames: list[Path], all_frames_dir: Path):
-    """Split frames into train (80%) and val (20%), copying images."""
+def split_train_val(frames: list[Path]):
+    """Split frames into train (80%) and val (20%)."""
     import random
     random.seed(42)
     paths = sorted(frames)
     random.shuffle(paths)
     n_val = max(1, len(paths) // 5)
-    val_set = set(p.stem for p in paths[:n_val])
+    val_set = {p.stem for p in paths[:n_val]}
 
     train_img = DS / "images" / "train"
     val_img = DS / "images" / "val"
     train_lbl = DS / "labels" / "train"
     val_lbl = DS / "labels" / "val"
-
     all_lbl = DS / "labels" / "labels_all"
 
     for fp in paths:
         stem = fp.stem
-        src_img = fp
-        src_lbl = all_lbl / f"{stem}.txt"
+        lbl = all_lbl / f"{stem}.txt"
         if stem in val_set:
-            shutil.copy2(src_img, val_img / fp.name)
-            if src_lbl.exists():
-                shutil.copy2(src_lbl, val_lbl / f"{stem}.txt")
+            shutil.copy2(fp, val_img / fp.name)
+            if lbl.exists():
+                shutil.copy2(lbl, val_lbl / f"{stem}.txt")
         else:
-            shutil.copy2(src_img, train_img / fp.name)
-            if src_lbl.exists():
-                shutil.copy2(src_lbl, train_lbl / f"{stem}.txt")
+            shutil.copy2(fp, train_img / fp.name)
+            if lbl.exists():
+                shutil.copy2(lbl, train_lbl / f"{stem}.txt")
 
     n_train = len(list(train_img.glob("*.jpg")))
-    n_val = len(list(val_img.glob("*.jpg")))
-    print(f"  Split: {n_train} train, {n_val} val")
+    n_val_count = len(list(val_img.glob("*.jpg")))
+    print(f"  Split: {n_train} train, {n_val_count} val")
 
 
 def main() -> None:
     print("=" * 60)
-    print("Step 1: Extract frames from video")
+    print("Step 1: Extract frames (step=2, denser sampling)")
     print("=" * 60)
-    frames_dir = DS / "images" / "all"
-    frames = extract_frames(VIDEO, frames_dir, step=3)
+    for d in [DS / "images" / "train", DS / "images" / "val",
+              DS / "labels" / "train", DS / "labels" / "val",
+              DS / "images" / "all", DS / "labels" / "labels_all"]:
+        d.mkdir(parents=True, exist_ok=True)
+    frames = extract_frames(VIDEO, DS / "images" / "all", step=2)
 
     print()
     print("=" * 60)
-    print("Step 2: Auto-label with COCO YOLOv8n")
+    print("Step 2: Auto-label with full COCO→fire mapping (conf=0.15)")
     print("=" * 60)
     base = YOLO(str(ROOT / "models" / "yolov8n.pt"))
     auto_label(frames, DS / "labels" / "labels_all", base)
@@ -147,35 +121,40 @@ def main() -> None:
     print("=" * 60)
     print("Step 3: Train/val split (80/20)")
     print("=" * 60)
-    split_train_val(frames, frames_dir)
+    split_train_val(frames)
 
-    # Cleanup intermediate files
     shutil.rmtree(DS / "images" / "all", ignore_errors=True)
     shutil.rmtree(DS / "labels" / "labels_all", ignore_errors=True)
 
     print()
     print("=" * 60)
-    print("Step 4: Train YOLOv8n on fire-risk dataset")
+    print("Step 4: Train YOLOv8n on fire-risk dataset (40 epochs)")
     print("=" * 60)
 
     model = YOLO(str(ROOT / "models" / "yolov8n.pt"))
-    results = model.train(
+    model.train(
         data=str(ROOT / "configs" / "dataset.yaml"),
-        epochs=30,
+        epochs=40,
         imgsz=640,
         batch=8,
         device="cpu",
         name="fire_risk",
-        patience=10,
+        patience=15,
         exist_ok=True,
     )
 
-    # Copy best model
     best = ROOT / "runs" / "detect" / "fire_risk" / "weights" / "best.pt"
     dst = ROOT / "models" / "fire_risk_best.pt"
     if best.is_file():
         shutil.copy2(best, dst)
-        print(f"\nBest model: {dst} ({os.path.getsize(dst) / 1e6:.1f} MB)")
+        size_mb = os.path.getsize(dst) / 1e6
+        print(f"\nBest model: {dst} ({size_mb:.1f} MB)")
+    else:
+        print("\nWARNING: best.pt not found, training may have failed")
+        last = ROOT / "runs" / "detect" / "fire_risk" / "weights" / "last.pt"
+        if last.is_file():
+            shutil.copy2(last, dst)
+            print(f"Fallback: using last.pt")
 
     print()
     print("=" * 60)
@@ -199,8 +178,8 @@ def main() -> None:
     print(f"  Total detections: {det_count}")
     print(f"  Classes detected: {sorted(classes_seen)}")
     print()
-    print("Done. Fine-tuned model ready:")
-    print(f"  uv run python src/main.py --model models/fire_risk_best.pt --input demo/input/static.mp4")
+    print("Done. Run:")
+    print("  uv run python src/main.py --model models/fire_risk_best.pt --input demo/input/static.mp4")
 
 
 if __name__ == "__main__":
