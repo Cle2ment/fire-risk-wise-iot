@@ -11,6 +11,9 @@ dependencies = [
     "pyyaml>=6.0",
 ]
 
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
 [project.scripts]
 fire-risk = "src.main:main"
 
@@ -24,3 +27,8 @@ packages = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
