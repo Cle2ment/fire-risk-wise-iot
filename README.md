@@ -1,47 +1,84 @@
-# Smart Community Security - Code Repository
+# Fire Risk Detection Probe
 
-2026 研华全国 AIoT 创新应用大赛 · 创新应用赛道 · 智慧城市方向
+2026 Advantech National AIoT Innovation Competition — Preliminary Round
+Single-camera vision-based fire risk identification demo
 
-## 目录结构
+## Architecture
+
+```
+video → Detector(YOLO) → RiskEngine(scoring) → Visualizer(dashboard) → annotated video + JSON report
+```
+
+**3 risk categories**: vehicle parking (weight 0.6), obstruction (0.7), ebike entry (0.9)
+
+## Project Structure
 
 ```
 Code/
-├── datasets/        # 训练数据集（gitignore）
-├── models/          # 模型权重文件（gitignore）
-├── src/             # 源代码
-│   ├── detect.py             # 目标检测模块
-│   ├── pose.py               # 姿态估计模块
-│   ├── tracker.py            # ByteTrack 目标跟踪
-│   ├── roi_config.py         # 消防通道 ROI 配置
-│   ├── alert_engine.py       # 告警规则引擎
-│   ├── video_processor.py    # 视频流主处理管线
-│   ├── visualize.py          # 可视化标注
-│   └── mqtt_client.py        # MQTT 客户端（云集成）
-├── configs/         # 配置文件
-├── demo/            # Demo 输入/输出视频
-├── docs/            # 研究文档
-│   ├── preliminary_research.md  # 前期研究
-│   ├── dataset_plan.md          # 数据集计划
-│   └── training_guide.md        # 训练指南
-├── scripts/         # 训练/运行脚本
-├── requirements.txt # Python 依赖
-└── README.md        # 本文件
+├── src/
+│   ├── main.py           # CLI pipeline entry point
+│   ├── detector.py       # YOLO object detection wrapper
+│   ├── risk_engine.py    # Multi-factor risk scoring engine
+│   ├── visualizer.py     # OpenCV frame annotator
+│   ├── roi_config.py     # ROI polygon configuration
+│   └── utils.py          # FPS timer, color mapping, reports
+├── tests/                # TDD test suites (pytest)
+├── configs/
+│   ├── default.yaml      # Inference pipeline configuration
+│   ├── classes.yaml      # Fire risk class definitions
+│   └── training.yaml     # (reserved for training)
+├── scripts/
+│   └── run_demo.py       # One-click demo runner
+├── demo/
+│   ├── input/            # Input test videos (gitignored)
+│   └── output/           # Annotated output + JSON reports (gitignored)
+├── models/               # Model weights (gitignored)
+├── datasets/             # Training datasets (gitignored)
+├── docs/                 # Reference docs (gitignored)
+├── pyproject.toml
+└── README.md
 ```
 
-## 环境搭建
+## Setup
+
+Requires Python 3.10+ and [uv](https://docs.astral.sh/uv/).
 
 ```bash
-conda create -n smart-community python=3.10
-conda activate smart-community
-pip install -r requirements.txt
+uv sync                          # Install dependencies
+uv run pytest tests/ -v          # Run all tests
 ```
 
-## 快速开始
+## Quick Start
 
 ```bash
-# 训练检测模型
-bash scripts/train_detect.sh
+# Run demo with defaults
+uv run python scripts/run_demo.py
 
-# 运行 Demo 推理
-python src/video_processor.py --input demo/demo_video.mp4 --output demo/demo_output.mp4
+# Or use the CLI directly
+uv run python src/main.py --input demo/input/test.mp4 --output demo/output/annotated.mp4
+
+# Override model and device
+uv run python src/main.py --input demo/input/test.mp4 --model models/custom.pt --device cuda:0
+```
+
+## CLI Reference
+
+```
+uv run python src/main.py --help
+```
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `--input` | (required) | Input video path |
+| `--output` | `demo/output/annotated.mp4` | Output video path |
+| `--config` | `configs/default.yaml` | YAML config path |
+| `--model` | from config | Override model path |
+| `--device` | from config | Override device (cpu/cuda:0) |
+| `--roi-debug` | off | Draw ROI polygons on output |
+| `--no-roi` | off | Disable ROI filtering |
+
+## Test Results
+
+```
+uv run pytest tests/ -v     # 79 tests, all passing
 ```
