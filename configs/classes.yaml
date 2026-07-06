@@ -5,7 +5,7 @@ classes:
     risk_weight: 0.6
     color: [0, 165, 255]
     require_persistence: true
-    persistence_sec: 10.0
+    persistence_sec: 3.0
 
   1:
     name: "obstruction"
@@ -13,7 +13,7 @@ classes:
     risk_weight: 0.7
     color: [0, 0, 255]
     require_persistence: true
-    persistence_sec: 5.0
+    persistence_sec: 2.0
 
   2:
     name: "ebike"
@@ -29,7 +29,7 @@ classes:
     risk_weight: 0.6
     color: [0, 128, 0]
     require_persistence: true
-    persistence_sec: 15.0
+    persistence_sec: 5.0
 
   4:
     name: "debris_paper"
@@ -37,7 +37,7 @@ classes:
     risk_weight: 0.8
     color: [255, 255, 0]
     require_persistence: true
-    persistence_sec: 10.0
+    persistence_sec: 3.0
 
   5:
     name: "debris_mixed"
@@ -45,7 +45,7 @@ classes:
     risk_weight: 0.7
     color: [128, 128, 0]
     require_persistence: true
-    persistence_sec: 12.0
+    persistence_sec: 4.0
 
   6:
     name: "congested_space"
@@ -53,7 +53,7 @@ classes:
     risk_weight: 0.75
     color: [255, 128, 0]
     require_persistence: true
-    persistence_sec: 8.0
+    persistence_sec: 3.0
 
   7:
     name: "flammable_liquid"
@@ -69,4 +69,4 @@ classes:
     risk_weight: 0.85
     color: [128, 0, 128]
     require_persistence: true
-    persistence_sec: 5.0
+    persistence_sec: 2.0

@@ -4,7 +4,7 @@ inference:
   model_path: "models/yolov8n.pt"       # Download from https://github.com/ultralytics/assets/releases/download/v8.4.0/yolov8n.pt
   device: "cpu"                           # or "cuda:0"
   imgsz: 640
-  conf_threshold: 0.4
+  conf_threshold: 0.15                      # Lower threshold for COCO->fire-risk mapping
   iou_threshold: 0.45
 
 roi:
