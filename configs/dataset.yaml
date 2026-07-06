@@ -1,0 +1,20 @@
+# Fire Risk Detection — Training Dataset Configuration
+# YOLOv8 fine-tuning dataset definition
+
+path: ../datasets/fire_risk       # dataset root (relative to this config)
+train: images/train                # training images (relative to path)
+val: images/val                    # validation images
+
+# 9-class fire risk categories
+names:
+  0: vehicle            # 车辆违停
+  1: obstruction        # 通道堵塞
+  2: ebike              # 电动车入楼
+  3: debris_wood        # 木质杂物堆放
+  4: debris_paper       # 纸质杂物堆放
+  5: debris_mixed       # 混合杂物堆放
+  6: congested_space    # 空间拥挤堵塞
+  7: flammable_liquid   # 易燃液体容器
+  8: electrical_hazard  # 电气火灾隐患
+
+nc: 9

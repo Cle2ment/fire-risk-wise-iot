@@ -22,3 +22,51 @@ classes:
     color: [255, 0, 255]
     require_persistence: false
     persistence_sec: 0.0
+
+  3:
+    name: "debris_wood"
+    label_cn: "木质杂物堆放"
+    risk_weight: 0.6
+    color: [0, 128, 0]
+    require_persistence: true
+    persistence_sec: 15.0
+
+  4:
+    name: "debris_paper"
+    label_cn: "纸质杂物堆放"
+    risk_weight: 0.8
+    color: [255, 255, 0]
+    require_persistence: true
+    persistence_sec: 10.0
+
+  5:
+    name: "debris_mixed"
+    label_cn: "混合杂物堆放"
+    risk_weight: 0.7
+    color: [128, 128, 0]
+    require_persistence: true
+    persistence_sec: 12.0
+
+  6:
+    name: "congested_space"
+    label_cn: "空间拥挤堵塞"
+    risk_weight: 0.75
+    color: [255, 128, 0]
+    require_persistence: true
+    persistence_sec: 8.0
+
+  7:
+    name: "flammable_liquid"
+    label_cn: "易燃液体容器"
+    risk_weight: 0.95
+    color: [255, 0, 0]
+    require_persistence: false
+    persistence_sec: 0.0
+
+  8:
+    name: "electrical_hazard"
+    label_cn: "电气火灾隐患"
+    risk_weight: 0.85
+    color: [128, 0, 128]
+    require_persistence: true
+    persistence_sec: 5.0
