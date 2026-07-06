@@ -79,14 +79,14 @@ class TestGetGradientColor:
         assert b < 50
 
     def test_get_gradient_color_fifty(self):
-        """score 50 returns yellow (255, 255, 0)"""
+        """score 50 returns yellow (0, 255, 255) in BGR"""
         b, g, r = get_gradient_color(50.0)
         assert g > 200
         assert r > 200
         assert b < 50
 
     def test_get_gradient_color_hundred(self):
-        """score 100 returns red (255, 0, 0)"""
+        """score 100 returns red (0, 0, 255) in BGR"""
         b, g, r = get_gradient_color(100.0)
         assert r > 200
         assert g < 50
