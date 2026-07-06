@@ -1,0 +1,28 @@
+# Model-generated reference docs — not tracked
+docs/
+docs/*.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Models & Data (large binaries)
+models/
+datasets/
+
+# Demo I/O
+demo/input/
+demo/output/
+
+# Environment
+.env
+
+# CodeGraph
+/.codegraph/

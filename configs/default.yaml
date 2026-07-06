@@ -1,0 +1,39 @@
+# 推理管线配置
+# 用于 src/video_processor.py 主程序
+
+inference:
+  detect_model: "models/trained/best_detect.pt"  # 检测模型路径
+  pose_model: "models/trained/best_pose.pt"      # 姿态模型路径
+  device: "cuda:0"                                # 推理设备
+  imgsz: 640                                      # 推理分辨率
+  conf_threshold: 0.5                             # 检测置信度阈值
+  iou_threshold: 0.45                             # IoU NMS 阈值（YOLO26 NMS-free，备选）
+
+tracking:
+  tracker: "bytetrack"                            # 跟踪算法
+  track_buffer: 30                                # 跟踪帧缓冲
+  track_thresh: 0.5                               # 跟踪置信度阈值
+  match_thresh: 0.8                               # 匹配阈值
+
+fire_lane:
+  roi_points: [[100,300],[800,300],[800,600],[100,600]]  # 消防通道ROI多边形 [x,y]
+  parking_timeout: 30                              # 违停判定时间（秒）
+  obstruction_timeout: 15                          # 障碍物判定时间（秒）
+
+fall_detection:
+  head_hip_threshold: 50                           # 头-臀水平判定阈值（像素）
+  velocity_threshold: 200                          # 垂直速度突变阈值（像素/秒）
+  ground_ratio: 0.85                               # 地面位置比例
+
+loitering:
+  min_track_duration: 30                           # 最短跟踪时长（秒）
+  max_displacement: 2.0                            # 最大位移（米）
+
+output:
+  video_path: "demo/demo_output.mp4"               # 输出视频路径
+  log_path: "demo/alerts.log"                      # 告警日志路径
+  show_fps: true                                   # 显示 FPS
+  draw_bbox: true                                  # 绘制检测框
+  draw_pose: true                                  # 绘制姿态骨架
+  draw_tracks: true                                # 绘制跟踪轨迹
+  draw_alerts: true                                # 绘制告警信息
