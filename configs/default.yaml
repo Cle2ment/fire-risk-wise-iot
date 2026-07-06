@@ -1,8 +1,8 @@
 # Fire Risk Detection Probe — Inference Pipeline Configuration
 
 inference:
-  model_path: "models/yolo26n.pt"       # Default: COCO pretrained, override for fine-tuned
-  device: "cuda:0"                       # or "cpu"
+  model_path: "models/yolov8n.pt"       # Download from https://github.com/ultralytics/assets/releases/download/v8.4.0/yolov8n.pt
+  device: "cpu"                           # or "cuda:0"
   imgsz: 640
   conf_threshold: 0.4
   iou_threshold: 0.45
