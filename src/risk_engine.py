@@ -71,7 +71,13 @@ class RiskEngine:
 
         # Parse class config → {name: {risk_weight, persistence_sec}}
         self._class_cfg: dict[str, dict[str, float]] = {}
-        for entry in classes_config.get("classes", []):
+        raw_classes = classes_config.get("classes", {})
+        # Handle both list-of-dicts and dict-of-dicts formats
+        if isinstance(raw_classes, dict):
+            entries = list(raw_classes.values())
+        else:
+            entries = raw_classes
+        for entry in entries:
             name = entry["name"]
             self._class_cfg[name] = {
                 "risk_weight": float(entry.get("risk_weight", 0.0)),
