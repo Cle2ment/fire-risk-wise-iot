@@ -1,7 +1,7 @@
 # Fire Risk Detection — Training Dataset Configuration
 # YOLOv8 fine-tuning dataset definition
 
-path: ../datasets/fire_risk       # dataset root (relative to this config)
+path: C:/Users/Cle2ment/Documents/Competition/VI/Code/datasets/fire_risk
 train: images/train                # training images (relative to path)
 val: images/val                    # validation images
 
