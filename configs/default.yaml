@@ -10,12 +10,9 @@ inference:
 roi:
   enabled: true
   zones:
-    corridor_main:
-      polygon: [[100, 200], [700, 200], [750, 500], [50, 500]]
-      label: "主楼道"
-    fire_lane_entrance:
-      polygon: [[50, 300], [200, 300], [200, 600], [50, 600]]
-      label: "消防通道入口"
+    full_frame:
+      polygon: [[0, 0], [1440, 0], [1440, 1080], [0, 1080]]
+      label: "全画面"
 
 risk:
   score_history_window: 30              # Frames to smooth risk score
