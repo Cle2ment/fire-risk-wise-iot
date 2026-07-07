@@ -26,3 +26,5 @@ demo/output/
 
 # CodeGraph
 /.codegraph/
+runs/
+_*.py
