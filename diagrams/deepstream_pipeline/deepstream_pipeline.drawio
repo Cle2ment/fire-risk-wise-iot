@@ -1,0 +1,23 @@
+<mxGraphModel dx="1000" dy="400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" shadow="0">
+  <root>
+    <mxCell id="0"/><mxCell id="1" parent="0"/>
+    <mxCell id="cam" value="Camera&lt;br&gt;1080p 30fps" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=10;" vertex="1" parent="1"><mxGeometry x="20" y="120" width="90" height="50" as="geometry"/></mxCell>
+    <mxCell id="dec" value="nvv4l2decoder&lt;br&gt;HW解码" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=9;" vertex="1" parent="1"><mxGeometry x="140" y="120" width="100" height="50" as="geometry"/></mxCell>
+    <mxCell id="mux" value="nvstreammux&lt;br&gt;多路合成" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=9;" vertex="1" parent="1"><mxGeometry x="270" y="120" width="100" height="50" as="geometry"/></mxCell>
+    <mxCell id="inf" value="&lt;b&gt;nvinfer&lt;/b&gt;&lt;br&gt;YOLO26n TRT FP16&lt;br&gt;640×640 4.57ms" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=9;" vertex="1" parent="1"><mxGeometry x="400" y="110" width="130" height="60" as="geometry"/></mxCell>
+    <mxCell id="trk" value="nvtracker&lt;br&gt;ByteTrack" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#6A1B9A;fontSize=9;" vertex="1" parent="1"><mxGeometry x="550" y="120" width="100" height="50" as="geometry"/></mxCell>
+    <mxCell id="osd" value="nvdsosd&lt;br&gt;OSD标注" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=9;" vertex="1" parent="1"><mxGeometry x="680" y="120" width="90" height="50" as="geometry"/></mxCell>
+    <mxCell id="out" value="输出: 标注视频帧" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=10;" vertex="1" parent="1"><mxGeometry x="800" y="120" width="130" height="50" as="geometry"/></mxCell>
+    <mxCell id="alert" value="&lt;b&gt;告警规则引擎&lt;/b&gt;&lt;br&gt;ROI判断+去抖动30帧" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#C62828;fontSize=10;" vertex="1" parent="1"><mxGeometry x="560" y="240" width="150" height="55" as="geometry"/></mxCell>
+    <mxCell id="mqtt" value="MQTT发布告警" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C62828;fontSize=10;" vertex="1" parent="1"><mxGeometry x="760" y="248" width="110" height="40" as="geometry"/></mxCell>
+    <mxCell id="e01" edge="1" parent="1" source="cam" target="dec" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e02" edge="1" parent="1" source="dec" target="mux" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e03" edge="1" parent="1" source="mux" target="inf" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e04" edge="1" parent="1" source="inf" target="trk" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e05" edge="1" parent="1" source="trk" target="osd" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e06" edge="1" parent="1" source="osd" target="out" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e07" edge="1" parent="1" source="inf" target="alert" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;dashed=1;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="460" y="210"/></Array></mxGeometry></mxCell>
+    <mxCell id="e08" edge="1" parent="1" source="trk" target="alert" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;dashed=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e09" edge="1" parent="1" source="alert" target="mqtt" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+  </root>
+</mxGraphModel>

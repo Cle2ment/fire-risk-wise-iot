@@ -1,0 +1,823 @@
+{
+  "metadata": {
+    "project": "fire-risk-probe",
+    "total_frames": 900,
+    "fps": 30,
+    "resolution": "1920x1080",
+    "classes": 9,
+    "zones": [
+      "entrance",
+      "corridor",
+      "storage"
+    ]
+  },
+  "summary": {
+    "total_frames": 900,
+    "peak_score": 64.23,
+    "average_score": 42.78,
+    "high_risk_frames": 19,
+    "medium_risk_frames": 815,
+    "low_risk_frames": 66,
+    "high_risk_pct": 2.1,
+    "total_detections": 9127
+  },
+  "class_distribution": [
+    {
+      "cls_name": "vehicle",
+      "label_cn": "车辆违停",
+      "count": 451,
+      "avg_confidence": 0.8308,
+      "risk_weight": 0.6
+    },
+    {
+      "cls_name": "obstruction",
+      "label_cn": "通道堵塞",
+      "count": 451,
+      "avg_confidence": 0.717,
+      "risk_weight": 0.7
+    },
+    {
+      "cls_name": "ebike",
+      "label_cn": "电动车入楼",
+      "count": 1680,
+      "avg_confidence": 0.8155,
+      "risk_weight": 0.9
+    },
+    {
+      "cls_name": "debris_wood",
+      "label_cn": "木质杂物堆放",
+      "count": 2610,
+      "avg_confidence": 0.7661,
+      "risk_weight": 0.6
+    },
+    {
+      "cls_name": "debris_paper",
+      "label_cn": "纸质杂物堆放",
+      "count": 1654,
+      "avg_confidence": 0.7586,
+      "risk_weight": 0.8
+    },
+    {
+      "cls_name": "debris_mixed",
+      "label_cn": "混合杂物堆放",
+      "count": 812,
+      "avg_confidence": 0.6493,
+      "risk_weight": 0.7
+    },
+    {
+      "cls_name": "congested_space",
+      "label_cn": "空间拥挤堵塞",
+      "count": 593,
+      "avg_confidence": 0.7455,
+      "risk_weight": 0.75
+    },
+    {
+      "cls_name": "flammable_liquid",
+      "label_cn": "易燃液体容器",
+      "count": 443,
+      "avg_confidence": 0.899,
+      "risk_weight": 0.95
+    },
+    {
+      "cls_name": "electrical_hazard",
+      "label_cn": "电气火灾隐患",
+      "count": 433,
+      "avg_confidence": 0.7959,
+      "risk_weight": 0.85
+    }
+  ],
+  "zone_distribution": [
+    {
+      "zone": "storage",
+      "count": 4717,
+      "pct": 51.7
+    },
+    {
+      "zone": "corridor",
+      "count": 3508,
+      "pct": 38.4
+    },
+    {
+      "zone": "entrance",
+      "count": 902,
+      "pct": 9.9
+    }
+  ],
+  "score_distribution": {
+    "min": 0.0,
+    "max": 64.23,
+    "mean": 42.78,
+    "histogram": [
+      {
+        "range": "0-10",
+        "count": 63
+      },
+      {
+        "range": "10-20",
+        "count": 3
+      },
+      {
+        "range": "20-30",
+        "count": 6
+      },
+      {
+        "range": "30-40",
+        "count": 121
+      },
+      {
+        "range": "40-50",
+        "count": 498
+      },
+      {
+        "range": "50-60",
+        "count": 190
+      },
+      {
+        "range": "60-70",
+        "count": 19
+      },
+      {
+        "range": "70-80",
+        "count": 0
+      },
+      {
+        "range": "80-90",
+        "count": 0
+      },
+      {
+        "range": "90-100",
+        "count": 0
+      }
+    ]
+  },
+  "peak_events": [
+    {
+      "frame_idx": 453,
+      "timestamp_sec": 15.1,
+      "score": 64.23,
+      "level": "high",
+      "risks": [
+        {
+          "risk_type": "ebike",
+          "score": 48.93,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "debris_wood",
+          "score": 39.42,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "debris_mixed",
+          "score": 17.03,
+          "level": "low",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "vehicle",
+          "score": 8.68,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "obstruction",
+          "score": 14.53,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "debris_paper",
+          "score": 42.45,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "congested_space",
+          "score": 32.35,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "flammable_liquid",
+          "score": 61.65,
+          "level": "high",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "electrical_hazard",
+          "score": 1.85,
+          "level": "low",
+          "zone": "corridor"
+        }
+      ]
+    },
+    {
+      "frame_idx": 451,
+      "timestamp_sec": 15.03,
+      "score": 64.18,
+      "level": "high",
+      "risks": [
+        {
+          "risk_type": "ebike",
+          "score": 40.18,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "debris_wood",
+          "score": 17.88,
+          "level": "low",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "debris_mixed",
+          "score": 35.18,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "vehicle",
+          "score": 27.48,
+          "level": "medium",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "obstruction",
+          "score": 15.26,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "debris_paper",
+          "score": 55.56,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "congested_space",
+          "score": 53.43,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "flammable_liquid",
+          "score": 78.61,
+          "level": "high",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "electrical_hazard",
+          "score": 0.15,
+          "level": "low",
+          "zone": "corridor"
+        }
+      ]
+    },
+    {
+      "frame_idx": 457,
+      "timestamp_sec": 15.23,
+      "score": 63.76,
+      "level": "high",
+      "risks": [
+        {
+          "risk_type": "ebike",
+          "score": 53.28,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "debris_wood",
+          "score": 36.52,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "debris_mixed",
+          "score": 31.65,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "vehicle",
+          "score": 13.21,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "obstruction",
+          "score": 11.54,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "debris_paper",
+          "score": 28.13,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "congested_space",
+          "score": 37.9,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "flammable_liquid",
+          "score": 58.22,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "electrical_hazard",
+          "score": 4.54,
+          "level": "low",
+          "zone": "corridor"
+        }
+      ]
+    },
+    {
+      "frame_idx": 449,
+      "timestamp_sec": 14.97,
+      "score": 63.65,
+      "level": "high",
+      "risks": [
+        {
+          "risk_type": "ebike",
+          "score": 29.44,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "debris_wood",
+          "score": 30.82,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "debris_mixed",
+          "score": 17.92,
+          "level": "low",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "vehicle",
+          "score": 24.95,
+          "level": "medium",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "obstruction",
+          "score": 11.2,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "debris_paper",
+          "score": 34.02,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "congested_space",
+          "score": 37.52,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "flammable_liquid",
+          "score": 67.99,
+          "level": "high",
+          "zone": "storage"
+        }
+      ]
+    },
+    {
+      "frame_idx": 454,
+      "timestamp_sec": 15.13,
+      "score": 63.63,
+      "level": "high",
+      "risks": [
+        {
+          "risk_type": "ebike",
+          "score": 21.8,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "debris_wood",
+          "score": 21.63,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "debris_mixed",
+          "score": 12.75,
+          "level": "low",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "vehicle",
+          "score": 33.68,
+          "level": "medium",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "obstruction",
+          "score": 15.11,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "debris_paper",
+          "score": 32.29,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "congested_space",
+          "score": 23.16,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "flammable_liquid",
+          "score": 59.14,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "electrical_hazard",
+          "score": 2.14,
+          "level": "low",
+          "zone": "corridor"
+        }
+      ]
+    },
+    {
+      "frame_idx": 456,
+      "timestamp_sec": 15.2,
+      "score": 63.32,
+      "level": "high",
+      "risks": [
+        {
+          "risk_type": "ebike",
+          "score": 29.11,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "debris_wood",
+          "score": 30.4,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "debris_mixed",
+          "score": 15.17,
+          "level": "low",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "vehicle",
+          "score": 12.02,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "obstruction",
+          "score": 15.45,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "debris_paper",
+          "score": 24.45,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "congested_space",
+          "score": 23.41,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "flammable_liquid",
+          "score": 70.11,
+          "level": "high",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "electrical_hazard",
+          "score": 2.08,
+          "level": "low",
+          "zone": "corridor"
+        }
+      ]
+    },
+    {
+      "frame_idx": 448,
+      "timestamp_sec": 14.93,
+      "score": 63.26,
+      "level": "high",
+      "risks": [
+        {
+          "risk_type": "ebike",
+          "score": 42.25,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "debris_wood",
+          "score": 35.99,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "debris_mixed",
+          "score": 22.97,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "vehicle",
+          "score": 35.44,
+          "level": "medium",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "obstruction",
+          "score": 30.0,
+          "level": "medium",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "debris_paper",
+          "score": 32.66,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "congested_space",
+          "score": 36.59,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "flammable_liquid",
+          "score": 80.7,
+          "level": "high",
+          "zone": "storage"
+        }
+      ]
+    },
+    {
+      "frame_idx": 450,
+      "timestamp_sec": 15.0,
+      "score": 63.24,
+      "level": "high",
+      "risks": [
+        {
+          "risk_type": "ebike",
+          "score": 15.65,
+          "level": "low",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "debris_wood",
+          "score": 25.89,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "debris_mixed",
+          "score": 13.61,
+          "level": "low",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "vehicle",
+          "score": 23.3,
+          "level": "medium",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "obstruction",
+          "score": 17.34,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "debris_paper",
+          "score": 34.31,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "congested_space",
+          "score": 20.42,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "flammable_liquid",
+          "score": 65.45,
+          "level": "high",
+          "zone": "storage"
+        }
+      ]
+    },
+    {
+      "frame_idx": 455,
+      "timestamp_sec": 15.17,
+      "score": 63.02,
+      "level": "high",
+      "risks": [
+        {
+          "risk_type": "ebike",
+          "score": 60.62,
+          "level": "high",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "debris_wood",
+          "score": 19.05,
+          "level": "low",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "debris_mixed",
+          "score": 7.51,
+          "level": "low",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "vehicle",
+          "score": 32.74,
+          "level": "medium",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "obstruction",
+          "score": 10.98,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "debris_paper",
+          "score": 31.41,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "congested_space",
+          "score": 31.51,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "flammable_liquid",
+          "score": 62.84,
+          "level": "high",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "electrical_hazard",
+          "score": 1.26,
+          "level": "low",
+          "zone": "corridor"
+        }
+      ]
+    },
+    {
+      "frame_idx": 452,
+      "timestamp_sec": 15.07,
+      "score": 62.75,
+      "level": "high",
+      "risks": [
+        {
+          "risk_type": "ebike",
+          "score": 49.51,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "debris_wood",
+          "score": 36.21,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "debris_mixed",
+          "score": 12.43,
+          "level": "low",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "vehicle",
+          "score": 19.28,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "obstruction",
+          "score": 16.64,
+          "level": "low",
+          "zone": "entrance"
+        },
+        {
+          "risk_type": "debris_paper",
+          "score": 33.72,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "congested_space",
+          "score": 22.78,
+          "level": "medium",
+          "zone": "corridor"
+        },
+        {
+          "risk_type": "flammable_liquid",
+          "score": 46.8,
+          "level": "medium",
+          "zone": "storage"
+        },
+        {
+          "risk_type": "electrical_hazard",
+          "score": 0.8,
+          "level": "low",
+          "zone": "corridor"
+        }
+      ]
+    }
+  ],
+  "trend_segments": [
+    {
+      "start_frame": 0,
+      "end_frame": 66,
+      "start_time_sec": 0.0,
+      "end_time_sec": 2.2,
+      "level": "low",
+      "duration_sec": 2.2
+    },
+    {
+      "start_frame": 66,
+      "end_frame": 445,
+      "start_time_sec": 2.2,
+      "end_time_sec": 14.83,
+      "level": "medium",
+      "duration_sec": 12.63
+    },
+    {
+      "start_frame": 445,
+      "end_frame": 461,
+      "start_time_sec": 14.83,
+      "end_time_sec": 15.37,
+      "level": "high",
+      "duration_sec": 0.54
+    },
+    {
+      "start_frame": 461,
+      "end_frame": 551,
+      "start_time_sec": 15.37,
+      "end_time_sec": 18.37,
+      "level": "medium",
+      "duration_sec": 3.0
+    },
+    {
+      "start_frame": 551,
+      "end_frame": 553,
+      "start_time_sec": 18.37,
+      "end_time_sec": 18.43,
+      "level": "high",
+      "duration_sec": 0.06
+    },
+    {
+      "start_frame": 553,
+      "end_frame": 554,
+      "start_time_sec": 18.43,
+      "end_time_sec": 18.47,
+      "level": "medium",
+      "duration_sec": 0.04
+    },
+    {
+      "start_frame": 554,
+      "end_frame": 555,
+      "start_time_sec": 18.47,
+      "end_time_sec": 18.5,
+      "level": "high",
+      "duration_sec": 0.03
+    },
+    {
+      "start_frame": 555,
+      "end_frame": 899,
+      "start_time_sec": 18.5,
+      "end_time_sec": 29.97,
+      "level": "medium",
+      "duration_sec": 11.47
+    }
+  ]
+}

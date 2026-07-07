@@ -1,0 +1,12 @@
+<mxGraphModel dx="800" dy="350" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" shadow="0">
+  <root>
+    <mxCell id="0"/><mxCell id="1" parent="0"/>
+    <mxCell id="pre" value="&lt;b&gt;预训练层&lt;/b&gt;&lt;br&gt;COCO 预训练 YOLO26n.pt&lt;br&gt;118K图 80类" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1"><mxGeometry x="40" y="80" width="160" height="70" as="geometry"/></mxCell>
+    <mxCell id="ft1" value="&lt;b&gt;微调层 1&lt;/b&gt;&lt;br&gt;UA-DETRAC 140K帧车辆&lt;br&gt;CrowdHuman 15K图行人" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1"><mxGeometry x="260" y="80" width="190" height="70" as="geometry"/></mxCell>
+    <mxCell id="ft2" value="&lt;b&gt;微调层 2&lt;/b&gt;&lt;br&gt;ParkScope 违停&lt;br&gt;URFD 跌倒&lt;br&gt;S-YOLOv5 抛物" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=10;" vertex="1" parent="1"><mxGeometry x="510" y="70" width="150" height="95" as="geometry"/></mxCell>
+    <mxCell id="aug" value="&lt;b&gt;增强策略&lt;/b&gt;&lt;br&gt;Mosaic + 缩放&lt;br&gt;Copy-Paste + 翻转" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#6A1B9A;fontSize=10;" vertex="1" parent="1"><mxGeometry x="280" y="200" width="160" height="70" as="geometry"/></mxCell>
+    <mxCell id="e01" edge="1" parent="1" source="pre" target="ft1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;endArrow=block;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e02" edge="1" parent="1" source="ft1" target="ft2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;endArrow=block;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e03" edge="1" parent="1" source="ft2" target="aug" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;endArrow=block;dashed=1;"><mxGeometry relative="1" as="geometry"/></mxCell>
+  </root>
+</mxGraphModel>

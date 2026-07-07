@@ -1,0 +1,13 @@
+<mxGraphModel dx="900" dy="400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" shadow="0">
+  <root>
+    <mxCell id="0"/><mxCell id="1" parent="0"/>
+    <mxCell id="p1" value="&lt;b&gt;书审 (5/15-6/15)&lt;/b&gt;&lt;br&gt;技术方案文档+PPT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1"><mxGeometry x="20" y="60" width="200" height="55" as="geometry"/></mxCell>
+    <mxCell id="p2" value="&lt;b&gt;初赛 (6/15-7/14)&lt;/b&gt;&lt;br&gt;YOLO26n训练+TRT导出&lt;br&gt;推理管线+Demo视频&lt;br&gt;MQTT数据上云PoC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=10;" vertex="1" parent="1"><mxGeometry x="260" y="40" width="200" height="85" as="geometry"/></mxCell>
+    <mxCell id="p3" value="&lt;b&gt;决赛 (7/14-8/18)&lt;/b&gt;&lt;br&gt;MIC-711D-ON部署&lt;br&gt;Gemini 336L集成&lt;br&gt;IoTSuite完整对接" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;fontSize=10;" vertex="1" parent="1"><mxGeometry x="500" y="40" width="200" height="85" as="geometry"/></mxCell>
+    <mxCell id="p4" value="&lt;b&gt;总决赛 (8/18-9/19)&lt;/b&gt;&lt;br&gt;DeepStream多路优化&lt;br&gt;AgentBuilder AI Agent&lt;br&gt;Dashboard美化+稳定性" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C62828;fontSize=10;" vertex="1" parent="1"><mxGeometry x="740" y="40" width="200" height="85" as="geometry"/></mxCell>
+    <mxCell id="e01" edge="1" parent="1" source="p1" target="p2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=3;endArrow=block;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e02" edge="1" parent="1" source="p2" target="p3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=3;endArrow=block;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e03" edge="1" parent="1" source="p3" target="p4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=3;endArrow=block;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="info" value="方案文档 → 软件PoC → 硬件原型 → 完整系统" style="text;html=1;fontSize=12;fontStyle=1;fillColor=#F5F5F5;" vertex="1" parent="1"><mxGeometry x="280" y="160" width="380" height="25" as="geometry"/></mxCell>
+  </root>
+</mxGraphModel>

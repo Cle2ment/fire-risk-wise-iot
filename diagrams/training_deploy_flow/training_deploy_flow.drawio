@@ -1,0 +1,9 @@
+<mxGraphModel dx="600" dy="300" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" shadow="0">
+  <root>
+    <mxCell id="0"/><mxCell id="1" parent="0"/>
+    <mxCell id="train" value="&lt;b&gt;训练 (PC GPU)&lt;/b&gt;&lt;br&gt;数据标注 → YOLO26n 训练&lt;br&gt;model.export(format='engine', half=True)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=12;" vertex="1" parent="1"><mxGeometry x="40" y="40" width="280" height="80" as="geometry"/></mxCell>
+    <mxCell id="deploy" value="&lt;b&gt;部署 (Jetson)&lt;/b&gt;&lt;br&gt;.engine 加载 → DeepStream 7.1 管线&lt;br&gt;→ MQTT 上云" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=12;" vertex="1" parent="1"><mxGeometry x="400" y="40" width="260" height="80" as="geometry"/></mxCell>
+    <mxCell id="ea" edge="1" parent="1" source="train" target="deploy" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=3;endArrow=block;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="label" value=".engine 文件" edge="1" parent="1" style="edgeStyle=none;rounded=0;fontSize=11;fontStyle=1;" source="train" target="deploy"><mxGeometry relative="1" as="geometry"><mxPoint x="340" y="50" as="offset"/></mxGeometry></mxCell>
+  </root>
+</mxGraphModel>

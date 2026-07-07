@@ -1,0 +1,12 @@
+<mxGraphModel dx="600" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" shadow="0">
+  <root>
+    <mxCell id="0"/><mxCell id="1" parent="0"/>
+    <mxCell id="vis" value="&lt;b&gt;可视化层&lt;/b&gt;&lt;br&gt;IoTSuite Dashboard + Grafana + AgentBuilder" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C62828;fontSize=12;" vertex="1" parent="1"><mxGeometry x="160" y="20" width="300" height="55" as="geometry"/></mxCell>
+    <mxCell id="cloud" value="&lt;b&gt;云端&lt;/b&gt;&lt;br&gt;IoT Hub + Notification + DataInsight" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=12;" vertex="1" parent="1"><mxGeometry x="170" y="130" width="280" height="55" as="geometry"/></mxCell>
+    <mxCell id="edge" value="&lt;b&gt;边缘&lt;/b&gt;&lt;br&gt;MIC-711D-ON&lt;br&gt;DeepStream + YOLO×2 + ByteTrack + Node-RED" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#6A1B9A;fontSize=11;" vertex="1" parent="1"><mxGeometry x="130" y="250" width="360" height="80" as="geometry"/></mxCell>
+    <mxCell id="perc" value="&lt;b&gt;感知&lt;/b&gt;&lt;br&gt;Gemini 336L ×2 + WISE-4012E + 烟感/地磁" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=11;" vertex="1" parent="1"><mxGeometry x="140" y="390" width="340" height="65" as="geometry"/></mxCell>
+    <mxCell id="e01" value="MQTT/REST" edge="1" parent="1" source="vis" target="cloud" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e02" value="MQTT (TLS)" edge="1" parent="1" source="cloud" target="edge" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e03" value="GMSL2.0/USB3.0 | Ethernet" edge="1" parent="1" source="edge" target="perc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+  </root>
+</mxGraphModel>

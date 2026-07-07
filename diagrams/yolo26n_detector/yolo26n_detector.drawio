@@ -1,0 +1,16 @@
+<mxGraphModel dx="700" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" shadow="0">
+  <root>
+    <mxCell id="0"/><mxCell id="1" parent="0"/>
+    <mxCell id="yolo" value="&lt;b&gt;YOLO26n TRT FP16 @ 640×640&lt;/b&gt;&lt;br&gt;推理: 4.57ms → 219FPS&lt;br&gt;模型: ~8MB" style="rounded=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="240" y="30" width="220" height="65" as="geometry"/></mxCell>
+    <mxCell id="v" value="&lt;b&gt;vehicle&lt;/b&gt;&lt;br&gt;违停判定&lt;br&gt;ROI + 30s超时" style="rounded=1;fillColor=#FFCDD2;strokeColor=#C62828;fontSize=10;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="40" y="140" width="120" height="60" as="geometry"/></mxCell>
+    <mxCell id="o" value="&lt;b&gt;obstruction&lt;/b&gt;&lt;br&gt;通道堵塞告警" style="rounded=1;fillColor=#FFF3E0;strokeColor=#E65100;fontSize=10;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="180" y="140" width="120" height="60" as="geometry"/></mxCell>
+    <mxCell id="p" value="&lt;b&gt;person&lt;/b&gt;&lt;br&gt;ByteTrack→徘徊判定&lt;br&gt;track&gt;30s+位移&lt;2m" style="rounded=1;fillColor=#F3E5F5;strokeColor=#6A1B9A;fontSize=9;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="320" y="135" width="145" height="70" as="geometry"/></mxCell>
+    <mxCell id="t" value="&lt;b&gt;thrown_object&lt;/b&gt;&lt;br&gt;高空抛物告警&lt;br&gt;可选1280×1280" style="rounded=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=9;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="470" y="135" width="145" height="70" as="geometry"/></mxCell>
+    <mxCell id="f" value="&lt;b&gt;fire_lane&lt;/b&gt;&lt;br&gt;消防通道标线" style="rounded=1;fillColor=#E0F7FA;strokeColor=#00695C;fontSize=10;whiteSpace=wrap;html=1;" vertex="1" parent="1"><mxGeometry x="620" y="145" width="110" height="50" as="geometry"/></mxCell>
+    <mxCell id="e01" edge="1" parent="1" source="yolo" target="v" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e02" edge="1" parent="1" source="yolo" target="o" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e03" edge="1" parent="1" source="yolo" target="p" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e04" edge="1" parent="1" source="yolo" target="t" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+    <mxCell id="e05" edge="1" parent="1" source="yolo" target="f" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;"><mxGeometry relative="1" as="geometry"/></mxCell>
+  </root>
+</mxGraphModel>

@@ -1,0 +1,30 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "test-1",
+    "title": "Test",
+    "tags": [],
+    "timezone": "browser",
+    "schemaVersion": 14,
+    "version": 0,
+    "rows": [
+      {
+        "collapse": false,
+        "height": "100px",
+        "panels": [
+          {
+            "id": 1,
+            "type": "text",
+            "title": "",
+            "span": 12,
+            "content": "Hello World",
+            "mode": "markdown"
+          }
+        ],
+        "showTitle": false,
+        "title": "Row"
+      }
+    ]
+  },
+  "overwrite": true
+}
