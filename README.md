@@ -46,15 +46,22 @@ uv run python src/main.py --input demo/input/test.mp4 --output demo/output/annot
 
 ## Risk Scoring
 
-Three fire-hazard detection categories:
+Nine fire-hazard categories with multi-factor scoring:
 
-| Class | Risk Weight | Persistence | Colour |
-|-------|-------------|-------------|--------|
-| 车辆违停 (vehicle) | 0.6 | 10 s | Orange |
-| 通道堵塞 (obstruction) | 0.7 | 5 s | Red |
-| 电动车入楼 (ebike) | 0.9 | instant | Magenta |
+**Score** = weight × confidence × duration_factor × area_factor × 100, clamped [0,100]
+**Level**: low < 20, 20 ≤ medium < 60, high ≥ 60
 
-Score = `weight × confidence × duration_factor × area_factor × 100`, smoothed over 30 frames.
+| Class | Weight | Persist | Description |
+|-------|--------|---------|-------------|
+| vehicle | 0.6 | 3s | Vehicles parked in fire lanes |
+| obstruction | 0.7 | 2s | Large objects blocking passages |
+| ebike | 0.9 | 0s | Electric bikes indoors (immediate) |
+| debris_wood | 0.6 | 5s | Wooden furniture, timber piles |
+| debris_paper | 0.8 | 3s | Cardboard, paper stacks |
+| debris_mixed | 0.7 | 4s | Mixed clutter, bags, textiles |
+| congested_space | 0.75 | 3s | Narrow/blocked corridors |
+| flammable_liquid | 0.95 | 0s | Containers with liquids (immediate) |
+| electrical_hazard | 0.85 | 2s | Exposed wires, appliances |
 
 ## Project Structure
 
@@ -72,7 +79,10 @@ Code/
 │   ├── roi_config.py      # ROI zone polygon config
 │   └── utils.py           # Timer, colour, report generation
 ├── scripts/
-│   └── run_demo.py        # Convenience demo launcher
+│   ├── run_demo.py        # Convenience demo launcher
+│   ├── finetune_pipeline.py # COCO-based auto-label + train
+│   ├── vlm_autolabel.py   # VLM auto-labeling (Gemini 2.5 Flash)
+│   └── vlm_label.py       # VLM→YOLO format converter
 ├── tests/                 # TDD test suite (79 tests)
 ├── models/                # Model weights (.gitignored)
 ├── datasets/              # Training data (.gitignored)
@@ -89,3 +99,27 @@ Code/
 - `pytest` (dev, for testing)
 
 Managed via `uv` — no conda or pip-tools needed.
+
+
+## Fine-Tuned Models
+
+| Version | Frames | Method | mAP50 | Peak Score | Classes Detected |
+|---------|--------|--------|-------|------------|------------------|
+| v1 (5.9MB) | 25 | COCO car→vehicle mapping | 0.995 | 8.4 | vehicle |
+| v2 (23.3MB) | 94 | 74-class COCO→fire mapping | ~0.7 | 19.7 | vehicle + congested_space |
+| v3 (23.3MB) | 55 | Gemini VLM annotation | ~0.3 | 13.7 | vehicle |
+
+## Fine-Tuning Pipelines
+
+### COCO Auto-Label
+```bash
+uv run python scripts/finetune_pipeline.py
+```
+Extracts frames, labels via COCO→fire mapping, trains YOLOv8n.
+
+### VLM Auto-Label (Gemini 2.5 Flash)
+```bash
+$env:CHERRYIN_API_KEY = "sk-..."
+uv run python scripts/vlm_autolabel.py
+uv run python scripts/vlm_label.py --train
+```
