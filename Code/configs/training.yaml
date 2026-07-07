@@ -1,8 +1,8 @@
-# YOLO26 检测模型训练超参数
-# 用于 smart_community_detect 项目
+# YOLOv8 检测模型训练超参数
+# 用于 fire-risk-probe 项目
 
 # --- 基础参数 ---
-model: yolo26n.pt          # 预训练权重
+model: yolov8n.pt          # 预训练权重
 data: datasets/dataset.yaml # 数据集配置
 epochs: 100                # 训练轮数
 patience: 20               # 早停轮数
@@ -11,7 +11,7 @@ imgsz: 640                 # 输入分辨率
 device: 0                  # GPU 设备（0=第一块GPU, cpu=CPU）
 
 # --- 优化器 ---
-optimizer: auto            # YOLO26 默认 MuSGD
+optimizer: auto            # YOLOv8 默认 SGD
 lr0: 0.01                  # 初始学习率
 lrf: 0.01                  # 最终学习率因子 (lr0 * lrf)
 momentum: 0.937            # SGD 动量
@@ -35,12 +35,12 @@ copy_paste: 0.1            # Copy-Paste 增强（小目标专用）
 # --- 损失函数 ---
 box: 7.5                   # BBox 损失权重
 cls: 0.5                   # 分类损失权重
-dfl: 1.5                   # DFL 损失权重（YOLO26 已移除此模块，忽略）
+dfl: 1.5                   # DFL 损失权重
 
 # --- 其他 ---
 workers: 8                 # 数据加载线程数
 project: runs/detect       # 输出目录
-name: smart_community_detect # 实验名称
+name: fire_risk_detect       # 实验名称
 exist_ok: false            # 是否覆盖已存在目录
 pretrained: true           # 使用预训练权重
 resume: false              # 从中断处恢复训练

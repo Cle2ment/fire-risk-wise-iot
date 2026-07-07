@@ -28,7 +28,9 @@ video → Detector(YOLO) → RiskEngine(scoring) → Visualizer(dashboard) → a
 - Type-annotated Python throughout
 - TDD: test file written and verified RED before any source code
 - Atomic git commits per logical unit (implementation + test together)
-- Models: fire_risk_v{N}.pt matching static_v{N}.mp4 versioning
+- Models: `fire_risk_v{N}.pt` for fine-tuned, `yolov8n.pt` for COCO pretrained base
+- 9 fire-risk classes: vehicle, obstruction, ebike, debris_wood, debris_paper, debris_mixed, congested_space, flammable_liquid, electrical_hazard
+- COCO model (80 classes) → 9-class fire-risk mapping in `detector.py:COCO_TO_FIRE`
 - runs/ and _*.py are .gitignored (training artifacts, temp scripts)
 - docs/ is model-generated reference — not committed to git
 - models/, datasets/, demo/input/, demo/output/ are .gitignored (binaries)

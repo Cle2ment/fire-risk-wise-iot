@@ -41,7 +41,7 @@ uv run python scripts/run_demo.py --list-models
 
 # Direct pipeline usage
 uv run python src/main.py --input demo/input/test.mp4 --output demo/output/annotated.mp4 \
-  --config configs/default.yaml --model models/yolo26n.pt --device cpu
+  --config configs/default.yaml --model models/yolov8n.pt --device cpu
 ```
 
 ## Risk Scoring
@@ -103,11 +103,15 @@ Managed via `uv` — no conda or pip-tools needed.
 
 ## Fine-Tuned Models
 
+Base model is YOLOv8n (COCO pretrained). Fine-tuned models are listed below.
+
+
 | Version | Frames | Method | mAP50 | Peak Score | Classes Detected |
 |---------|--------|--------|-------|------------|------------------|
 | v1 (5.9MB) | 25 | COCO car→vehicle mapping | 0.995 | 8.4 | vehicle |
 | v2 (23.3MB) | 94 | 74-class COCO→fire mapping | ~0.7 | 19.7 | vehicle + congested_space |
 | v3 (23.3MB) | 55 | Gemini VLM annotation | ~0.3 | 13.7 | vehicle |
+| vlm (7.2MB) | 10 | Gemini VLM + train | — | — | 9-class (demo) |
 
 ## Fine-Tuning Pipelines
 

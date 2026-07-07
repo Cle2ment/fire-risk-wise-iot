@@ -1,6 +1,7 @@
 # Tool internals
 .omo/
 .playwright-mcp/
+.codegraph/
 
 # Competition reference docs
 references/
