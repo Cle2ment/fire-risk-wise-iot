@@ -16,23 +16,24 @@
 |--------|--------|
 | 了解项目技术架构与分阶段计划 | [`documentation/ROADMAP.md`](documentation/ROADMAP.md) |
 | 了解项目背景与预期成果 | [`documentation/DESCRIPTION.md`](documentation/DESCRIPTION.md) |
-| **跑代码、看模块说明、模型训练** | [**`Code/README.md`**](Code/README.md) |
+| **跑代码、看模块说明、模型训练** | [**`code/README.md`**](code/README.md) |
 | 查看 AI 代理操作约定 | [`AGENTS.md`](AGENTS.md) |
 
 ## 目录结构
 
 ```
 fire-risk-wise-iot/
-├── Code/                   ← Python 项目（uv 管理，所有代码命令在此执行）
+├── code/                   ← Python 项目（uv 管理，所有代码命令在此执行）
 │   ├── src/                # 核心模块：detector, risk_engine, visualizer, main
 │   ├── tests/              # 79 个测试
 │   ├── configs/            # YAML 配置
 │   ├── scripts/            # 训练/标注/Demo 脚本
+│   ├── data/               # 推理输出报告（demo pipeline 产物）
 │   ├── models/             # 模型权重（gitignored）
 │   └── datasets/           # 训练数据（gitignored）
+├── visualization/          # WISE-PaaS/Dashboard 面板导出（Grafana JSON）
 ├── documentation/          # 竞赛文档：DESCRIPTION, ROADMAP, 硬件清单
 ├── diagrams/               # 架构图（draw.io + SVG）
-├── data/                   # 推理输出报告（JSON）
 └── references/             # 参赛手册、硬件数据手册
 ```
 

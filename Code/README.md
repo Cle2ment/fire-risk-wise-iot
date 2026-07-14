@@ -66,7 +66,7 @@ Nine fire-hazard categories with multi-factor scoring:
 ## Project Structure
 
 ```
-Code/
+code/
 ├── configs/
 │   ├── default.yaml       # Inference, ROI, risk, output settings
 │   └── classes.yaml       # Class definitions with risk weights & colours

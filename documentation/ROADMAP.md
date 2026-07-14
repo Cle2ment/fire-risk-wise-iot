@@ -152,12 +152,12 @@ smart_community/{community_id}/
     └── device_offline/{id}     ← 设备离线通知
 ```
 
-> 详细 JSON Payload 设计见 `Code/docs/wise_iot_project_integration_analysis.md` §4.2。
+> 详细 JSON Payload 设计见 `code/docs/wise_iot_project_integration_analysis.md` §4.2。
 
 ### 4.4 延伸阅读
 
-- [WISE-IoT 平台详细使用说明](../Code/docs/wise_iot_platform_usage_guide.md) — 7 大核心服务介绍、6 步使用指南
-- [WISE-IoT 与项目联动分析](../Code/docs/wise_iot_project_integration_analysis.md) — 11 项需求匹配、架构融合、评审加分分析
+- [WISE-IoT 平台详细使用说明](../code/docs/wise_iot_platform_usage_guide.md) — 7 大核心服务介绍、6 步使用指南
+- [WISE-IoT 与项目联动分析](../code/docs/wise_iot_project_integration_analysis.md) — 11 项需求匹配、架构融合、评审加分分析
 
 ---
 
