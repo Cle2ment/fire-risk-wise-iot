@@ -1,0 +1,1737 @@
+{
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "advantech-columnchart-panel",
+      "name": "Column Chart",
+      "version": "1.1.12"
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "3.6.1"
+    },
+    {
+      "type": "panel",
+      "id": "grafana-piechart-panel",
+      "name": "Pie Chart",
+      "version": "1.2.7"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "text",
+      "name": "Text",
+      "version": ""
+    }
+  ],
+  "advantechSchemaVersion": 4.1,
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": false,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "borderRadiusValue": "Default",
+  "borderShadowGradientData": "Default",
+  "closeBtn": false,
+  "dashGirdColLevel": 1,
+  "dashNoTopPadding": false,
+  "dashboardPanelBorderColor": "",
+  "dashboardPanelBorderSquareRadiusColor": "",
+  "dashboardPanelBorderStyle": "",
+  "dashboardPanelBorderWidth": "",
+  "dashboardPanelColorScheme": "Default",
+  "dashboardPanelGradientColor": "",
+  "dashboardPanelPillarColor": "",
+  "dashboardPanelShadow": false,
+  "dashboardPanelTitleGradientColor": "",
+  "dashboardPanelTitleScheme": "Default",
+  "dashboardPanelTran": 1,
+  "downloadShow": false,
+  "editable": true,
+  "frameWidth": "",
+  "genieAi": "",
+  "genieIcon": "",
+  "genieIconHeight": "",
+  "genieIconWidth": "",
+  "genieOpacity": false,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": null,
+  "initialGroup": "",
+  "initialSearch": "",
+  "linkOneLineShow": false,
+  "links": [],
+  "mobileAuto": false,
+  "mobileUpgraded": true,
+  "objectVariableAssociation": "",
+  "panelLanguage": "zh-CN",
+  "panels": [
+    {
+      "autoOpen": true,
+      "autoplayLists": [],
+      "autoplayTime": "30s",
+      "content": "# 🔥 Fire Risk Detection Probe — 消防风险识别探头\n\n**2026 Advantech AIoT Innovation Competition** | 单摄像头视觉消防风险识别 | 30s 监控场景 | 900 帧分析",
+      "createUid": "7ad3c677-14c0-80ea-325b-4a555b603b1a",
+      "datasource": null,
+      "gridPos": {
+        "h": 3,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "i18n": {
+        "zh-CN": {
+          "content": "# 🔥 Fire Risk Detection Probe — 消防风险识别探头\n\n**2026 Advantech AIoT Innovation Competition** | 单摄像头视觉消防风险识别 | 30s 监控场景 | 900 帧分析"
+        }
+      },
+      "id": 1,
+      "modalShow": false,
+      "mode": "markdown",
+      "multipleSegmentation": false,
+      "options": {},
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "refreshInView": false,
+      "richTextValue": "",
+      "schemaVersion": 1,
+      "selfAdaption": true,
+      "timeResetColor": "",
+      "timeTextResetColor": "",
+      "title": "",
+      "titleShow": false,
+      "transparentRange": 0,
+      "type": "text",
+      "withVar": false
+    },
+    {
+      "adjustableFontSize": true,
+      "benchmark": "",
+      "bgColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "bgThresholds": "",
+      "bold": false,
+      "boldGauge": true,
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237,129,40,0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "compatibleThresholds": "",
+      "createUid": "009e686e-16ee-d66c-9d52-0156c4aa1fd5",
+      "datasource": "-- Grafana --",
+      "datasourceVar": "",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 3
+      },
+      "i18n": {
+        "zh-CN": {}
+      },
+      "id": 10,
+      "interval": null,
+      "isMath": false,
+      "isMathInputVal": false,
+      "isMathTip": false,
+      "isMathUpgrade": false,
+      "labelFontSize": "120%",
+      "linkTarget": false,
+      "linkTitle": "",
+      "linkUrl": "",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "mathInputVal": "",
+      "maxDataPoints": 100,
+      "metricRuleObjArr": [],
+      "metricRuleObjArrForAll": [],
+      "multiGauge": false,
+      "multiGaugeFZUpgrade": true,
+      "multiGaugeFZVal": "80%",
+      "multiTableGaugeFZVal": "80%",
+      "multiTitle": true,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "oneTitle": false,
+      "options": {},
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "panelTran": 1,
+      "postColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "postThresholds": "",
+      "postfix": "",
+      "postfixFontSize": "120%",
+      "preColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "preThresholds": "",
+      "prefix": "",
+      "prefixFontSize": "120%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "refreshInView": false,
+      "selBgThres": "",
+      "selBgThresEnd": "",
+      "selBgThresMul": "",
+      "selPostThres": "",
+      "selPostThresEnd": "",
+      "selPostThresMul": "",
+      "selPreThres": "",
+      "selPreThresEnd": "",
+      "selPreThresMul": "",
+      "selValueMax": "",
+      "selValueMin": "",
+      "selValueThres": "",
+      "selValueThresEnd": "",
+      "selValueThresMul": "",
+      "selfAdaption": true,
+      "showYear": false,
+      "sparkline": {
+        "full": false,
+        "show": true
+      },
+      "tableColumn": "",
+      "tableMultiColArr": [],
+      "tableMultiColText": "",
+      "tableMultiGauge": false,
+      "tableMultiGaugeUpgrade": true,
+      "tableSingleGauge": false,
+      "tableView": false,
+      "targets": [
+        {
+          "data": "{\"jsonPath\": \"$.summary.peak_score\"}",
+          "hide": false,
+          "refId": "A",
+          "target": "jsonPath",
+          "type": "table"
+        }
+      ],
+      "timeConversion": "",
+      "timeResetColor": "",
+      "timeTextResetColor": "",
+      "title": "🏔 Peak Score",
+      "titleShow": false,
+      "transparentRange": 1,
+      "type": "singlestat",
+      "valueFontSize": "120%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current",
+      "withVar": false
+    },
+    {
+      "adjustableFontSize": true,
+      "benchmark": "",
+      "bgColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "bgThresholds": "",
+      "bold": false,
+      "boldGauge": true,
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237,129,40,0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "compatibleThresholds": "",
+      "createUid": "7ea9720f-c7c8-4d35-6215-928fa747e4ac",
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 3
+      },
+      "i18n": {
+        "zh-CN": {}
+      },
+      "id": 11,
+      "interval": null,
+      "isMath": false,
+      "isMathInputVal": false,
+      "isMathTip": false,
+      "isMathUpgrade": false,
+      "labelFontSize": "120%",
+      "linkTarget": false,
+      "linkTitle": "",
+      "linkUrl": "",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "mathInputVal": "",
+      "maxDataPoints": 100,
+      "metricRuleObjArr": [],
+      "metricRuleObjArrForAll": [],
+      "multiGauge": false,
+      "multiGaugeFZUpgrade": true,
+      "multiGaugeFZVal": "80%",
+      "multiTableGaugeFZVal": "80%",
+      "multiTitle": true,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "oneTitle": false,
+      "options": {},
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "panelTran": 1,
+      "postColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "postThresholds": "",
+      "postfix": "",
+      "postfixFontSize": "120%",
+      "preColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "preThresholds": "",
+      "prefix": "",
+      "prefixFontSize": "120%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "refreshInView": false,
+      "selBgThres": "",
+      "selBgThresEnd": "",
+      "selBgThresMul": "",
+      "selPostThres": "",
+      "selPostThresEnd": "",
+      "selPostThresMul": "",
+      "selPreThres": "",
+      "selPreThresEnd": "",
+      "selPreThresMul": "",
+      "selValueMax": "",
+      "selValueMin": "",
+      "selValueThres": "",
+      "selValueThresEnd": "",
+      "selValueThresMul": "",
+      "selfAdaption": true,
+      "showYear": false,
+      "sparkline": {
+        "full": false,
+        "show": true
+      },
+      "tableColumn": "",
+      "tableMultiColArr": [],
+      "tableMultiColText": "",
+      "tableMultiGauge": false,
+      "tableMultiGaugeUpgrade": true,
+      "tableSingleGauge": false,
+      "timeConversion": "",
+      "timeResetColor": "",
+      "timeTextResetColor": "",
+      "title": "📊 Avg Score",
+      "titleShow": false,
+      "transparentRange": 1,
+      "type": "singlestat",
+      "valueFontSize": "120%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current",
+      "withVar": false
+    },
+    {
+      "adjustableFontSize": true,
+      "benchmark": "",
+      "bgColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "bgThresholds": "",
+      "bold": false,
+      "boldGauge": true,
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "#299c46",
+        "#299c46",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "compatibleThresholds": "",
+      "createUid": "d1097765-77f9-a63f-1260-729d176c871e",
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 3
+      },
+      "i18n": {
+        "zh-CN": {}
+      },
+      "id": 12,
+      "interval": null,
+      "isMath": false,
+      "isMathInputVal": false,
+      "isMathTip": false,
+      "isMathUpgrade": false,
+      "labelFontSize": "120%",
+      "linkTarget": false,
+      "linkTitle": "",
+      "linkUrl": "",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "mathInputVal": "",
+      "maxDataPoints": 100,
+      "metricRuleObjArr": [],
+      "metricRuleObjArrForAll": [],
+      "multiGauge": false,
+      "multiGaugeFZUpgrade": true,
+      "multiGaugeFZVal": "80%",
+      "multiTableGaugeFZVal": "80%",
+      "multiTitle": true,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "oneTitle": false,
+      "options": {},
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "panelTran": 1,
+      "postColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "postThresholds": "",
+      "postfix": "",
+      "postfixFontSize": "120%",
+      "preColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "preThresholds": "",
+      "prefix": "",
+      "prefixFontSize": "120%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "refreshInView": false,
+      "selBgThres": "",
+      "selBgThresEnd": "",
+      "selBgThresMul": "",
+      "selPostThres": "",
+      "selPostThresEnd": "",
+      "selPostThresMul": "",
+      "selPreThres": "",
+      "selPreThresEnd": "",
+      "selPreThresMul": "",
+      "selValueMax": "",
+      "selValueMin": "",
+      "selValueThres": "",
+      "selValueThresEnd": "",
+      "selValueThresMul": "",
+      "selfAdaption": true,
+      "showYear": false,
+      "sparkline": {
+        "show": false
+      },
+      "tableColumn": "",
+      "tableMultiColArr": [],
+      "tableMultiColText": "",
+      "tableMultiGauge": false,
+      "tableMultiGaugeUpgrade": true,
+      "tableSingleGauge": false,
+      "timeConversion": "",
+      "timeResetColor": "",
+      "timeTextResetColor": "",
+      "title": "🟢 Low Risk",
+      "titleShow": false,
+      "transparentRange": 1,
+      "type": "singlestat",
+      "valueFontSize": "120%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current",
+      "withVar": false
+    },
+    {
+      "adjustableFontSize": true,
+      "benchmark": "",
+      "bgColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "bgThresholds": "",
+      "bold": false,
+      "boldGauge": true,
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "rgba(237,129,40,0.89)",
+        "rgba(237,129,40,0.89)",
+        "rgba(237,129,40,0.89)",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "compatibleThresholds": "",
+      "createUid": "1705bb68-ce44-a8bb-4b42-54efffa244cd",
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 3
+      },
+      "i18n": {
+        "zh-CN": {}
+      },
+      "id": 13,
+      "interval": null,
+      "isMath": false,
+      "isMathInputVal": false,
+      "isMathTip": false,
+      "isMathUpgrade": false,
+      "labelFontSize": "120%",
+      "linkTarget": false,
+      "linkTitle": "",
+      "linkUrl": "",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "mathInputVal": "",
+      "maxDataPoints": 100,
+      "metricRuleObjArr": [],
+      "metricRuleObjArrForAll": [],
+      "multiGauge": false,
+      "multiGaugeFZUpgrade": true,
+      "multiGaugeFZVal": "80%",
+      "multiTableGaugeFZVal": "80%",
+      "multiTitle": true,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "oneTitle": false,
+      "options": {},
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "panelTran": 1,
+      "postColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "postThresholds": "",
+      "postfix": "",
+      "postfixFontSize": "120%",
+      "preColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "preThresholds": "",
+      "prefix": "",
+      "prefixFontSize": "120%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "refreshInView": false,
+      "selBgThres": "",
+      "selBgThresEnd": "",
+      "selBgThresMul": "",
+      "selPostThres": "",
+      "selPostThresEnd": "",
+      "selPostThresMul": "",
+      "selPreThres": "",
+      "selPreThresEnd": "",
+      "selPreThresMul": "",
+      "selValueMax": "",
+      "selValueMin": "",
+      "selValueThres": "",
+      "selValueThresEnd": "",
+      "selValueThresMul": "",
+      "selfAdaption": true,
+      "showYear": false,
+      "sparkline": {
+        "show": false
+      },
+      "tableColumn": "",
+      "tableMultiColArr": [],
+      "tableMultiColText": "",
+      "tableMultiGauge": false,
+      "tableMultiGaugeUpgrade": true,
+      "tableSingleGauge": false,
+      "timeConversion": "",
+      "timeResetColor": "",
+      "timeTextResetColor": "",
+      "title": "🟡 Medium",
+      "titleShow": false,
+      "transparentRange": 1,
+      "type": "singlestat",
+      "valueFontSize": "120%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current",
+      "withVar": false
+    },
+    {
+      "adjustableFontSize": true,
+      "benchmark": "",
+      "bgColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "bgThresholds": "",
+      "bold": false,
+      "boldGauge": true,
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#d44a3a",
+        "#d44a3a",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "compatibleThresholds": "",
+      "createUid": "a6991959-e4d9-6d7a-995f-49a0d8864727",
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 3
+      },
+      "i18n": {
+        "zh-CN": {}
+      },
+      "id": 14,
+      "interval": null,
+      "isMath": false,
+      "isMathInputVal": false,
+      "isMathTip": false,
+      "isMathUpgrade": false,
+      "labelFontSize": "120%",
+      "linkTarget": false,
+      "linkTitle": "",
+      "linkUrl": "",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "mathInputVal": "",
+      "maxDataPoints": 100,
+      "metricRuleObjArr": [],
+      "metricRuleObjArrForAll": [],
+      "multiGauge": false,
+      "multiGaugeFZUpgrade": true,
+      "multiGaugeFZVal": "80%",
+      "multiTableGaugeFZVal": "80%",
+      "multiTitle": true,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "oneTitle": false,
+      "options": {},
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "panelTran": 1,
+      "postColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "postThresholds": "",
+      "postfix": "",
+      "postfixFontSize": "120%",
+      "preColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "preThresholds": "",
+      "prefix": "",
+      "prefixFontSize": "120%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "refreshInView": false,
+      "selBgThres": "",
+      "selBgThresEnd": "",
+      "selBgThresMul": "",
+      "selPostThres": "",
+      "selPostThresEnd": "",
+      "selPostThresMul": "",
+      "selPreThres": "",
+      "selPreThresEnd": "",
+      "selPreThresMul": "",
+      "selValueMax": "",
+      "selValueMin": "",
+      "selValueThres": "",
+      "selValueThresEnd": "",
+      "selValueThresMul": "",
+      "selfAdaption": true,
+      "showYear": false,
+      "sparkline": {
+        "show": false
+      },
+      "tableColumn": "",
+      "tableMultiColArr": [],
+      "tableMultiColText": "",
+      "tableMultiGauge": false,
+      "tableMultiGaugeUpgrade": true,
+      "tableSingleGauge": false,
+      "timeConversion": "",
+      "timeResetColor": "",
+      "timeTextResetColor": "",
+      "title": "🔴 High Risk",
+      "titleShow": false,
+      "transparentRange": 1,
+      "type": "singlestat",
+      "valueFontSize": "120%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current",
+      "withVar": false
+    },
+    {
+      "adjustableFontSize": true,
+      "benchmark": "",
+      "bgColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "bgThresholds": "",
+      "bold": false,
+      "boldGauge": true,
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#5794f2",
+        "#5794f2",
+        "#5794f2",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "compatibleThresholds": "",
+      "createUid": "680ba3af-3aeb-6b89-0400-c3c350d4a9e8",
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 3
+      },
+      "i18n": {
+        "zh-CN": {}
+      },
+      "id": 15,
+      "interval": null,
+      "isMath": false,
+      "isMathInputVal": false,
+      "isMathTip": false,
+      "isMathUpgrade": false,
+      "labelFontSize": "120%",
+      "linkTarget": false,
+      "linkTitle": "",
+      "linkUrl": "",
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "mathInputVal": "",
+      "maxDataPoints": 100,
+      "metricRuleObjArr": [],
+      "metricRuleObjArrForAll": [],
+      "multiGauge": false,
+      "multiGaugeFZUpgrade": true,
+      "multiGaugeFZVal": "80%",
+      "multiTableGaugeFZVal": "80%",
+      "multiTitle": true,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "oneTitle": false,
+      "options": {},
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "panelTran": 1,
+      "postColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "postThresholds": "",
+      "postfix": "",
+      "postfixFontSize": "120%",
+      "preColors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a",
+        "rgba(45, 91, 172, 0.9)",
+        "rgba(247, 243, 27, 0.9)",
+        "rgba(184, 27, 247, 0.9)"
+      ],
+      "preThresholds": "",
+      "prefix": "",
+      "prefixFontSize": "120%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "refreshInView": false,
+      "selBgThres": "",
+      "selBgThresEnd": "",
+      "selBgThresMul": "",
+      "selPostThres": "",
+      "selPostThresEnd": "",
+      "selPostThresMul": "",
+      "selPreThres": "",
+      "selPreThresEnd": "",
+      "selPreThresMul": "",
+      "selValueMax": "",
+      "selValueMin": "",
+      "selValueThres": "",
+      "selValueThresEnd": "",
+      "selValueThresMul": "",
+      "selfAdaption": true,
+      "showYear": false,
+      "sparkline": {
+        "show": false
+      },
+      "tableColumn": "",
+      "tableMultiColArr": [],
+      "tableMultiColText": "",
+      "tableMultiGauge": false,
+      "tableMultiGaugeUpgrade": true,
+      "tableSingleGauge": false,
+      "timeConversion": "",
+      "timeResetColor": "",
+      "timeTextResetColor": "",
+      "title": "🔍 Total Dets",
+      "titleShow": false,
+      "transparentRange": 1,
+      "type": "singlestat",
+      "valueFontSize": "120%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current",
+      "withVar": false
+    },
+    {
+      "aliasColors": {},
+      "areaColor": "#4e4e4e",
+      "axisAdjFontSize": false,
+      "axisFontSize": "",
+      "bars": false,
+      "barwidth": 1,
+      "createUid": "0e39aa8f-8e22-5635-9a1d-366d933d13ad",
+      "currentTimePoints": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "discrete": false,
+      "discreteDataType": "max",
+      "discreteShiftDay": 0,
+      "fill": 2,
+      "fillGradient": 0,
+      "graphMode": "continuous",
+      "gridPos": {
+        "h": 9,
+        "w": 18,
+        "x": 0,
+        "y": 7
+      },
+      "hiddenSeries": false,
+      "i18n": {
+        "zh-CN": {}
+      },
+      "id": 20,
+      "isMath": false,
+      "isMathInputVal": false,
+      "isMathTip": false,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "evenColor": "",
+        "legendAdjFontSize": false,
+        "legendFontSize": "",
+        "max": true,
+        "min": true,
+        "oddColor": "",
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 2,
+      "linkages": [],
+      "markingAreaDataType": "series",
+      "markingAreaRefId": "",
+      "markingEnd": "",
+      "markingStart": "",
+      "mathInputVal": "",
+      "maxPointColor": "#F2495C",
+      "maxPointFontSize": 13,
+      "maxPointSize": 2,
+      "metricRuleObjArr": [],
+      "needDrawCL": {
+        "hideValue": false,
+        "isCl": false,
+        "lineColor": "rgba(0, 191, 255, 0.7)",
+        "target": "",
+        "type": "line",
+        "value": ""
+      },
+      "needDrawLCL": {
+        "hideValue": false,
+        "isLcl": false,
+        "lineColor": "rgba(255, 165, 0, 0.7)",
+        "target": "",
+        "type": "line",
+        "value": ""
+      },
+      "needDrawUCL": {
+        "hideValue": false,
+        "isUcl": false,
+        "lineColor": "rgba(0, 255, 255, 0.7)",
+        "target": "",
+        "type": "line",
+        "value": ""
+      },
+      "nullPointMode": "connected",
+      "openInNewTabOption": true,
+      "openIncludeTimeRangeOption": true,
+      "options": {
+        "dataLinks": []
+      },
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "percentage": false,
+      "plotDbclick": true,
+      "plotselectedchb": true,
+      "pointradius": 2,
+      "points": false,
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "refreshInView": false,
+      "renderer": "flot",
+      "selectNames": "",
+      "selectedStatName": "",
+      "selfAdaption": true,
+      "seriesOverrides": [],
+      "showMarkingArea": false,
+      "showMaxPoint": "All",
+      "showModesPart": false,
+      "showXSlider": false,
+      "skipUrl": null,
+      "spaceLength": 10,
+      "stack": false,
+      "stackPanel": false,
+      "stackTotal": false,
+      "steppedLine": false,
+      "thresholds": [
+        {
+          "colorMode": "critical",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 60
+        },
+        {
+          "colorMode": "warning",
+          "fill": true,
+          "line": true,
+          "op": "gt",
+          "value": 20
+        }
+      ],
+      "timeFormatAsX": false,
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeResetColor": "",
+      "timeShift": null,
+      "timeTextResetColor": "",
+      "title": "📈 Risk Score Timeline (0-100)",
+      "titleShow": false,
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transparentRange": 1,
+      "type": "graph",
+      "valueFontSize": 13,
+      "withVar": false,
+      "xaxis": {
+        "buckets": null,
+        "enableCustomScale": false,
+        "format": "Autoscale",
+        "mode": "time",
+        "name": null,
+        "nsformat": "Autoscale",
+        "precision": "ms",
+        "scaleNumber": 1,
+        "scaleUnit": "day",
+        "show": true,
+        "timeRangeAdjustable": false,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "none",
+          "label": "Risk Score",
+          "logBase": 1,
+          "max": 100,
+          "min": 0,
+          "show": true,
+          "title": "Risk Score"
+        },
+        {
+          "format": "short",
+          "logBase": 1,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "adjFontSize": true,
+      "adjFontSize_Option": false,
+      "aliasColors": {},
+      "cacheTimeout": null,
+      "combine": {
+        "combine": "",
+        "i18n": {
+          "zh-CN": {
+            "label": "Others"
+          }
+        },
+        "label": "Others",
+        "threshold": 0,
+        "zeroTips": ""
+      },
+      "createUid": "f79c6696-a7ad-3007-cbd3-af480dc0a3f2",
+      "currenValueAlias": null,
+      "currentValue": null,
+      "dataArr": [],
+      "datasource": null,
+      "defaultUnit": "",
+      "evenColor": "",
+      "fontSize": "70%",
+      "format": "short",
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 18,
+        "y": 7
+      },
+      "heightLight": false,
+      "i18n": {
+        "zh-CN": {
+          "fontSize": "70%"
+        }
+      },
+      "id": 21,
+      "indicatorMath": {
+        "isMath": false,
+        "metricRuleObjArr": []
+      },
+      "innerRadius": 6,
+      "interval": null,
+      "isMath": false,
+      "isValueBold": false,
+      "isValueCheckUnit": false,
+      "labelData": "",
+      "legend": {
+        "enableCurrent": false,
+        "fakeValue": false,
+        "i18n": {
+          "zh-CN": {}
+        },
+        "show": true,
+        "values": true
+      },
+      "legendDisplay": "Muti line",
+      "legendList": [
+        {
+          "text": "",
+          "value": ""
+        }
+      ],
+      "legendType": "Under graph",
+      "linkData": [],
+      "linkOpenNewTab": false,
+      "linkTime": "",
+      "linkages": [],
+      "links": [],
+      "mathInputVal": "",
+      "maxDataPoints": 100,
+      "metricRuleObjArr": [],
+      "middleFont": "100%",
+      "nullPointMode": "connected",
+      "oddColor": "",
+      "options": {},
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "pieType": "donut",
+      "postfix": "",
+      "postfixColumn": "",
+      "postfixColumnList": [],
+      "postfixMapping": "",
+      "postfixType": "",
+      "prefix": "",
+      "prefixColumn": "",
+      "prefixColumnList": [],
+      "prefixData": "",
+      "prefixMapping": "",
+      "prefixType": "",
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "referMath": {
+        "isMath": false,
+        "metricRuleObjArr": []
+      },
+      "refreshInView": false,
+      "selfAdaption": true,
+      "skipUrl": "",
+      "sort": "default",
+      "spacingEnable": false,
+      "strokeWidth": 1,
+      "timeResetColor": "",
+      "timeTextResetColor": "",
+      "title": "🎯 Risk Level",
+      "titleShow": false,
+      "transparentRange": 1,
+      "type": "grafana-piechart-panel",
+      "valueName": "current",
+      "withVar": false
+    },
+    {
+      "LfontSize": 18,
+      "YfontSize": 18,
+      "adjFontSize": false,
+      "alertColor": "",
+      "barWidth": 0,
+      "createUid": "eae7c01d-efc1-07cb-3048-380b6d2e5804",
+      "dataSort": false,
+      "datasource": null,
+      "fontColor": "",
+      "gridPos": {
+        "h": 8,
+        "w": 16,
+        "x": 0,
+        "y": 16
+      },
+      "i18n": {
+        "zh-CN": {}
+      },
+      "id": 30,
+      "isMath": false,
+      "leftSpacing": 0,
+      "legFontSize": false,
+      "legRightSpacing": 0,
+      "legend": true,
+      "legendFontSize": "90%",
+      "legendHeight": 0,
+      "legendLeftName": "",
+      "legendRightName": "",
+      "legendRightSpacing": 0,
+      "metricRuleObjArr": [],
+      "options": {},
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "refreshInView": false,
+      "rightAlart": "",
+      "rightSpacing": 0,
+      "rightTotal": "",
+      "selfAdaption": true,
+      "seriesData": [],
+      "sideLSpacing": 50,
+      "sideRSpacing": 50,
+      "timeResetColor": "",
+      "timeTextResetColor": "",
+      "title": "🏷 Class Distribution",
+      "titleShow": false,
+      "totalColor": "",
+      "transparentRange": 1,
+      "type": "advantech-columnchart-panel",
+      "valueFontSize": "90%",
+      "valueName": "current",
+      "withVar": false
+    },
+    {
+      "columns": [],
+      "createUid": "a9ede755-b0bf-54ea-ad3a-324ba9cbda6e",
+      "datasource": null,
+      "fontAdjustable": true,
+      "fontSize": "100%",
+      "fontSizePX": "15px",
+      "fontSizeStyle": {
+        "font-size": "0.8vw"
+      },
+      "fontSizeVW": "0.8vw",
+      "fontSizeVal": "70%",
+      "gridPos": {
+        "h": 8,
+        "w": 8,
+        "x": 16,
+        "y": 16
+      },
+      "i18n": {
+        "zh-CN": {
+          "fontSizeVal": "70%"
+        }
+      },
+      "id": 31,
+      "options": {},
+      "pageSize": null,
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "refreshInView": false,
+      "scroll": true,
+      "selfAdaption": true,
+      "showHeader": true,
+      "sort": {
+        "col": 1,
+        "desc": true
+      },
+      "styles": [
+        {
+          "i18n": {
+            "zh-CN": {}
+          },
+          "pattern": "/.*/",
+          "type": "string"
+        }
+      ],
+      "timeResetColor": "",
+      "timeTextResetColor": "",
+      "title": "📋 Zone Details",
+      "titleShow": false,
+      "transform": "timeseries_to_rows",
+      "transparentRange": 1,
+      "type": "table",
+      "withVar": false
+    },
+    {
+      "columns": [],
+      "createUid": "a2fdf09c-3db9-7b9b-c028-0cffca136f9d",
+      "datasource": null,
+      "fontAdjustable": true,
+      "fontSize": "100%",
+      "fontSizePX": "15px",
+      "fontSizeStyle": {
+        "font-size": "0.8vw"
+      },
+      "fontSizeVW": "0.8vw",
+      "fontSizeVal": "70%",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 24
+      },
+      "i18n": {
+        "zh-CN": {
+          "fontSizeVal": "70%"
+        }
+      },
+      "id": 40,
+      "options": {},
+      "pageSize": null,
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "refreshInView": false,
+      "scroll": true,
+      "selfAdaption": true,
+      "showHeader": true,
+      "sort": {
+        "col": 2,
+        "desc": true
+      },
+      "styles": [
+        {
+          "i18n": {
+            "zh-CN": {}
+          },
+          "pattern": "Time",
+          "type": "date"
+        },
+        {
+          "i18n": {
+            "zh-CN": {}
+          },
+          "pattern": "/.*/",
+          "type": "string"
+        }
+      ],
+      "timeResetColor": "",
+      "timeTextResetColor": "",
+      "title": "📊 Class Detail (9 Classes)",
+      "titleShow": false,
+      "transform": "timeseries_to_rows",
+      "transparentRange": 1,
+      "type": "table",
+      "withVar": false
+    },
+    {
+      "columns": [],
+      "createUid": "e820ae48-10fc-a41e-2cea-5d59c9ff65e0",
+      "datasource": null,
+      "fontAdjustable": true,
+      "fontSize": "100%",
+      "fontSizePX": "15px",
+      "fontSizeStyle": {
+        "font-size": "0.8vw"
+      },
+      "fontSizeVW": "0.8vw",
+      "fontSizeVal": "70%",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 24
+      },
+      "i18n": {
+        "zh-CN": {
+          "fontSizeVal": "70%"
+        }
+      },
+      "id": 41,
+      "options": {},
+      "pageSize": null,
+      "panelGradientEndColor": "",
+      "panelPillarColor": "",
+      "panelStartGradientColor": "",
+      "panelTitleScheme": "Default",
+      "refResetColor": "",
+      "refTextResetColor": "",
+      "refreshInView": false,
+      "scroll": true,
+      "selfAdaption": true,
+      "showHeader": true,
+      "sort": {
+        "col": 2,
+        "desc": true
+      },
+      "styles": [
+        {
+          "i18n": {
+            "zh-CN": {}
+          },
+          "pattern": "/.*/",
+          "type": "string"
+        }
+      ],
+      "timeResetColor": "",
+      "timeTextResetColor": "",
+      "title": "⚠ Top 5 Peak Risk Events",
+      "titleShow": false,
+      "transform": "timeseries_to_rows",
+      "transparentRange": 1,
+      "type": "table",
+      "withVar": false
+    }
+  ],
+  "recovery": {
+    "enter": false
+  },
+  "reduceBtn": false,
+  "refreshInView": false,
+  "rowPanelsIds": [],
+  "schemaVersion": 21,
+  "selectAsset": "",
+  "service": "ObjectManagement",
+  "startingGradientColor": "",
+  "style": "dark",
+  "tags": [
+    "fire-risk",
+    "advantech",
+    "competition"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-30s",
+    "to": "now"
+  },
+  "timepicker": {
+    "customMode": "default",
+    "customTimeRange": [],
+    "panelTimePicker": [
+      "Last 5 minutes",
+      "Last 15 minutes",
+      "Last 30 minutes",
+      "Last 1 hour",
+      "Last 3 hours",
+      "Last 6 hours",
+      "Last 12 hours",
+      "Last 24 hours",
+      "Last 2 days",
+      "Last 7 days",
+      "Last 30 days",
+      "Last 90 days",
+      "Last 6 months",
+      "Last 1 year",
+      "Last 2 years",
+      "Last 5 years",
+      "Yesterday",
+      "Day before yesterday",
+      "This day last week",
+      "Previous week",
+      "Previous month",
+      "Previous year",
+      "Today",
+      "Today so far",
+      "Yest 8:00 to today 8:00",
+      "This week",
+      "This week so far",
+      "This month",
+      "This month so far",
+      "This year",
+      "This year so far"
+    ],
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "🔥 消防风险识别探头 — 可视化分析",
+  "totalVariableArray": [],
+  "treeAllExpanded": false,
+  "treeMenuApi": "",
+  "treeMenuAuthType": "token",
+  "treeMenuDatasource": "",
+  "treeMenuDragHeight": 0,
+  "treeMenuExpanded": false,
+  "treeMenuExpandedWidth": "",
+  "treeMenuHeadersAddList": [],
+  "treeMenuOpenleftMenu": false,
+  "treeMenuPassword": "",
+  "treeMenuProperty": false,
+  "treeMenuStyles": {
+    "treeMenuPresetStyles": "theme"
+  },
+  "treeMenuTagMultiple": false,
+  "treeMenuUser": "",
+  "uid": "fire-risk-v2",
+  "variableAssociation": "",
+  "version": 5
+}
