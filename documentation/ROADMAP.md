@@ -2,8 +2,8 @@
 
 > **项目：基于 AIoT 的城市老旧小区智慧安防与消防通道联动管控系统**
 > **赛事：2026 研华全国 AIoT 创新应用大赛 — 创新应用赛道（智慧城市）**
-**生成日期：2026-07-08**
-**版本：v2.1 — 更新初赛 PoC 进度**
+**生成日期：2026-07-14**
+**版本：v2.2 — 更新 WISE-IoT MQTT 集成进度**
 
 ---
 
@@ -168,18 +168,25 @@ smart_community/{community_id}/
 
 ### 阶段2：初赛（6月→7/14）
 - YOLOv8n 训练 + TensorRT 导出 + 推理管线 + Demo 视频 ✅ （9 类消防风险检测 PoC 已完成）
+- **WISE-IoT MQTT 集成 ✅**（7/14 完成）：
+  - IoTSuite v2.0.6 设备模型 FireRiskDetector 已注册（8 属性点）
+  - 设备 fire-risk-pc-01 已注册（DCCS 直连，MQTT 协议）
+  - DCCS SDK Cloud Publisher 脚本已实现（`scripts/sdk_cloud_publisher.py`）
+  - paho-mqtt 备用发布器已实现（`scripts/mqtt_cloud_publisher.py`）
+  - Dashboard DataHub-SimpleJson 数据源已创建（ID:365），待填入 DataHub URL
 
 ### 阶段3：决赛（7月→8/18）
 - **硬件申请与部署**：申请 MIC-711D-ON + Gemini 336L + ECU-1051E
 - **TensorRT 迁移**：PC 训练好的 .pt → .engine，部署到 Jetson
 - **DeepStream 管线**：配置 nvv4l2decoder → nvinfer → nvtracker → nvdsosd
-- **MQTT 上云**：`mqtt_client.py` 发布告警至 ECU-1051E Broker → WISE-IoT DataHub
-- **IoTSuite 对接**（按顺序 5 个子任务）：
-  - ① Dashboard 搭建（2天）：创建实时监控面板，拖拽布局
-  - ② MQTT Topic 配置 + DataHub 数据接入（1天）
-  - ③ SaaS Composer 工单规则配置（1天）：违停→派保安 / 跌倒→紧急响应
-  - ④ Notification 推送通道（0.5天）：绑定微信/短信/邮件
-  - ⑤ AgentBuilder Agent 编排（1天）：违停处置决策链 + LLM SOP 建议
+- **MQTT 上云**（✅ 初赛已提前完成 PC 端）：
+  - SDK Publisher → DCCS → DataHub → Dashboard（`sdk_cloud_publisher.py`）
+  - 备用：paho-mqtt → ECU-1051E Broker → EdgeLink → DataHub
+- **IoTSuite 对接**：
+  - ① Dashboard 搭建 ✅（v2 完成，12 面板，DataHub-SimpleJson 数据源已创建）
+  - ② MQTT Topic 配置 + DataHub 数据接入 ✅（设备模型+Topic 已配置，待填入 DataHub URL）
+  - ③ SaaS Composer 工单规则配置（1天）
+  - ④ Notification 推送通道（0.5天）
 - **Gemini 336L 集成**：Orbbec SDK 接入，GMSL2.0/USB3.0 驱动调试
 
 ### 阶段4：总决赛（8月→9/19）
