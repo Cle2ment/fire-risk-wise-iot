@@ -1,0 +1,64 @@
+# Fire Risk Detection Probe — WISE-IoT Cloud MQTT Configuration
+# Phase 1: PC → MQTT (RabbitMQ) → DataHub → Dashboard (DataHub-SimpleJson)
+#
+# Prerequisites (in IoTSuite Portal at https://portal-catalog-ensaas.sa.wise-paas.com):
+#   1. Locate your gateway device (EdgeLink/SCADA) — already registered on platform
+#   2. Create an MQTT sub-device under it → get device_id
+#   3. The gateway's MQTT credentials (IP/username/password) serve as connection params
+#
+# Reference: vendor/wise-iot-docs/IoTsuite MQTT子设备.docx
+# SDK example: https://github.com/WISE-PaaS/example-py-iothub-sso
+
+mqtt:
+  # === IoTSuite 直连设备 (DCCS代理模式) ===
+  # Device registered at portal-home-wiseiot-aiot.edu.advantech.com.cn
+  # DCCS API manages RabbitMQ broker credentials internally
+  broker_host: "127.0.0.1"                  # DCCS proxy; real broker via DCCS API
+  broker_port: 1883                         # 1883 default; 8883 for TLS
+  use_tls: false                            # DCCS handles TLS internally
+
+  # === Device authentication ===
+  device_id: "231a82fda93a42999e6d69cacb7f405e"
+  device_key: "8934d9aba9d3be278f9495686245a94e"  # 设备秘钥
+  dccs_api: "https://api-dccs-ensaas.edu.advantech.com.cn/v1/serviceCredentials/"
+  username: "231a82fda93a42999e6d69cacb7f405e"   # device_id as username
+  password: "8934d9aba9d3be278f9495686245a94e"   # device_key as password
+  client_id: "fire-risk-pc-01"              # unique MQTT client ID
+
+  # === Topic (per IoTSuite MQTT spec) ===
+  topic_report: "/device/{device_id}/up/report"
+  qos: 1                                     # at-least-once delivery
+
+  # === Timing ===
+  keepalive_sec: 60                          # MQTT keepalive ping interval
+  publish_interval_sec: 0.05                # throttle between publishes (50ms)
+
+# --- Pipeline data → IoTSuite property mapping ---
+module_mapping:
+  module_name: "fireRiskModule"
+  properties:
+    risk_score:       { name: "risk_score",       datatype: "float" }
+    risk_level:       { name: "risk_level",       datatype: "string" }
+    detections_count: { name: "detections",       datatype: "int" }
+    high_risk_count:  { name: "high_risk",        datatype: "int" }
+    peak_score:       { name: "peak_score",       datatype: "float" }
+    avg_score:        { name: "avg_score",        datatype: "float" }
+    fps:              { name: "fps",              datatype: "float" }
+    frame_idx:        { name: "frame_idx",        datatype: "int" }
+
+# --- Dashboard DataHub-SimpleJson configuration ---
+# After MQTT data is flowing:
+#   1. Add DataHub-SimpleJson datasource in Dashboard
+#   2. The datasource auto-discovers device properties from DataHub
+#   3. Replace panel datasource from null → DataHub-SimpleJson
+#   4. Map each panel to the corresponding property:
+#
+#   Panel               → Property
+#   Peak Score          → peak_score
+#   Avg Score           → avg_score
+#   Low/Med/High Risk   → risk_level (count aggregation)
+#   Total Dets          → detections
+#   Risk Timeline       → risk_score (time-series)
+#   Class Distribution  → risk_level (pie/column)
+#   Zone Details        → frame_idx + risk_score (table)
+#   Top 5 Events        → risk_score (top-N query)
