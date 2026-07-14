@@ -1,0 +1,3 @@
+[submodule "vendor/dashboard-mongo-datasource-example"]
+	path = vendor/dashboard-mongo-datasource-example
+	url = https://github.com/WISE-PaaS/dashboard-mongo-datasource-example

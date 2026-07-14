@@ -1,0 +1,6738 @@
+[
+    {
+        "type": "text",
+        "text": "WISE-PaaS/Dashboard 基于Grafana的加值说明",
+        "text_level": 2,
+        "bbox": [
+            65,
+            343,
+            513,
+            506
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/fdebcbbbcafd4c4fd48372aa02958c63cd4e9a986ebf84cfdadfd9ecfb0cb126.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            750,
+            288,
+            990,
+            881
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "ADVANTECH",
+        "bbox": [
+            88,
+            59,
+            204,
+            98
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Enabling an Intelligent Planet",
+        "bbox": [
+            120,
+            111,
+            250,
+            135
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Tingting.ning, PM, Advantech 2020/12/08",
+        "bbox": [
+            84,
+            859,
+            343,
+            938
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Why Grafana ?",
+        "text_level": 2,
+        "bbox": [
+            352,
+            34,
+            631,
+            113
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "1. 更适合工业物联网场景数据",
+        "text_level": 2,
+        "bbox": [
+            48,
+            148,
+            273,
+            185
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "IoT领域采集的数据较多是时间序列数据，各类传感器采集的工业现场数据可快速接入在众多panel上进行展现，Grafana专注于时间序列数据的显示，对各类时序数据库都有很好的支持，显示插件对于时序数据的支持也是优先。",
+        "bbox": [
+            47,
+            192,
+            943,
+            266
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "2. 多租户和多维度的权限控制",
+        "text_level": 2,
+        "bbox": [
+            48,
+            306,
+            273,
+            340
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "支持多租户的场景，使用Org区分不同的用户，数据源和dashboard进行隔离。多种用户角色，除了支持用户也支持Team的管理。多维度的权限控制，支持org，folder，dashboard三层的权限控制，可满足各种使用场景。",
+        "bbox": [
+            47,
+            345,
+            943,
+            422
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "3. 仪表板和可视化",
+        "text_level": 2,
+        "bbox": [
+            48,
+            469,
+            190,
+            503
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Grafana支持众多的显示panel，可帮助您快速构建各类显示效果，满足各类场景的需求，同时通过简单的拖拉缩放即可快速进行排版布局，操作简易方便。支持变量，注释的特性，可方便制作动态panel，同一张dashboard通过动态切换变量更换显示的数据。",
+        "bbox": [
+            45,
+            511,
+            948,
+            619
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "4. 数据源和集成",
+        "text_level": 2,
+        "bbox": [
+            48,
+            666,
+            176,
+            703
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "支持众多的数据源，内置集成Graphite，Prometheus，InfluxDB，MySQL，PostgreSQL和Elasticsearch等内置插件，另外支持众多的第三方数据源的插件，并可自行进行扩展。方便接入更多的数据来源并进行显示。每种数据源有自己特性化的查询编辑器，帮助用户简单方便掌握各类数据的查询配置",
+        "bbox": [
+            45,
+            711,
+            954,
+            819
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Why Grafana ?",
+        "text_level": 2,
+        "bbox": [
+            352,
+            34,
+            631,
+            113
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "5. 警报和通知",
+        "text_level": 2,
+        "bbox": [
+            45,
+            155,
+            152,
+            192
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Grafana附带内置警报引擎，允许用户设置一定的条件规则到特定的panel上，数据刷新警报触发之后，可产生一系列的事件，并内置插件支持显示，同时结合notification通知功能，警报触发之后可自动发送通知，支持的方式众多（例如, Email, Slack, LINE, Telegram, 自定义的webhook等）",
+        "bbox": [
+            43,
+            200,
+            950,
+            311
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "6. 和Prometheus，Loki 集成度高",
+        "text_level": 2,
+        "bbox": [
+            45,
+            355,
+            306,
+            392
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Prometheus是一个领先的开源监控解决方案，属于一站式监控告警平台，依赖少，功能齐全。Loki是一个可水平伸缩、高可用、多租户的日志聚合系统。在grafana上都有高度的集成和方便的使用。",
+        "bbox": [
+            44,
+            397,
+            950,
+            471
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "7. 插件化的结构，更易于扩展",
+        "text_level": 2,
+        "bbox": [
+            45,
+            518,
+            270,
+            555
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Grafana 是插件化的架构，对于 panel，data source，app 都可以开发插件进行扩展，插件的开发轻量简易，放入指定插件目录下注册即可生效。对于显示效果的增加或是更多数据源的接入都可以轻松解决。",
+        "bbox": [
+            44,
+            562,
+            952,
+            634
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "8. 开源社区",
+        "text_level": 2,
+        "bbox": [
+            45,
+            683,
+            137,
+            718
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "拥有强大的用户社区和活跃的贡献者，它已拥有54个数据源，50个面板，17个应用程序和1732个仪表盘。在github上有25000多次提交，并且Star为35.6K之多，持续更新，快速进版增加新功能。",
+        "bbox": [
+            43,
+            725,
+            938,
+            800
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/5d76a152ee4cc887c079412ac02b93a6fe7ff6f32805621ca89494f852650056.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            619,
+            131,
+            701
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/f1d05bf930cb18624a670078d22fac958c1385e0040c9c2228d2a667dab02252.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            491,
+            131,
+            570
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/566c20e714ad55de4617fc69cab7e2394d023dcdbadf7191bb34c2e906e746bb.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            548,
+            619,
+            606,
+            701
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "WISE-PaaS/Dashboard 基于Grafana的加值",
+        "text_level": 2,
+        "bbox": [
+            150,
+            46,
+            845,
+            116
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "保证系统的兼容性和稳定性",
+        "bbox": [
+            158,
+            246,
+            426,
+            291
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "2",
+        "bbox": [
+            86,
+            380,
+            101,
+            417
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/afc1f00e8ba6d4f7d7cfce0c1b5e50d0c00c5073a36521e1302b8f3a1082944c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            358,
+            131,
+            439
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "新增10大增强功能模块",
+        "bbox": [
+            158,
+            382,
+            387,
+            424
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "3",
+        "bbox": [
+            86,
+            513,
+            102,
+            548
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "新增低代码应用构建框架",
+        "bbox": [
+            158,
+            513,
+            405,
+            555
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "移动端排版和Mobile App支持",
+        "bbox": [
+            158,
+            646,
+            463,
+            691
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "4",
+        "bbox": [
+            84,
+            644,
+            101,
+            679
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "5",
+        "bbox": [
+            84,
+            775,
+            101,
+            812
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "新增25支各行业的显示插件",
+        "bbox": [
+            158,
+            775,
+            430,
+            817
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "6",
+        "bbox": [
+            561,
+            251,
+            576,
+            286
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/a9d90871a9dda94d9f9629690d097652c73cde3c5f853d0b792026623da9786f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            544,
+            227,
+            606,
+            308
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "新增9支数据源插件，无缝接入平台数据",
+        "bbox": [
+            627,
+            229,
+            931,
+            320
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "7",
+        "bbox": [
+            565,
+            385,
+            577,
+            419
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/f113c3098166393d34451f4550e5c7fdf0f0ab50ed709ae0e68a2f6e34e2b574.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            548,
+            360,
+            608,
+            439
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "17支增强或维护的第三方插件",
+        "bbox": [
+            627,
+            382,
+            922,
+            427
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "8",
+        "bbox": [
+            563,
+            513,
+            577,
+            548
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/7b1bcf4874e83b6bd83ee670ed223c9b2fd7126cfaa34e4add424ea5d9716e78.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            548,
+            491,
+            606,
+            570
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "插件商城，插件开发生态",
+        "bbox": [
+            627,
+            511,
+            875,
+            553
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "9",
+        "bbox": [
+            563,
+            644,
+            579,
+            679
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "完善的培训和技术资料",
+        "bbox": [
+            627,
+            641,
+            852,
+            686
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "10",
+        "bbox": [
+            559,
+            772,
+            587,
+            809
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "技术支持和客制化开发",
+        "bbox": [
+            627,
+            775,
+            852,
+            817
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "保证系统的兼容性和稳定性",
+        "text_level": 2,
+        "bbox": [
+            134,
+            395,
+            734,
+            483
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/f7572439e98be17e8528e3aef20810291fdf1039fa649fbda30dcbd4ca86b3f9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            752,
+            291,
+            988,
+            879
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/18983572d8f7ad4648e89023f7c0fa5a31b1394b5af97acc7e0b2e3c1ec3b343.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "sub_type": "seal",
+        "bbox": [
+            752,
+            681,
+            987,
+            876
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "ADVANTECH",
+        "bbox": [
+            88,
+            61,
+            202,
+            98
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Enabling an Intelligent Planet",
+        "bbox": [
+            120,
+            111,
+            250,
+            135
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "保证系统的兼容性和稳定性",
+        "text_level": 2,
+        "bbox": [
+            263,
+            41,
+            731,
+            113
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "定期和Grafana开源版本整合，加入开源版本的新特性，保证已发布的功能向下兼容",
+        "bbox": [
+            313,
+            187,
+            895,
+            269
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "WISE-PaaS/Dashboard",
+        "bbox": [
+            81,
+            291,
+            297,
+            338
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "WISE-PaaS/Dashboard保证和自有开发的数据源和显示插件的兼容性",
+        "bbox": [
+            313,
+            279,
+            898,
+            360
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "WISE-PaaS/Dashboard保证和纳入发布的第三方插件的兼容性",
+        "bbox": [
+            312,
+            370,
+            900,
+            412
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "修改Grafana开源版本和第三方插件的bug",
+        "bbox": [
+            313,
+            419,
+            720,
+            464
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/7051f453bd6d3a568a49aeb9a00e0f4e3472432aca914d53f9eab52368a6c29b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            156,
+            506,
+            216,
+            614
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "保证兼容性，才能保证升级系统的稳定性",
+        "text_level": 2,
+        "bbox": [
+            294,
+            520,
+            895,
+            587
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "image",
+        "img_path": "images/93b22f66111f140ef22805103ba56b809529dab9f13244aed0fbe7ad903023b1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            143,
+            703,
+            216,
+            839
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "和Grafana新版整合的过程中开源版本向下不兼容",
+        "bbox": [
+            313,
+            686,
+            781,
+            728
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "第三方插件没有及时更新和维护，在Grafana新版不能使用",
+        "bbox": [
+            313,
+            735,
+            858,
+            777
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Grafana对接的数据源的数据结构有变化不兼容，比如6.5.2对table或timeserie类型返回数据中自定义的字段不支持",
+        "bbox": [
+            313,
+            787,
+            883,
+            869
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Enabling an Intelligent Planet",
+        "bbox": [
+            122,
+            111,
+            250,
+            135
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "新增10大增强功能模块",
+        "text_level": 2,
+        "bbox": [
+            180,
+            395,
+            690,
+            483
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/5b1175cfeda6ddffbb077db21177e5ebc5c517272c94a59d4a596e9c6df08cc5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            751,
+            291,
+            991,
+            879
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "ADVANTECH",
+        "bbox": [
+            88,
+            61,
+            202,
+            98
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "功能1 - Logo更换",
+        "text_level": 2,
+        "bbox": [
+            352,
+            41,
+            644,
+            116
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "- Dashboard logo更换",
+        "text_level": 2,
+        "bbox": [
+            56,
+            148,
+            284,
+            192
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/28ee4428ecd4da34bf5d477a62068571b10a9a7ad796541ce4f37d6428bb2480.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            213,
+            200,
+            731,
+            540
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "- SRP-Frame框架logo更换",
+        "text_level": 2,
+        "bbox": [
+            56,
+            545,
+            323,
+            590
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/b7dbffec951e69902a88b9f54d528f5cbf74e7df21ca15ab34e3c82ead66f30b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            213,
+            609,
+            731,
+            972
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "功能2 - 图片管理",
+        "text_level": 2,
+        "bbox": [
+            352,
+            34,
+            644,
+            103
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Dashboard中增加图片服务器的功能主要为方便各种panel使用图片",
+        "bbox": [
+            68,
+            130,
+            531,
+            165
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "可进行图片上传，删除等管理功能，上传之后可粘贴图片的url，方便在SRP-Frame的logo，dashboard logo，Infographic, PictureIt panel中使用",
+        "bbox": [
+            68,
+            170,
+            955,
+            234
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "PictureIt 中和图片上传功能整合，可直接选中上传的列表中的图片",
+        "bbox": [
+            68,
+            241,
+            559,
+            274
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "支持上传的图片格式：bmp，jpg，jpeg，png，gif，svg",
+        "bbox": [
+            68,
+            281,
+            505,
+            318
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/908efe93d094c14d88f871507ec148ad55aa63d9e263ed5bc365a98515ad54aa.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            69,
+            335,
+            523,
+            980
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "image",
+        "img_path": "images/d115e8215e14fc7c846dfa1a0f4cbd69a4fcfc12d87861a2032e95e8e963b14b.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "在PictureIt中选择图片上传的图片使用"
+        ],
+        "content": "",
+        "bbox": [
+            527,
+            335,
+            906,
+            980
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "功能3 - 插件管理",
+        "text_level": 2,
+        "bbox": [
+            352,
+            34,
+            643,
+            103
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/0576ab66071b3a27e964ea1ddb255dc1503ecbc19ffdbdce55691a250594f1f3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            72,
+            148,
+            652,
+            933
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "插件管理：",
+        "text_level": 2,
+        "bbox": [
+            670,
+            259,
+            748,
+            296
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "支持用户自己开发的插件上传使用",
+        "bbox": [
+            670,
+            296,
+            944,
+            330
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "➢ 方便用户测试自己开发的插件",
+        "bbox": [
+            670,
+            330,
+            911,
+            367
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "➢ 方便第三方社区的插件载入使用",
+        "bbox": [
+            670,
+            367,
+            927,
+            402
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "▶ 支持插件管理，删除",
+        "bbox": [
+            670,
+            402,
+            845,
+            439
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "用法：",
+        "text_level": 2,
+        "bbox": [
+            670,
+            474,
+            713,
+            508
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "将要上传的plugin文件压缩成.zip格式的文件，通过上传即可注册生效",
+        "bbox": [
+            669,
+            508,
+            945,
+            577
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "插件上传和管理",
+        "bbox": [
+            663,
+            713,
+            756,
+            745
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            973,
+            972
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "功能4 - org的批量导入导出",
+        "text_level": 2,
+        "bbox": [
+            266,
+            49,
+            727,
+            123
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "备份：",
+        "text_level": 2,
+        "bbox": [
+            55,
+            167,
+            119,
+            209
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "批量导出某个org或多个org的dashboard，数据源，SRP-Frame作为zip档可保留备份",
+        "bbox": [
+            52,
+            212,
+            475,
+            298
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "导入：",
+        "text_level": 2,
+        "bbox": [
+            55,
+            345,
+            119,
+            387
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "➢ 支持从一个Dashboard的org导入到另一个指定org中",
+        "bbox": [
+            52,
+            390,
+            477,
+            474
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "➢ 支持以相同结构从一个Dashboard导入到另外一个Dashboard中",
+        "bbox": [
+            52,
+            474,
+            481,
+            555
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "优点：",
+        "text_level": 2,
+        "bbox": [
+            55,
+            604,
+            119,
+            651
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Grafana只提供单张dashboard的导入导出，我们提供基于org为单位的批量操作，大大的提高导入导出的便利性",
+        "bbox": [
+            52,
+            651,
+            481,
+            777
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/c96153c9a134ce48a475d303add478868a3f8963bc111e887043ca6c92473d94.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            540,
+            182,
+            959,
+            649
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/56b698eb22d263e951063fa2b7844ace2ddcff8b9e027ce627a4dd6334d3aded.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            538,
+            674,
+            961,
+            933
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Import The Same Structure",
+        "bbox": [
+            793,
+            851,
+            875,
+            866
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Import To The Specified Org",
+        "bbox": [
+            791,
+            866,
+            877,
+            883
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            973,
+            972
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "功能5 - 变量增强功能",
+        "text_level": 2,
+        "bbox": [
+            313,
+            51,
+            684,
+            120
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "改变Grafana变量只能固定位置的功能，增加变量panel，可装载变量到此panel并放置于dashboard中的任意位置",
+        "bbox": [
+            44,
+            148,
+            943,
+            229
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "新增自定义依赖关系的变量，并支持变量text和id的两种取值模式",
+        "bbox": [
+            45,
+            241,
+            647,
+            281
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "image",
+        "img_path": "images/bcb73fdc7e36d76d6a459af605a36d3e5a16b114b4defa30de5c6eb5943d3146.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            19,
+            298,
+            977,
+            992
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "功能6 - 显示提升",
+        "text_level": 2,
+        "bbox": [
+            352,
+            34,
+            643,
+            106
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/33fef9cd7ae8c45f5290a88755b14615c9b591c54ac230e8b060e4bbcc4caafe.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            20,
+            158,
+            705,
+            883
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "背景：",
+        "text_level": 2,
+        "bbox": [
+            730,
+            182,
+            786,
+            219
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "1. 背景颜色可设置",
+        "bbox": [
+            730,
+            224,
+            887,
+            259
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "2. 背景可载入图片",
+        "bbox": [
+            729,
+            259,
+            886,
+            293
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "边框：",
+        "text_level": 2,
+        "bbox": [
+            730,
+            335,
+            786,
+            375
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "1. 边框可设置线性粗细",
+        "bbox": [
+            730,
+            377,
+            920,
+            412
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "2. 边框可设置边角",
+        "bbox": [
+            730,
+            414,
+            888,
+            446
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "3. 3种内置模式，可再自定调整",
+        "bbox": [
+            729,
+            449,
+            948,
+            520
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Panel Title效果：",
+        "text_level": 2,
+        "bbox": [
+            730,
+            562,
+            883,
+            600
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "1. Title内置10中默认样式，可在此基础上自定义",
+        "bbox": [
+            729,
+            604,
+            950,
+            671
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "2. 颜色阴影效果可配置",
+        "bbox": [
+            729,
+            674,
+            920,
+            708
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "大屏Title Panel：",
+        "text_level": 2,
+        "bbox": [
+            730,
+            753,
+            881,
+            790
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "1. 多种内置样式可供选择",
+        "bbox": [
+            729,
+            792,
+            938,
+            827
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "2. 进一步灵活设置",
+        "bbox": [
+            729,
+            829,
+            888,
+            864
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            973,
+            972
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/b18e0aae3a09ea6bc9e96fe80092c19edf747be660c66e878feb5a9b8251565f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            38,
+            827,
+            143,
+            893
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "功能7 - 通知功能支持微信和短信",
+        "text_level": 2,
+        "bbox": [
+            216,
+            34,
+            780,
+            106
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Alert产生的告警事件结合\nNotification 进行通知，灵活的告警分派策略，可以将不同应用、级别、内容的告警分配给不同的人员，",
+        "bbox": [
+            38,
+            158,
+            351,
+            325
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "slack pagerduty\nVictorOps OpsGene\nemail webhook",
+        "bbox": [
+            79,
+            382,
+            288,
+            545
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "通知方式新增微信和短信的通知，可配置不同的分组测试，不同的通知方式进行通知：",
+        "bbox": [
+            31,
+            674,
+            329,
+            800
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "2",
+        "bbox": [
+            406,
+            449,
+            422,
+            479
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/bc58e4f96f1cace3035822704cb62e41a7baa98d40dbc6c9ca1d9c58bc9604c1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            395,
+            138,
+            927,
+            982
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "功能8 - 多设备分辨率支持",
+        "text_level": 2,
+        "bbox": [
+            275,
+            51,
+            722,
+            120
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "SRP-Frame框架构建的I.App应用和Dashboard支持战情室大屏大分辨率的显示2K, 4K, 8K，支持PC日常管理使用，目前在移动装置上也同样支持，方便您随时随地查看您的I.App应用。优化点：",
+        "bbox": [
+            47,
+            162,
+            945,
+            251
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "1. 既有针对大分辨率进行适配",
+        "bbox": [
+            47,
+            266,
+            277,
+            301
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "2. 针对大屏一屏显示所有内容，提供高度自适应的机制",
+        "bbox": [
+            47,
+            320,
+            461,
+            355
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "3. 在移动端针对众多panel的显示进行适配，符合移动端端的显示效果",
+        "bbox": [
+            47,
+            372,
+            572,
+            409
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "4. 调整Panel的字体可针对不同显示设备动态调整到合适大小",
+        "bbox": [
+            47,
+            427,
+            504,
+            461
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/79f3e1817e906ee4ebafb33a4552e87d5286f0746b156a5cb06fe4d5a8a9742b.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "大屏战情室"
+        ],
+        "content": "",
+        "bbox": [
+            36,
+            498,
+            427,
+            780
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/9b13f5937da25dffbfa29df74861fdc532ada9bbda2ab5196724593c568de703.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "PC"
+        ],
+        "content": "",
+        "bbox": [
+            476,
+            506,
+            740,
+            777
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/413a9df9126bc95b4953f9b730e2f936c8fb71d4e8e4fd0979d79ef83a2f4b92.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "手机"
+        ],
+        "content": "",
+        "bbox": [
+            797,
+            427,
+            909,
+            829
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            973,
+            972
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "功能9 - Dashboard多语言支持",
+        "text_level": 2,
+        "bbox": [
+            243,
+            41,
+            750,
+            113
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "第四阶段",
+        "text_level": 2,
+        "bbox": [
+            66,
+            320,
+            138,
+            358
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "系统多语言支持：@Q1 (2021)",
+        "text_level": 2,
+        "bbox": [
+            248,
+            229,
+            498,
+            266
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/b15a499d508d265341dece97c3cc188894a42f66f53ba6ebcc1684b240fb2007.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            841,
+            4,
+            988,
+            162
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Dashboard自己的各个操作界面的语言支持多语言，如用户管理，系统配置，org管理页面，dashboard setting等。抽取语言文件，增加多语言，定义不同的语言文件，根据切换的语言加载对应的语言文件替换界面上的显示",
+        "bbox": [
+            247,
+            271,
+            780,
+            387
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "第三阶段",
+        "text_level": 2,
+        "bbox": [
+            65,
+            471,
+            138,
+            511
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Dashboard页面支持多语言：（已支持）",
+        "text_level": 2,
+        "bbox": [
+            252,
+            451,
+            536,
+            483
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "可支持一套Dashboard的配置适用多套语言下的显示，只需要调整多语言差异的部分，比如文本。切换语言可自动加载对应语言的差异性配置部分。",
+        "bbox": [
+            251,
+            486,
+            766,
+            555
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Data Source 支持多语言：（已支持）",
+        "text_level": 2,
+        "bbox": [
+            245,
+            585,
+            509,
+            619
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "第二阶段",
+        "text_level": 2,
+        "bbox": [
+            66,
+            624,
+            138,
+            661
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "在SRP-Frame切换语言时，对应所有panel的数据查询会带上语言的参数lang给数据源，例如：/query?lang=en，数据源即可根据当前的语言回传相应语言下的数据",
+        "bbox": [
+            244,
+            624,
+            770,
+            738
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "第一阶段",
+        "text_level": 2,
+        "bbox": [
+            66,
+            755,
+            137,
+            792
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "SRP-Frame支持多语言：（已支持）",
+        "text_level": 2,
+        "bbox": [
+            238,
+            762,
+            491,
+            800
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "SRP-Frame 支持新增一套语言的配置，菜单树支持配置对应语言的显示，并可在界面上进行语言切换，可动态增加多个。同时需要制作此语言对应的 dashboard，包括panel上的title，所有文字配置的部分要支持多语言。",
+        "bbox": [
+            238,
+            802,
+            770,
+            918
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "国际化  \n吸引更多海外客户  \n目前已有海外客户：",
+        "bbox": [
+            823,
+            224,
+            962,
+            343
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "韩国",
+        "bbox": [
+            870,
+            397,
+            906,
+            432
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "日本",
+        "bbox": [
+            872,
+            474,
+            906,
+            508
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "印度",
+        "bbox": [
+            872,
+            555,
+            908,
+            592
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "马来西亚",
+        "bbox": [
+            856,
+            646,
+            923,
+            681
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "欧洲",
+        "bbox": [
+            870,
+            733,
+            906,
+            770
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Other",
+        "bbox": [
+            865,
+            819,
+            915,
+            851
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            875,
+            935,
+            977,
+            975
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "image",
+        "img_path": "images/17382309b75fce43c9639182716ed78b22bcd71825e7812c7aea7394e10debad.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            20,
+            140,
+            948,
+            933
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "功能9 - Dashboard多语言支持",
+        "text_level": 2,
+        "bbox": [
+            243,
+            41,
+            751,
+            113
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "所有有这个图标的配置项为多语言差异的配置项，切换语言只需要修改这些配置项",
+        "bbox": [
+            134,
+            817,
+            409,
+            925
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "image",
+        "img_path": "images/4b87ffb3a5651d0b7d002edc99041b1af4d2cc7f7e611510dfa92adc3697ec1c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            841,
+            4,
+            988,
+            165
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            973,
+            972
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "功能10 - 整合WISE-PaaS SSO 支持单点登录",
+        "text_level": 2,
+        "bbox": [
+            113,
+            34,
+            883,
+            103
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "支持平台角色自动登录：\n订阅号admin\n订阅号user\nWorkspace owner\nNamespace developer",
+        "bbox": [
+            12,
+            340,
+            227,
+            530
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/61d4de71c4b2c82c2dd9420e21df2bbf7bbd9c07a1fc30fb43b82002f4f307b2.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "© 1983-2020 Advantech Co., Ltd."
+        ],
+        "content": "",
+        "bbox": [
+            226,
+            155,
+            1000,
+            748
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            975,
+            972
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "新增低代码应用构建框架SRP-Frame",
+        "text_level": 2,
+        "bbox": [
+            118,
+            407,
+            666,
+            471
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/c75e32215a4e4b35659e96cacfc70373451886a264cec399040b0a7e83856518.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            750,
+            291,
+            991,
+            879
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "ADVANTECH",
+        "bbox": [
+            88,
+            61,
+            202,
+            98
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Enabling an Intelligent Planet",
+        "bbox": [
+            120,
+            111,
+            250,
+            135
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "image",
+        "img_path": "images/ce35b6919e3bc1da82131c122a90febdae834a57881e52580dc60bf14666af54.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            112,
+            237,
+            445,
+            903
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "SRP-Frame简介",
+        "text_level": 2,
+        "bbox": [
+            343,
+            24,
+            630,
+            93
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "背景介绍：随着dashboard的成熟化，客户已经可以独立制作多个dashboard，进一步针对多个dashboard需要有一个总览的选单，方便实时观察与分析，SRP-Frame主要是提供一有结构的目录导引系统，让客户能够将dashboard有结构的呈现。",
+        "bbox": [
+            37,
+            123,
+            916,
+            234
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0191ad0437fa76a4a1b613644a834595fb4ecd74513f2b82e2753f795b9a0d54.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "2020/10/22 14:47:28 POWERED BY WISE-PaaS"
+        ],
+        "bbox": [
+            451,
+            283,
+            680,
+            595
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/fbed2440699ee16f82396e855e7056396fdf7daa66b544d4c3266a5798c8de6e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            688,
+            283,
+            920,
+            592
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/d484961adf00f4f9ccd771e28fc799aa38e2f0c252d2498ddeb04e7e08ac15c4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            450,
+            604,
+            681,
+            881
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "image",
+        "img_path": "images/58413ac79c37c46101aa11ea123032ec2d0e9d61db47dc54665067308d9afb22.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            690,
+            604,
+            973,
+            908
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "SRP-Frame功能特点",
+        "text_level": 2,
+        "bbox": [
+            36,
+            27,
+            402,
+            98
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持更换Logo",
+        "bbox": [
+            393,
+            101,
+            500,
+            130
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持自定义Title",
+        "bbox": [
+            393,
+            130,
+            506,
+            162
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "红色铃铛支持接入告警事件",
+        "bbox": [
+            708,
+            29,
+            883,
+            61
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "黄色铃铛支持接入通知事件",
+        "bbox": [
+            708,
+            61,
+            883,
+            93
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持API或WebSocket接入",
+        "bbox": [
+            708,
+            93,
+            891,
+            123
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持累加和清零",
+        "bbox": [
+            708,
+            125,
+            820,
+            155
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持自定义左侧菜单，支持多级子菜单",
+        "bbox": [
+            6,
+            365,
+            180,
+            422
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持菜单添加小图标",
+        "bbox": [
+            6,
+            424,
+            144,
+            454
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持定义不同语言的菜单项",
+        "bbox": [
+            6,
+            456,
+            180,
+            486
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持菜单展开和合住",
+        "bbox": [
+            6,
+            488,
+            144,
+            518
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持使能用户登录检查",
+        "bbox": [
+            816,
+            323,
+            965,
+            355
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "image",
+        "img_path": "images/a013131d78b06a702fbafc06b528a0b36a5f5bd613a4c9a8d112526ddccf2b30.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            183,
+            116,
+            973,
+            841
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持跑马灯显示",
+        "bbox": [
+            275,
+            854,
+            388,
+            883
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持自定义文本",
+        "bbox": [
+            275,
+            886,
+            388,
+            916
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持接入API获取跑马灯内容支持大屏4K，8K分辨率显示",
+        "bbox": [
+            275,
+            918,
+            459,
+            950
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            816,
+            674,
+            973,
+            730
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持SRP-Frame 配置导入导出",
+        "bbox": [
+            816,
+            733,
+            975,
+            787
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "支持Dashboard页面高度自适应",
+        "bbox": [
+            816,
+            790,
+            970,
+            846
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            973,
+            972
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "SRP-Frame低代码配置界面",
+        "text_level": 2,
+        "bbox": [
+            256,
+            29,
+            738,
+            103
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "image",
+        "img_path": "images/f629b089d42f97e3a07bbf8f4601762eca2dbeb2154f18c6cc728653d55b3c40.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            86,
+            113,
+            904,
+            992
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "DIANTECH",
+        "bbox": [
+            900,
+            943,
+            973,
+            975
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "三片屏幕Dashboard展示(高阶版)",
+        "text_level": 2,
+        "bbox": [
+            208,
+            17,
+            791,
+            93
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Focal Point",
+        "text_level": 2,
+        "bbox": [
+            86,
+            155,
+            194,
+            197
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "table",
+        "img_path": "images/704fb126d4a72e4d060ab39b634706e90bbadfe43bca299b18f537c8a71e034c.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"4\">放流口現場影像</td></tr><tr><td colspan=\"4\">加藥排程</td></tr><tr><td>Dosing Tank</td><td>Dosing</td><td>Schedule</td><td>Status</td></tr><tr><td>1# Coagulation Tank</td><td>PAC</td><td>2018/02/12</td><td>Pending</td></tr><tr><td>2# Coagulation Tank</td><td>PAM</td><td>2018/02/22</td><td>Progressing</td></tr><tr><td>1# Neutralization Tank</td><td>Sulfuric acid</td><td>2018/03/23</td><td>Pending</td></tr><tr><td>2# Neutralization Tank</td><td>Alkaline</td><td>2018/03/25</td><td>Done</td></tr><tr><td>3# Coagulation Tank</td><td>PAC</td><td>2018/04/01</td><td>Pending</td></tr><tr><td>2# Neutralization Tank</td><td>Alkaline</td><td>2018/03/25</td><td>Done</td></tr><tr><td>3# Coagulation Tank</td><td>PAC</td><td>2018/04/01</td><td>Pending</td></tr><tr><td colspan=\"4\">維護保養排程</td></tr><tr><td>Device Maintenance</td><td>Item</td><td>Schedule</td><td>Status</td></tr><tr><td>1# Pump of Station 1</td><td>Quarterly</td><td>2018/02/12</td><td>Pending</td></tr><tr><td>1# VJA of Station 1</td><td>Motor</td><td>2018/02/22</td><td>Progressing</td></tr><tr><td>2# AR of Station 1</td><td>Motor</td><td>2018/03/23</td><td>Pending</td></tr><tr><td>2# SAR of Station 2</td><td>Motor</td><td>2018/03/25</td><td>Done</td></tr><tr><td>3# Pump of Station 4</td><td>Routine</td><td>2018/04/01</td><td>Pending</td></tr><tr><td>3# AR of Station 4</td><td>Chang Oil</td><td>2018/03/13</td><td>Progressing</td></tr><tr><td>2# VJA of Station 5</td><td>Quarterly</td><td>2018/03/23</td><td>Pending</td></tr><tr><td>1# VJA of Maojiabang</td><td>Quarterly</td><td>2018/03/25</td><td>Done</td></tr><tr><td>2# VJA of Maojiabang</td><td>Quarterly</td><td>2018/04/01</td><td>Pending</td></tr><tr><td>3# VJA of Maojiabang</td><td>Chang Oil</td><td>2018/03/13</td><td>Progressing</td></tr></table>",
+        "bbox": [
+            50,
+            219,
+            227,
+            637
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Interactive Dashboard",
+        "text_level": 2,
+        "bbox": [
+            400,
+            155,
+            609,
+            195
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/fc11ee2f5fc249be805915edadb9c067c06cd37fbedabedbfbecc6131aa134b4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            234,
+            227,
+            775,
+            634
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "M. Scorecard",
+        "text_level": 2,
+        "bbox": [
+            808,
+            155,
+            933,
+            197
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "table",
+        "img_path": "images/ab3ece73a67af3e11198baf25e90060bc09de52abfaafa0475eb4399c34bf21b.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"3\">放流口管理指標</td></tr><tr><td colspan=\"3\">日常汗水進流水量(單位1)</td></tr><tr><td>汗水處理站</td><td>實際值</td><td>目標值</td></tr><tr><td>Station 1</td><td>▼1,882</td><td>4,000</td></tr><tr><td>Station 2</td><td>▼3,752</td><td>5,000</td></tr><tr><td>Station 3</td><td>▼1,051</td><td>3,200</td></tr><tr><td>Station 4</td><td>▲2,498</td><td>2,000</td></tr><tr><td>Station 5</td><td>▼1,847</td><td>3,700</td></tr><tr><td>Station 6</td><td>▼3,122</td><td>5,000</td></tr><tr><td>Station 7</td><td>▼1,061</td><td>3,200</td></tr><tr><td>Station 8</td><td>▲2,198</td><td>2,000</td></tr><tr><td colspan=\"3\">汗水進流費用統計(單位RMB)</td></tr><tr><td>時間指標</td><td colspan=\"2\">達成值</td></tr><tr><td>上個月費用</td><td colspan=\"2\">5189.6</td></tr><tr><td>本月費用</td><td colspan=\"2\">▼2419.5</td></tr><tr><td>本年度累積費用</td><td colspan=\"2\">110168</td></tr><tr><td colspan=\"3\">耗電量統計統計(單位kWh)</td></tr><tr><td>時間指標</td><td colspan=\"2\">達成值</td></tr><tr><td>上個月耗電量</td><td colspan=\"2\">8289.6</td></tr><tr><td>本月耗電量</td><td colspan=\"2\">▼9924.5</td></tr><tr><td>本年度累積耗電量</td><td colspan=\"2\">521168</td></tr><tr><td colspan=\"3\">汗水進流量指標(單位1)</td></tr><tr><td>時間指標</td><td colspan=\"2\">實際值</td></tr><tr><td>全年累積量</td><td colspan=\"2\">500,005</td></tr><tr><td>已完成累積量</td><td colspan=\"2\">1,500,000</td></tr><tr><td>實際達成率</td><td colspan=\"2\">▲31.5%</td></tr><tr><td>每日實際量</td><td colspan=\"2\">1565.5</td></tr><tr><td>每日目標量</td><td colspan=\"2\">3722</td></tr></table>",
+        "bbox": [
+            783,
+            222,
+            959,
+            637
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "单台设备焦点资讯",
+        "text_level": 2,
+        "bbox": [
+            45,
+            666,
+            183,
+            706
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "(中阶管理者、一般操作者)\n监控影像画面、Snapshot\n单点细部报表呈现",
+        "bbox": [
+            44,
+            720,
+            227,
+            856
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "互动智能业绩数据报表",
+        "text_level": 2,
+        "bbox": [
+            331,
+            659,
+            502,
+            696
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "(中阶管理者、一般操作者)\n主选单: 功能互动与配置、分析报表、资料追踪\n警报推播: 发现问题、预防问题、解决问题",
+        "bbox": [
+            331,
+            711,
+            651,
+            849
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "总体关键绩效指标",
+        "text_level": 2,
+        "bbox": [
+            783,
+            666,
+            920,
+            703
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "(高阶管理者)",
+        "bbox": [
+            783,
+            718,
+            875,
+            753
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "关键累积指标KPI",
+        "bbox": [
+            781,
+            767,
+            902,
+            804
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "提高策略性決策",
+        "bbox": [
+            781,
+            814,
+            895,
+            851
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "SRP-Frame可支持左中右三片式显示，分别对应三个独立的url，左右两边支持轮播功能，中间互动页面可进行互动操作，搭配战情室硬件可打造用户自己的监控战情室",
+        "bbox": [
+            43,
+            891,
+            919,
+            962
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            973,
+            972
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "20171# Pump of Maojiavang River Recovery System in Alarm!",
+        "bbox": [
+            83,
+            785,
+            261,
+            802
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "单片荧幕Dashboard展示(基础版)",
+        "text_level": 2,
+        "bbox": [
+            206,
+            14,
+            791,
+            91
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "image",
+        "img_path": "images/c7e0d315984c2ab8bbf1f0c97d9a9a1a1bbd50f4bf94a08649c9c5bb2b52e803.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "20171# Pump of Maojiavang River Recovery System in Alarm!"
+        ],
+        "content": "",
+        "bbox": [
+            80,
+            140,
+            600,
+            782
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "SRP-Frame支持55寸的显示模式，只需要在Url后面带上layout=ss的参数即可切换到单片荧幕的显示模式。",
+        "bbox": [
+            788,
+            350,
+            961,
+            516
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "配合55寸，86寸屏幕可展示单屏的战情室。",
+        "bbox": [
+            788,
+            520,
+            952,
+            590
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "table",
+        "img_path": "images/7b2cecf14dfaa25ba6026351705fa90402983bdf02b8537bbb05240812fa9755.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"2\">日常汗水進流水量</td><td>(單位:元)</td><td colspan=\"2\">汗水進流費用統計</td><td>(單位:RMB)</td><td colspan=\"2\">耗電量統計統計</td><td>(單位:kWh)</td><td colspan=\"2\">汗水進流量指標</td></tr><tr><td>汗水處理站</td><td>實際值</td><td>目標值</td><td>時間指標</td><td>達成值</td><td>時間指標</td><td>達成值</td><td>時間指標</td><td>時間指標</td><td>實際值</td><td></td></tr><tr><td>Station 1</td><td>▼1,882</td><td>4,000</td><td>上個月費用</td><td>5189.6</td><td>上個月耗電量</td><td>8289.6</td><td>全年累積量</td><td>500,005</td><td></td><td></td></tr><tr><td>Station 2</td><td>▼3,722</td><td>5,000</td><td>本月費用</td><td>▼2419.1</td><td>本月耗電量</td><td>▼5924.1</td><td>已完成累積量</td><td>1,500,000</td><td></td><td></td></tr><tr><td>Station 3</td><td>▼1,051</td><td>3,200</td><td>本年度累積費用</td><td>110168</td><td>本年度累積耗電量</td><td>521168</td><td>實際達成率</td><td>▲31.5%</td><td></td><td></td></tr></table>",
+        "bbox": [
+            81,
+            804,
+            773,
+            886
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "Management Scorecard",
+        "bbox": [
+            313,
+            908,
+            540,
+            948
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            973,
+            972
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "image",
+        "img_path": "images/19ec1161b849642c36d97f9428ad00b090fdab48f426f4c418ac13ac3a64d2d5.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "高阶版设备(86\" x1,55\" x2)"
+        ],
+        "content": "",
+        "bbox": [
+            695,
+            293,
+            886,
+            446
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "搭配战情室硬体－实物效果",
+        "text_level": 2,
+        "bbox": [
+            262,
+            19,
+            736,
+            93
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9a5234de30f5e3e0e638d880b56423ef21337eb983c24fdca85e2fd9614518fc.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            56,
+            227,
+            563,
+            513
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/ebf8c74bc6a17a98b2d5259ce3aa70b82bb5bba61bf0d4d3b89e3ea3d21e9ed2.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "基础版设备(55\" x1)"
+        ],
+        "content": "",
+        "bbox": [
+            80,
+            538,
+            581,
+            883
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "55\" LCD",
+        "bbox": [
+            756,
+            355,
+            825,
+            395
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "image",
+        "img_path": "images/b4c0a417ad6504f125033b7671a4c55271031795a07a5d728900bf8c28e8ee1a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            663,
+            540,
+            916,
+            881
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            975,
+            972
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Enabling an Intelligent Planet",
+        "bbox": [
+            120,
+            111,
+            250,
+            135
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "移动端排版和Mobile App支持",
+        "text_level": 2,
+        "bbox": [
+            127,
+            392,
+            662,
+            474
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "image",
+        "img_path": "images/d6a56cc83373c22525338781bc7c1f57e7bd8f07ae07005bb70475316254ca62.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            750,
+            288,
+            991,
+            879
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "ADVANTECH",
+        "bbox": [
+            88,
+            59,
+            202,
+            98
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "I.App Mobile APP",
+        "text_level": 2,
+        "bbox": [
+            333,
+            34,
+            663,
+            113
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "I. App Mobile APP 为我们推出的SRP-Frame构建的应用的通用mobile APP。用于在手机上方便查看SRP-Frame页面，具有以下特点：",
+        "bbox": [
+            50,
+            143,
+            962,
+            232
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "直接连接自己在PC端构建好的I.App应用，不用修改SRP-Frame的配置。",
+        "bbox": [
+            50,
+            246,
+            559,
+            283
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "如果想在mobile有更好的呈现效果，我们推荐把dashboard页面针对Mobile重新排版，所见即所得。",
+        "bbox": [
+            50,
+            296,
+            752,
+            330
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "➢ 不只研华的I.App, 客户自己用SRP-Frame构建的应用也可以使用此APP，即刻拥有自己应用的Mobile APP",
+        "bbox": [
+            50,
+            345,
+            787,
+            380
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "App Event 支持WISE-PaaS/Dashboard 中Alert产生的事件接入",
+        "bbox": [
+            50,
+            395,
+            506,
+            429
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "image",
+        "img_path": "images/4a4a851fded365f0e1397d566cde73571d6949a6ecb765cb9a5e262f83422632.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            95,
+            456,
+            634,
+            960
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "image",
+        "img_path": "images/3fd6cd8e0fbc15e8a1b3e8a40693503e70eb5330000d9ec07d9e90bdc38f2b63.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            676,
+            446,
+            837,
+            970
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "image",
+        "img_path": "images/33ce8b33802fa433327eb27173fe7929b4bce606ff977476aeabac6e2d02ed49.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            495,
+            501,
+            744,
+            686
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Dashboard Mobile APP",
+        "text_level": 2,
+        "bbox": [
+            281,
+            34,
+            718,
+            101
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "WISE-PaaS/Dashboard Mobile APP 是WISE-PaaS/Dashboard的Mobile 版本，用于在手机上方便查看Dashboard页面。如果您只查看Dashboard的页面而不是SRP-Frame的页面请使用此APP",
+        "bbox": [
+            25,
+            155,
+            975,
+            232
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "image",
+        "img_path": "images/a69dac5e39ac4203c59725b821f68743f77278dec629baa0d5cbab2f2a562427.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            227,
+            264,
+            761,
+            498
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d83cacb217b32bf625b28e4e56ee2a63050ff130fe125986006f635508ec1d88.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            230,
+            501,
+            488,
+            691
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2ab2ca7b7e09e7c24108ace41b4d0d4d53a55583fd6ea318bf8f023236a7e856.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            50,
+            666,
+            225,
+            908
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "image",
+        "img_path": "images/a1c22d855458be98668d5d68e6850efbd43ec21b2915c9112cc18c010a48b6c8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            229,
+            693,
+            761,
+            908
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "image",
+        "img_path": "images/9a859ae29490ddefdfb3a69cee6a3b676e0764e5beb655354b02340c61b1ace9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            775,
+            256,
+            975,
+            908
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "针对移动端的排版",
+        "text_level": 2,
+        "bbox": [
+            345,
+            34,
+            658,
+            103
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "为了让手机端的dashboard有更好的显示效果，我们推荐用户在PC端针对dashboard进行mobile显示排版：",
+        "text_level": 2,
+        "bbox": [
+            52,
+            133,
+            787,
+            167
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "我们推荐将大量的数据资讯『群组化』的方式呈現在移动端设备的小屏幕中，可通过建立Group分组。",
+        "bbox": [
+            52,
+            187,
+            698,
+            219
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "可根据自己的喜好把panel移动到指定群组中。",
+        "bbox": [
+            52,
+            239,
+            359,
+            269
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "每个群组都可分别依据自己喜好进行布局。",
+        "bbox": [
+            52,
+            291,
+            338,
+            320
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "如果不重新排版布局默认是流式布局，每个panel纵向排列下来。",
+        "bbox": [
+            52,
+            338,
+            470,
+            370
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Step.1 Mobile View Mode",
+        "bbox": [
+            140,
+            427,
+            329,
+            461
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "image",
+        "img_path": "images/165977be006be6c68ac021355de1a75201eb08b9674de5589880967e1bf0aa4e.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Step.2 Layout Setting"
+        ],
+        "content": "",
+        "bbox": [
+            48,
+            516,
+            402,
+            906
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "image",
+        "img_path": "images/1dee1eed45328cb5597c7392575864e7c1a222d7b00ad57d5ea2807952a802d2.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Mobile的排版页面，建立Group，可对panel分组",
+            "Step.3 Finished"
+        ],
+        "content": "",
+        "bbox": [
+            438,
+            516,
+            729,
+            802
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "image",
+        "img_path": "images/fd8f688351ef1f0080b775e74dcee55cc62451ce0122bc76ea26dc36a055bb76.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "从PC页面跳转到mobile的排版页面"
+        ],
+        "content": "",
+        "bbox": [
+            801,
+            511,
+            925,
+            883
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            973,
+            972
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Mobile群组化排版",
+        "text_level": 2,
+        "bbox": [
+            350,
+            29,
+            676,
+            98
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "PC端针对dashboard 进行mobile 群组化排版，所见即所得",
+        "text_level": 2,
+        "bbox": [
+            31,
+            145,
+            438,
+            177
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "由dashboard PC端，点击“mobile view mode”进入排版页面",
+        "bbox": [
+            31,
+            200,
+            450,
+            229
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Group Tab分类的意义在于将同属性的panel分门别类，通过手机切换帮助使用者有效的进行资料的对比与浏览",
+        "bbox": [
+            30,
+            249,
+            729,
+            281
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "提供群组的添加，删除，编辑功能，调换顺序，Group的名字不建议过长",
+        "bbox": [
+            31,
+            298,
+            502,
+            330
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "每个Group内，建议不要超过5个panel",
+        "bbox": [
+            31,
+            350,
+            291,
+            382
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "提供panel的拖拉修改大小，移动位置布局",
+        "bbox": [
+            31,
+            400,
+            312,
+            432
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Panel可移动到指定群组",
+        "bbox": [
+            31,
+            451,
+            201,
+            481
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "点击群组名称可进行切换",
+        "bbox": [
+            297,
+            476,
+            375,
+            530
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "image",
+        "img_path": "images/524339c3094211b9078373042ed2adc1e038fb523b1c9a074099ce9de882f8ea.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            293,
+            350,
+            916,
+            972
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            973,
+            972
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Mobile群组化排版范例",
+        "text_level": 2,
+        "bbox": [
+            309,
+            29,
+            716,
+            103
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c1fc86403e07e0751e3cb17bb0c9598728b835232eeecb7d7703da4c86ccd5f6.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "范例1"
+        ],
+        "bbox": [
+            48,
+            172,
+            272,
+            935
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/80175f9ba79ce9c55f0ffd3345a67a70151f8e60125844dd90e0fcb34834d3cf.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "范例2"
+        ],
+        "content": "",
+        "bbox": [
+            377,
+            170,
+            602,
+            935
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "image",
+        "img_path": "images/57aa2f8c2c57fe689f2a81c4989d16895e1712e8601bb4cd30970ac1ce96ab32.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "范例3"
+        ],
+        "content": "",
+        "bbox": [
+            718,
+            182,
+            941,
+            935
+        ],
+        "page_idx": 30
+    },
+    {
+        "type": "text",
+        "text": "I.App Mobile App下载",
+        "text_level": 2,
+        "bbox": [
+            293,
+            32,
+            704,
+            113
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "iOS版本",
+        "text_level": 2,
+        "bbox": [
+            52,
+            155,
+            159,
+            195
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "已在Apple App Store应用商店上架, 可搜索WISE-PaaS/I.App关键字查找下载",
+        "bbox": [
+            51,
+            204,
+            518,
+            288
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "\\- APP Name : I.App",
+        "bbox": [
+            51,
+            303,
+            212,
+            338
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "\\- APP 下载：可至Apple App Store 下载",
+        "bbox": [
+            52,
+            350,
+            344,
+            387
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "image",
+        "img_path": "images/ce05562816dc63af64d1184d7b743b80dbe40ab08c977beb83a52f34966f36ad.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            138,
+            395,
+            326,
+            987
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "Android版本：",
+        "text_level": 2,
+        "bbox": [
+            534,
+            162,
+            698,
+            204
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "\\- 已在google Play Store上架，请搜索IWISE-PaaS/I.App下载",
+        "bbox": [
+            533,
+            219,
+            973,
+            259
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "\\- 已在小米应用商店上架，请搜索WISE-PaaS/I.App下载",
+        "bbox": [
+            533,
+            269,
+            927,
+            306
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "\\- 已在华为应用商店上架，请搜索WISE-PaaS/I.App下载",
+        "bbox": [
+            533,
+            318,
+            927,
+            355
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "\\- 提供固定二维码扫描下载",
+        "bbox": [
+            534,
+            367,
+            729,
+            402
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "WISEPAA WISE-PaaS I.App",
+        "text_level": 2,
+        "bbox": [
+            616,
+            511,
+            838,
+            906
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "header",
+        "text": "WISE-PaaS I.App",
+        "bbox": [
+            781,
+            9,
+            836,
+            113
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            973,
+            972
+        ],
+        "page_idx": 31
+    },
+    {
+        "type": "text",
+        "text": "Dashboard Mobile App下载",
+        "text_level": 2,
+        "bbox": [
+            236,
+            29,
+            752,
+            108
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "image",
+        "img_path": "images/3628e9c92b12e066efc27666e14d02219a42b551a9297c3b8bdb7381ff0e431f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            784,
+            12,
+            840,
+            118
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "iOS版本",
+        "text_level": 2,
+        "bbox": [
+            68,
+            145,
+            175,
+            182
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "已在Apple App Store应用商店上架, 可搜索WISE-PaaS/Dashboard 关键字查找下载",
+        "bbox": [
+            66,
+            195,
+            409,
+            279
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "\\- APP Name : WISE-PaaS/Dashboard",
+        "bbox": [
+            68,
+            293,
+            354,
+            328
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "\\- APP 下载：可至Apple App Store 下载",
+        "bbox": [
+            68,
+            340,
+            359,
+            377
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "wise-paas/dashboard",
+        "bbox": [
+            97,
+            446,
+            256,
+            483
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "image",
+        "img_path": "images/fe87d7b4259978dee9f7989ed93b775b868267153152b5a07eb827e451c23485.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            343,
+            449,
+            359,
+            481
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "取消",
+        "bbox": [
+            370,
+            446,
+            402,
+            481
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "image",
+        "img_path": "images/d8684c8574dfa48ee1e2425bdbee9393079b417bab5c09a02534171f80cf44b1.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            95,
+            525,
+            141,
+            614
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "WISE-PaaS/Dashboard\n工具",
+        "bbox": [
+            150,
+            528,
+            277,
+            582
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "image",
+        "img_path": "images/8bbc85cd0bb0a5f6100c2095c800f6a4e0cb2cbbfb46674f5a6e11c0f3ecc57a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            376,
+            550,
+            401,
+            592
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "image",
+        "img_path": "images/8be0145e854fb2b0104d800be3fd49bdfd6681e8bd4090430d40898380eaf293.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            91,
+            634,
+            191,
+            945
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "Android版本：",
+        "text_level": 2,
+        "bbox": [
+            481,
+            143,
+            647,
+            182
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "image",
+        "img_path": "images/4a57238bb5461d42fb4e10c78c538b7875aafbd2ad76971d3f7bdbc966b27298.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            197,
+            637,
+            297,
+            945
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "\\- 已在google Play Store上架，请搜索WISE-PaaS/Dashboard下载",
+        "bbox": [
+            481,
+            202,
+            922,
+            283
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "\\- 已在小米应用商店上架，请搜索WISE-PaaS/Dashboard下载",
+        "bbox": [
+            481,
+            298,
+            916,
+            335
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "\\- 提供固定二维码扫描下载",
+        "bbox": [
+            481,
+            397,
+            676,
+            432
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "\\- 已在华为应用商店上架，请搜索WISE-PaaS/Dashboard下载",
+        "bbox": [
+            481,
+            348,
+            916,
+            382
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "image",
+        "img_path": "images/8d3f2a4a44bf573c1afcd1b545d06fa13b8afb8ed6a94a0e96bd58f7af95135c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            302,
+            637,
+            402,
+            945
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "Dashboard",
+        "text_level": 2,
+        "bbox": [
+            612,
+            572,
+            827,
+            955
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            973,
+            972
+        ],
+        "page_idx": 32
+    },
+    {
+        "type": "text",
+        "text": "Enabling an Intelligent Planet",
+        "bbox": [
+            120,
+            111,
+            250,
+            135
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "新增25支各行业的显示插件",
+        "text_level": 2,
+        "bbox": [
+            166,
+            392,
+            711,
+            474
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "image",
+        "img_path": "images/f654af89be0bbdde0232c33847b76c8b4455d4dd486cdb980e4aaed64ca180ce.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            750,
+            291,
+            991,
+            879
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "header",
+        "text": "ADVANTECH",
+        "bbox": [
+            88,
+            61,
+            202,
+            98
+        ],
+        "page_idx": 33
+    },
+    {
+        "type": "text",
+        "text": "25个新增插件效果",
+        "text_level": 2,
+        "bbox": [
+            316,
+            49,
+            675,
+            128
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "Work Order – 显示设备图片和当前的运行数据",
+        "text_level": 2,
+        "bbox": [
+            70,
+            177,
+            387,
+            209
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "image",
+        "img_path": "images/459460628ffee444f42c257d3ebcca179483c43a32d2b8bf7efe93d766b27ce7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            56,
+            229,
+            348,
+            545
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "table",
+        "img_path": "images/c0c8a7e1be6d2d8b82d7f89c08bbd52643533078b00dda288d31f8b756fa2247.jpg",
+        "table_caption": [
+            "Advanced Datatable - 搜索，状态灯，row 控制，填入表格"
+        ],
+        "table_footnote": [
+            "Grouped Bar Chart – 多功能的曲线图和柱状图，状态阈值，柏拉图"
+        ],
+        "table_body": "<table><tr><td colspan=\"6\">Panel Title</td></tr><tr><td rowspan=\"2\">Time ▼</td><td colspan=\"2\">Title</td><td rowspan=\"2\">●(○)</td><td rowspan=\"2\">AT-Status</td><td rowspan=\"2\">Num-Status</td></tr><tr><td>AT</td><td>Num</td></tr><tr><td>2019-12-24 10:58:13</td><td>67.00</td><td>92.73</td><td>96</td><td>●</td><td>●</td></tr><tr><td>2019-12-24 10:58:02</td><td>67.00</td><td>92.73</td><td>96</td><td>●</td><td>●</td></tr><tr><td>2019-12-24 10:57:52</td><td>67.00</td><td>92.73</td><td>96</td><td>●</td><td>●</td></tr><tr><td>2019-12-24 10:57:42</td><td>67.00</td><td>92.73</td><td>96</td><td>●</td><td>●</td></tr><tr><td>2019-12-24 10:57:32</td><td>67.00</td><td>92.73</td><td>96</td><td>●</td><td>●</td></tr><tr><td>2019-12-24 10:57:22</td><td>67.00</td><td>92.73</td><td>96</td><td>●</td><td>●</td></tr><tr><td>2019-12-24 10:57:12</td><td>67.00</td><td>92.73</td><td>96</td><td>●</td><td>●</td></tr><tr><td>2019-12-24 10:57:02</td><td>67.00</td><td>92.73</td><td>96</td><td>●</td><td>●</td></tr><tr><td>2019-12-24 10:56:52</td><td>67.00</td><td>92.73</td><td>96</td><td>●</td><td>●</td></tr><tr><td>2019-12-24 10:56:42</td><td>67.00</td><td>92.73</td><td>96</td><td>●</td><td>●</td></tr></table>",
+        "bbox": [
+            491,
+            224,
+            931,
+            545
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e5e74134a12efcb3fb39b8ddc18525a7fcb3319068a71f7ae4c95856209a4e25.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Alarm Tracking – 接入DataHub的Alarm数据显示"
+        ],
+        "bbox": [
+            56,
+            646,
+            422,
+            945
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "table",
+        "img_path": "images/d905b91c9c80bb6568e6ab5ec92001d8b7f16f7ca346f32dbdf6abf61c6d406e.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td colspan=\"12\">Panel Title</td></tr><tr><td colspan=\"12\">Acknowledge all</td></tr><tr><td>Alarm Code</td><td>SCADA</td><td>Device</td><td>Tag</td><td>Message</td><td>Alarm Time</td><td>Value</td><td>Ack Time</td><td>Ack Status</td><td>ACK</td><td></td><td></td></tr><tr><td>tag1~20x=700</td><td>100tag@simulator3</td><td>P01_dev</td><td>A03</td><td>tag2~20x=700</td><td>2019-11-08 13:58:02</td><td>500</td><td>2019-11-11 16:04:28</td><td>Asked</td><td></td><td></td><td></td></tr><tr><td>tag3~20x=700</td><td>100tag@simulator3</td><td>P01_dev</td><td>A04</td><td>tag3~20x=700</td><td>2019-11-08 13:41:21</td><td>500</td><td>2019-11-11 16:04:25</td><td>Asked</td><td></td><td></td><td></td></tr><tr><td>tag3~20x=700</td><td>100tag@simulator3</td><td>P01_dev</td><td>A05</td><td>tag3~20x=700</td><td>2019-11-08 13:41:21</td><td>500</td><td>2019-11-11 14:36:15</td><td>Asked</td><td></td><td></td><td></td></tr><tr><td>tag3~20x=700</td><td>100tag@simulator3</td><td>P01_dev</td><td>A06</td><td>tag3~20x=700</td><td>2019-11-08 13:41:21</td><td>500</td><td>2019-11-11 16:04:20</td><td>Asked</td><td></td><td></td><td></td></tr><tr><td>tag3~20x=700</td><td>100tag@simulator3</td><td>P01_dev</td><td>A07</td><td>tag3~20x=700</td><td>2019-11-08 13:41:21</td><td>500</td><td>2019-11-11 16:04:31</td><td>Asked</td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            491,
+            637,
+            930,
+            933
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 34
+    },
+    {
+        "type": "text",
+        "text": "25个新增插件效果",
+        "text_level": 2,
+        "bbox": [
+            56,
+            51,
+            415,
+            128
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "\\- Infographic – 图片+ 统计表格显示",
+        "bbox": [
+            43,
+            177,
+            313,
+            209
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "image",
+        "img_path": "images/ba42d0434a8b0e7facf664a152cd6de32152575b0188aa943453e8e9ead11a2a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            84,
+            234,
+            458,
+            543
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "image",
+        "img_path": "images/86e6c3dce73622375bff10f01208c241f685f43aa9952998c694b4872892d039.jpg",
+        "image_caption": [
+            "- Machine Temp – 设备稳定的多维度显示"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            525,
+            229,
+            800,
+            540
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "image",
+        "img_path": "images/b6ee92926184023a544f1727a5e7f63713e509c22ec6af8d69d51cb3111e040b.jpg",
+        "image_caption": [
+            "Machine information – 设备的基本信息和图片显示"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            84,
+            637,
+            477,
+            928
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "image",
+        "img_path": "images/4623b9c0a6cbf6802dd2e2c56e25b0d32de10b67ae1d8e45b9c0f55e52b11700.jpg",
+        "image_caption": [
+            "Monitor Panel – 多维度有层次的数据监控显示"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            526,
+            629,
+            884,
+            928
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 35
+    },
+    {
+        "type": "text",
+        "text": "25个新增插件效果",
+        "text_level": 2,
+        "bbox": [
+            56,
+            49,
+            415,
+            128
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "- Ranking Bar – 排行显示效果",
+        "text_level": 2,
+        "bbox": [
+            50,
+            177,
+            283,
+            209
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "image",
+        "img_path": "images/c1aac9ed95b26556b917e7ac15c4f9ded3ffc10c2c4e4772824bf3a80cb66ef1.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "- Sankey Panel – 可用于能源流动或者人员流动情况的现象展示"
+        ],
+        "content": "",
+        "bbox": [
+            81,
+            234,
+            384,
+            535
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "chart",
+        "img_path": "images/af67db8910c89272eb099fbd7263f1436288ee68a488cafc8a741b7490def8a0.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            529,
+            222,
+            781,
+            528
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "• Patient Card – 病人信息和科室已经重点监控状态",
+        "text_level": 2,
+        "bbox": [
+            50,
+            567,
+            423,
+            600
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "image",
+        "img_path": "images/73ececa7e0262522606844b08941b2a7917dbc2d4d1cd01a5d2f09e6501a7111.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "- Rader Chart – 雷达图，多维度的数据显示分析"
+        ],
+        "content": "",
+        "bbox": [
+            81,
+            622,
+            438,
+            861
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "image",
+        "img_path": "images/d8b6c824bd4f80ba2da3d74c90d8ae5f27914ac1e9617bf388a39e5a561f4013.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            526,
+            619,
+            768,
+            913
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 36
+    },
+    {
+        "type": "text",
+        "text": "25个新增插件效果",
+        "text_level": 2,
+        "bbox": [
+            56,
+            51,
+            415,
+            128
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "- TimelineList – 多组设备的当前运行状况",
+        "text_level": 2,
+        "bbox": [
+            50,
+            175,
+            359,
+            209
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f3a3b5bd1080886bdac861ea81c14a7783cc9910a266c6d7cf728b23046a9afc.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            81,
+            232,
+            419,
+            511
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "Worldmap Card – 地图+卡片的显示效果",
+        "text_level": 2,
+        "bbox": [
+            501,
+            180,
+            781,
+            214
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "image",
+        "img_path": "images/032f599cadd0cb36784461d93d8001c46ded8a99a4897da7219f2ec354731a2a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            505,
+            224,
+            795,
+            538
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "progress bar – 当前的进度情况，可设置阈值",
+        "bbox": [
+            86,
+            567,
+            394,
+            602
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d526758bc39021e248c84b58871193f3b31f6695a5f0e00ee04f9117dde2cd57.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            83,
+            622,
+            418,
+            866
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "- Multistat – 多个状态的数据显示",
+        "text_level": 2,
+        "bbox": [
+            468,
+            555,
+            729,
+            590
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "PlannedPcs / ActualPcs / ActRate",
+        "bbox": [
+            581,
+            629,
+            794,
+            661
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "image",
+        "img_path": "images/6adf3138570553fa474900bab88ca7b8fb5e2a0d3a576aa87e7f5587f75d3536.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            502,
+            622,
+            869,
+            856
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "ATag10 / ATag1 / BTag1\n53 200 300",
+        "bbox": [
+            609,
+            723,
+            763,
+            790
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 37
+    },
+    {
+        "type": "text",
+        "text": "25个新增插件效果",
+        "text_level": 2,
+        "bbox": [
+            56,
+            49,
+            416,
+            128
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "• Water Achieving Rate - 用于以圆形与水位的方式显示数值的达成率",
+        "bbox": [
+            47,
+            177,
+            451,
+            244
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c67378386294ec0227f3fda66b71d8321cec55d8fb0a20612e258591f99b1a67.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            80,
+            254,
+            452,
+            511
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "\\- Water Flow In-Out - 用于以柱状图方式显示两笔数据当前值以及误差值警示",
+        "bbox": [
+            47,
+            565,
+            445,
+            629
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "image",
+        "img_path": "images/4baa833d7b629933aa8995ccee10c27e5472d6c0c9907dff1bdd8407c345f84e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            80,
+            654,
+            475,
+            923
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "Water pump status - 显示当前水位与设备启动状态(支援1\\~4台设备)",
+        "bbox": [
+            509,
+            177,
+            963,
+            251
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "image",
+        "img_path": "images/db9601ba78107130701a6913483a6a7b3f2fbabda2b5aa18534d953e35d73c9c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            519,
+            261,
+            716,
+            518
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "\\- Water Statistic - 显示Tag的环比数据(仅对Query回来的数据进行呈现、不在前端作计算)",
+        "bbox": [
+            488,
+            562,
+            952,
+            627
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "image",
+        "img_path": "images/b984c49f8708bacc52a1a8af9604668a0fb918e00b5e5f1860edd77223a1d556.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            520,
+            641,
+            775,
+            923
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 38
+    },
+    {
+        "type": "text",
+        "text": "25个新增插件效果",
+        "text_level": 2,
+        "bbox": [
+            56,
+            51,
+            415,
+            128
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "\\- Control Panel Funnel Panel – 用于对数据源反向控制写入数据",
+        "bbox": [
+            56,
+            175,
+            484,
+            246
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "image",
+        "img_path": "images/9c232b45cfde08c576c4e690ca6fa2d635f1b50b16f40aea503e0507ca5b76c5.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            70,
+            266,
+            498,
+            550
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "\\- Funnel Panel - 漏斗图适用于业务流程多的流程分析，显示各流程的转化率",
+        "bbox": [
+            527,
+            177,
+            934,
+            249
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "image",
+        "img_path": "images/5e09e909a6cf2ffbce66720c8ebc8f010a9d8ecd74a4e1022de4c0c96ab7caca.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            577,
+            261,
+            876,
+            555
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "\\- APM Switch panel - 用户动态多设备或群组的动态 dashboard配置",
+        "bbox": [
+            56,
+            595,
+            459,
+            664
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "image",
+        "img_path": "images/9da04ac75080049f6b4bcb11526922b64f2da7677c9dc48b9472f42cbb21c6dd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            56,
+            674,
+            677,
+            955
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 39
+    },
+    {
+        "type": "text",
+        "text": "川源(中国)智慧云平台",
+        "bbox": [
+            329,
+            204,
+            456,
+            234
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "25个新增插件效果 – VideoSense + Dash Video panel 支持视频接入",
+        "text_level": 2,
+        "bbox": [
+            25,
+            29,
+            970,
+            91
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "image",
+        "img_path": "images/2dab63c55bf2f5995e83e2289883c6425ae31227f23d12992712bf1ebf5eaa4d.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            41,
+            150,
+            270,
+            377
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "√ 多协议(RTMP, HLS, DASH)",
+        "bbox": [
+            81,
+            419,
+            270,
+            446
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "√ 实时画面",
+        "bbox": [
+            83,
+            446,
+            170,
+            471
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "√ 历史回放",
+        "bbox": [
+            81,
+            471,
+            170,
+            498
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "√ 子码流直播选项",
+        "bbox": [
+            83,
+            498,
+            206,
+            525
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "√ 视频转码",
+        "bbox": [
+            83,
+            525,
+            170,
+            553
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "image",
+        "img_path": "images/7c8a0bc047c42bcecd78beff9cd67323755e6da9dccd77a9514e9972e5539d79.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            41,
+            600,
+            272,
+            861
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "image",
+        "img_path": "images/95f83a6c88347780f492407e42dce0b398c0da8c9aabbffcbfd43ab7fdb30763.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            288,
+            197,
+            990,
+            829
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            881,
+            940,
+            975,
+            972
+        ],
+        "page_idx": 40
+    },
+    {
+        "type": "text",
+        "text": "新增插件效果 – SaaS Composer Viewer",
+        "text_level": 2,
+        "bbox": [
+            220,
+            24,
+            777,
+            88
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "image",
+        "img_path": "images/c3aa56b386556307503c8b800f1ff4cec1261b0d84ac27889ff6c1854981e307.jpg",
+        "image_caption": [
+            "WISE-PaaS/Dashboard"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            33,
+            192,
+            270,
+            407
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "image",
+        "img_path": "images/cb6a0ae88d5d79f0185abdcf572de38d5c2aec933c5c997537818612c8478360.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            116,
+            441,
+            191,
+            567
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "image",
+        "img_path": "images/1cf7c0b458cc7b0f75519a02f628c173bfa1f3d1785520607933376ef8948aac.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            284,
+            162,
+            986,
+            881
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "WISE-PaaS/SaaS Composer",
+        "text_level": 2,
+        "bbox": [
+            61,
+            612,
+            238,
+            644
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "image",
+        "img_path": "images/f00e775b7c068ae76300906f97d393aea2637b2ba683eae1b23e0adf73958b3b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            27,
+            646,
+            275,
+            871
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "chart",
+        "img_path": "images/74e7e2a34c37b0ef8708562f3e53b808fe8bab44fbbe756dae5c7534c5784f94.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            383,
+            629,
+            537,
+            871
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            975,
+            972
+        ],
+        "page_idx": 41
+    },
+    {
+        "type": "text",
+        "text": "新增9支数据源插件，无缝接入平台数据",
+        "text_level": 2,
+        "bbox": [
+            134,
+            395,
+            741,
+            572
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "image",
+        "img_path": "images/bd72b94088f0a3408b91fe9f040043b0bdd4b262b2ba4e178d7b489c104fc50c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            752,
+            291,
+            991,
+            879
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "header",
+        "text": "ADVANTECH",
+        "bbox": [
+            88,
+            59,
+            202,
+            98
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "header",
+        "text": "Enabling an Intelligent Planet",
+        "bbox": [
+            120,
+            111,
+            250,
+            135
+        ],
+        "page_idx": 42
+    },
+    {
+        "type": "text",
+        "text": "9个新增数据源接入插件－平台数据无缝整合",
+        "text_level": 2,
+        "bbox": [
+            116,
+            49,
+            877,
+            123
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "table",
+        "img_path": "images/6c868e32a695d8698e00c63d4b456aa263baf6c880ed9232f111cdf8e2b10433.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>数据源名称</td><td>描述</td></tr><tr><td>InsightAPM datasource</td><td>接入InsightAPM数据,接入资产绩效管理系统的数据显示</td></tr><tr><td>DataHub datasource</td><td>接入DataHub数据,接入各种IoT设备,闸道器和系统等产生的大量时间序列数据</td></tr><tr><td>DeviceOn datasource</td><td>接入DeviceOn数据,接入各类设备监控的数据</td></tr><tr><td>M+datasource</td><td>接入WISE M+数据,用于显示智能设备管理,实时监控设备的数据,应用于环境和能源管理领域</td></tr><tr><td>AFS datasource</td><td>接入AIFS数据,用于展示AFS训练后存储在Model Repository的模型绩效指标值</td></tr><tr><td>iFactory EAM datasource</td><td>接入iFactory数据,用于展示智慧工厂收集的数据</td></tr><tr><td>WebAccess datasource</td><td>接入WebAccess数据,用于展示各类工业现场采集的数据</td></tr><tr><td>UShop datasource</td><td>接入UShop数据,用于展示智能零售案场手机的经营数据</td></tr><tr><td>MongoDB datasource</td><td>接入MongoDB数据,通过部署一个代理接入数据</td></tr></table>",
+        "bbox": [
+            84,
+            185,
+            916,
+            854
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 43
+    },
+    {
+        "type": "text",
+        "text": "和平台其它服务深度整合",
+        "text_level": 2,
+        "bbox": [
+            130,
+            34,
+            559,
+            106
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "image",
+        "img_path": "images/c3d0cb660c9c460ba69a4d2e3e3b07a122dd6ebe4b16c52cf6ea44fd7e463375.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            44,
+            148,
+            200,
+            338
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "InsightAPM 整合",
+        "text_level": 2,
+        "bbox": [
+            65,
+            343,
+            169,
+            382
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "1. 提供Device，ProductLine，Group多层级的Dashboard自动生成",
+        "bbox": [
+            29,
+            397,
+            206,
+            469
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "2. APM和OEE模板，自定义模板",
+        "bbox": [
+            29,
+            469,
+            206,
+            493
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "3. 移动端整合",
+        "bbox": [
+            29,
+            493,
+            116,
+            518
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "4. 开发3 支插件",
+        "bbox": [
+            29,
+            516,
+            125,
+            543
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "image",
+        "img_path": "images/bd807f1b5c15151552565eb89499d895ec0d2dcbbd2ba281e500b2062ed4b4ab.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            277,
+            145,
+            434,
+            335
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "WISE.M+ 整合",
+        "text_level": 2,
+        "bbox": [
+            306,
+            345,
+            400,
+            385
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "1. 自动生成水处理，能源管理的应用",
+        "bbox": [
+            269,
+            412,
+            440,
+            461
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "2. 开发5个插件",
+        "bbox": [
+            270,
+            461,
+            363,
+            486
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "3. 数据源动态提供配置",
+        "bbox": [
+            269,
+            483,
+            397,
+            513
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "image",
+        "img_path": "images/aa2770406def0ce6245a021167ea293e329cf82e5ba97abdcd5d0c245dd0878f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            497,
+            145,
+            650,
+            330
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "DeviceOn 整合",
+        "text_level": 2,
+        "bbox": [
+            530,
+            345,
+            625,
+            385
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "image",
+        "img_path": "images/4eb34c2526410034af28e99de5ed21d235ddacc5b7105ffffafd262d6533610b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            43,
+            572,
+            195,
+            753
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "1. 提供Device Dashboard自动生成",
+        "bbox": [
+            493,
+            407,
+            654,
+            456
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "2. 开发数据插件接入数据",
+        "bbox": [
+            494,
+            456,
+            637,
+            481
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "3. 用户管理权限串接",
+        "bbox": [
+            494,
+            479,
+            616,
+            506
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "DataHub 整合",
+        "text_level": 2,
+        "bbox": [
+            77,
+            765,
+            166,
+            804
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "image",
+        "img_path": "images/22c10d8b3bbf2b559793fbc75b936eb417d03ad6298edcacc2811a9d6f575a8f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            500,
+            570,
+            658,
+            753
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "1. 开发datasource数据源接入",
+        "bbox": [
+            31,
+            851,
+            200,
+            876
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "2. 开发插件展示Alarm",
+        "bbox": [
+            31,
+            876,
+            162,
+            898
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "3. Control panel 反向控制",
+        "bbox": [
+            31,
+            898,
+            181,
+            925
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "image",
+        "img_path": "images/38e5eaa4686c05a96b5f870b572072062a18eab5859e6b82497344d835576097.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            277,
+            572,
+            427,
+            753
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "WebAccess整合",
+        "text_level": 2,
+        "bbox": [
+            304,
+            767,
+            408,
+            807
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "1. Local端和WebAccess绑定发布",
+        "bbox": [
+            263,
+            824,
+            448,
+            851
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "2. 用户管理整合",
+        "bbox": [
+            263,
+            851,
+            361,
+            874
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "3. 开发数据源插件，接入数据",
+        "bbox": [
+            263,
+            874,
+            429,
+            898
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "4. Mobile App 支持WebAccess本地用户登录使用",
+        "bbox": [
+            263,
+            898,
+            451,
+            948
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "AIFS 整合",
+        "text_level": 2,
+        "bbox": [
+            550,
+            762,
+            618,
+            802
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "1. 开发AIFS datasource接入数据  \n2. 展示AFS训练后模型绩效指标值",
+        "bbox": [
+            490,
+            837,
+            675,
+            888
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "3. 结合Dashboard展现AFS的结果  \n页面直观查看效果",
+        "bbox": [
+            490,
+            886,
+            675,
+            935
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "平台数据无缝接入可视化，对平台客户数据上云即可直接接入制作方案",
+        "text_level": 2,
+        "bbox": [
+            706,
+            41,
+            958,
+            106
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "image",
+        "img_path": "images/60ce56c2e96df0f608c4608dc8596cd061649891f8ea8e53b79cf502bfffc5b3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            769,
+            120,
+            925,
+            614
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "快速可复制，根据模板自动生成，设备监控页面，水处理解决方案等",
+        "bbox": [
+            720,
+            641,
+            970,
+            711
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "Template",
+        "text_level": 2,
+        "bbox": [
+            731,
+            767,
+            790,
+            800
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "image",
+        "img_path": "images/e8de48f84a4622451fbda2a9baa459c4371dab2454c34fb1c2c25ec29c5788f8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            731,
+            804,
+            801,
+            955
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "image",
+        "img_path": "images/5f40d76020c7e6b8a515bed7c4d6daa28860931dedb42ddab6b319f18572aff7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            804,
+            797,
+            865,
+            943
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "image",
+        "img_path": "images/4fc9eb7a5e1a06016a6afc8153a7a4a8b5e96ca5eb0e37ca68ccb32f244bc672.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            868,
+            740,
+            983,
+            856
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "image",
+        "img_path": "images/ac58aa0982370a9b457b5a6795fc4d99e0178a42952964f2a6c3ec14d802a958.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            868,
+            866,
+            983,
+            985
+        ],
+        "page_idx": 44
+    },
+    {
+        "type": "text",
+        "text": "Enabling an Intelligent Planet",
+        "bbox": [
+            120,
+            111,
+            250,
+            135
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "17支增强或维护的第三方插件",
+        "text_level": 2,
+        "bbox": [
+            150,
+            395,
+            738,
+            474
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "image",
+        "img_path": "images/3ebfd4e3c85123969ffd94786ea1e6ab52c5505990194e75f131fb9684aee226.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            752,
+            291,
+            990,
+            879
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "image",
+        "img_path": "images/6f3d25873d209a649ee1b75e7888261d8822aaf2e875b77c3422d1ac9ae6f649.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "sub_type": "seal",
+        "bbox": [
+            752,
+            681,
+            986,
+            876
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "header",
+        "text": "ADVANTECH",
+        "bbox": [
+            88,
+            61,
+            202,
+            98
+        ],
+        "page_idx": 45
+    },
+    {
+        "type": "text",
+        "text": "17个优化和维护的官方或第三方插件",
+        "text_level": 2,
+        "bbox": [
+            268,
+            37,
+            893,
+            111
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "第三方插件的功能增强",
+        "bbox": [
+            26,
+            254,
+            179,
+            338
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "第三方插件支持更多类型的数据源",
+        "bbox": [
+            25,
+            377,
+            179,
+            503
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "第三方插件的\nbug修改",
+        "bbox": [
+            26,
+            545,
+            179,
+            632
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "第三方插件和 grafana 不同版本的兼容",
+        "bbox": [
+            25,
+            669,
+            177,
+            795
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "table",
+        "img_path": "images/bab929dadc0e5bc7e3f2429111f4fd920a95510d47a9a43cce2d1d888fca38f6.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Panel</td><td>优化or维护</td><td>Panel</td><td>优化or维护</td></tr><tr><td>Graph</td><td>新增列算式计算数据功能,数据时间自适应功能,新增统计控制线UCL, CL, LCL,离散统计功能,新增数据按天统计</td><td>Traffic Lights panel</td><td>行数很多时的显示优化</td></tr><tr><td>Singlestat</td><td>新增自定义算式计算数据功能,Alert</td><td>gauge-panel</td><td>修复图片加载和卡死的bug</td></tr><tr><td>Multistat Bar Chart</td><td>新增timeseris 数据源的支持</td><td>Bubblechart panel</td><td>修复图片加载不出来的bug</td></tr><tr><td>Status panel</td><td>新增多个查询数据的显示</td><td>Radar panel</td><td>Grafana 6.0以上版本适配</td></tr><tr><td>Histogram</td><td>新增SPC 统计控制线的功能</td><td>FlowCharting</td><td>Grafana 6.0以上版本适配</td></tr><tr><td>Pie Chart</td><td>新增table数据源的支持,新增圆环显示效果和当前值显示</td><td>Diagram</td><td>Grafana 6.0以上版本适配</td></tr><tr><td>PictureIt</td><td>图片显示可选图片上传的结果,可显示告警效果</td><td>WindRose</td><td>Grafana 6.0以上版本适配</td></tr><tr><td>Worldmap Panel</td><td>增加平台Datahub和DeviceOn数据的接入支持</td><td>Plotly-New</td><td>显示bug 修改</td></tr><tr><td>Discrete</td><td>修复legend显示的问题,优化显示</td><td></td><td></td></tr></table>",
+        "bbox": [
+            202,
+            158,
+            944,
+            953
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            877,
+            945,
+            970,
+            972
+        ],
+        "page_idx": 46
+    },
+    {
+        "type": "text",
+        "text": "Enabling an Intelligent Planet",
+        "bbox": [
+            120,
+            111,
+            250,
+            135
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "插件商城，插件开发生态",
+        "text_level": 2,
+        "bbox": [
+            200,
+            377,
+            627,
+            449
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "image",
+        "img_path": "images/83e1b20591c8b163b2ff38ab4306f1bca2f423ecfa51bb2975ca508a56db22a8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            750,
+            291,
+            991,
+            879
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "header",
+        "text": "ADVANTECH",
+        "bbox": [
+            88,
+            61,
+            202,
+            98
+        ],
+        "page_idx": 47
+    },
+    {
+        "type": "text",
+        "text": "微生态 — WISE-PaaS/Dashboard插件商城",
+        "text_level": 2,
+        "bbox": [
+            127,
+            34,
+            890,
+            111
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "image",
+        "img_path": "images/8e860c00433c365046a78c77ce78c6c86cd2b23557162490795902dbfa8be4f4.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            72,
+            143,
+            109,
+            177
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "Plugin Marketplace",
+        "text_level": 2,
+        "bbox": [
+            259,
+            162,
+            429,
+            209
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "image",
+        "img_path": "images/018701be1c98667cea028c080b920223a554ae38f98201ad7d29265c89e7e611.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            211,
+            143,
+            256,
+            222
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "Catalog | Console ∨ | Resource ∨",
+        "bbox": [
+            12,
+            283,
+            173,
+            308
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "image",
+        "img_path": "images/a5405c83c07baf2640d2bdb4cdfa7907ce152317187a2b8b8078a3550b4feca9.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            345,
+            229,
+            440,
+            266
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "WISE-PaaS/Dashboard",
+        "text_level": 2,
+        "bbox": [
+            550,
+            155,
+            756,
+            207
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "< IoTSuite",
+        "text_level": 2,
+        "bbox": [
+            9,
+            372,
+            134,
+            414
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "Essential tools for building cloud native industrial applications...",
+        "bbox": [
+            45,
+            417,
+            325,
+            441
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "image",
+        "img_path": "images/6232e414c32e75567fee689f94c45766a7c0792061235dd26e25fe3266e1c01e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            791,
+            150,
+            850,
+            219
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "image",
+        "img_path": "images/6ef4084cc0514bafeffa817e35abee91e17fc19236238b326c81df83dc2c2c74.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            16,
+            496,
+            97,
+            520
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "image",
+        "img_path": "images/4b9d36949d547078792d3cc78bf11226bed2530a1960cacdb1aeb3b3ce3c3c68.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Chorothmap Panel"
+        ],
+        "content": "",
+        "bbox": [
+            58,
+            548,
+            100,
+            612
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "I.App Team",
+        "text_level": 2,
+        "bbox": [
+            841,
+            259,
+            941,
+            303
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "image",
+        "img_path": "images/515d4bcb201ceb2a4aee049bd61166f4f1a3e1f63774c2ee68a609ed5528d90c.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Dispatch Service\n1.2.3"
+        ],
+        "content": "",
+        "bbox": [
+            202,
+            548,
+            238,
+            607
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "image",
+        "img_path": "images/84111f46ac0292b72a9dc75997a53a87e1a5fdac417210b18e0bd7e4223a0dfa.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            59,
+            706,
+            100,
+            767
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "image",
+        "img_path": "images/d06ce9c372ffcc0b96a7295d7b41bdb5b5c449a96fbf8e774616d6c9e4d15351.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Scatter Map Panel",
+            "Hydrograph Panel",
+            "Thermometer Panel"
+        ],
+        "content": "",
+        "bbox": [
+            343,
+            550,
+            380,
+            609
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "Dashboard Team",
+        "text_level": 2,
+        "bbox": [
+            576,
+            261,
+            720,
+            303
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "Get Free Trial Now",
+        "text_level": 2,
+        "bbox": [
+            334,
+            390,
+            420,
+            414
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "image",
+        "img_path": "images/10f5e0fab3442bb2ada6cc28801bb38c065d31ad7dc1e7b387a65d52fcdc5460.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            202,
+            706,
+            238,
+            767
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "User Ecosystem",
+        "text_level": 2,
+        "bbox": [
+            856,
+            160,
+            991,
+            202
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "价值交换",
+        "text_level": 2,
+        "bbox": [
+            450,
+            400,
+            544,
+            454
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "image",
+        "img_path": "images/817cd280d3924dc15ded6fb71c2f25182bddd3d9bf68c4e828ca70a05e047509.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            450,
+            493,
+            547,
+            651
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "欢迎加入",
+        "text_level": 2,
+        "bbox": [
+            451,
+            597,
+            545,
+            649
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "image",
+        "img_path": "images/a14470de19c78a95f029cffb56f6bf859fb2c2938d988eb5dba3a163c7e79d7c.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            570,
+            311,
+            954,
+            846
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "DFSI",
+        "text_level": 2,
+        "bbox": [
+            570,
+            866,
+            613,
+            903
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "End User",
+        "bbox": [
+            854,
+            839,
+            931,
+            874
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            875,
+            945,
+            975,
+            975
+        ],
+        "page_idx": 48
+    },
+    {
+        "type": "text",
+        "text": "上架精品插件打造插件商城",
+        "text_level": 2,
+        "bbox": [
+            275,
+            22,
+            741,
+            93
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "image",
+        "img_path": "images/c3037533acc35f96cc005e9fad3739f747b4b09b7b88151c22fa24f790d6513f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            38,
+            120,
+            337,
+            545
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "分级地图",
+        "text_level": 2,
+        "bbox": [
+            443,
+            150,
+            513,
+            187
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 可显示分级图，根据不同的数据显示不同的颜色分布，如疫情分布图。",
+        "bbox": [
+            406,
+            187,
+            545,
+            350
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 分布图可以在地图上通过更立体的显示和气泡标注来显示各省份数据",
+        "bbox": [
+            406,
+            353,
+            537,
+            516
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5043df87607367216525bb1448411d5938dfd19552b54f8d221f5a8e69c18a91.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            588,
+            116,
+            802,
+            520
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "水位图",
+        "text_level": 2,
+        "bbox": [
+            866,
+            148,
+            919,
+            182
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "image",
+        "img_path": "images/e72fdec6b057f31e95567f28bd3b99b526ec7a33e6bfc564a8d9d97baeeb6aa3.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            0,
+            562,
+            398,
+            1000
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 支持字体大小和保留小数点个数设置",
+        "bbox": [
+            831,
+            185,
+            990,
+            249
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 支持自定义计算区间最大值，结合当前数据计算百分比",
+        "bbox": [
+            831,
+            251,
+            988,
+            345
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 支持多域值和颜色设置，可根据需要添加不同的域值区间展示不同的业务含义",
+        "bbox": [
+            831,
+            350,
+            988,
+            513
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "客制化地图",
+        "text_level": 2,
+        "bbox": [
+            431,
+            587,
+            519,
+            622
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 可按需设置水域，陆地，边界,行政名称的颜色",
+        "bbox": [
+            406,
+            627,
+            537,
+            755
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 可显示数据点散射，气泡的效果",
+        "bbox": [
+            406,
+            758,
+            534,
+            854
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 可显示数据点 Marker跳动效果",
+        "bbox": [
+            406,
+            856,
+            540,
+            955
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c6c2da8414f84dbad255323129100888d890dccbec3538f879af59ee93255c60.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            615,
+            565,
+            795,
+            1000
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "温度计",
+        "text_level": 2,
+        "bbox": [
+            865,
+            587,
+            919,
+            622
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 灵活的刻度设置支持最大最小刻度值设置，支持刻度区间设置",
+        "bbox": [
+            830,
+            624,
+            984,
+            765
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 支持温度的阈值区间自定义",
+        "bbox": [
+            831,
+            767,
+            983,
+            837
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "\\- 支持字体的大小设置和温度单位的设置",
+        "bbox": [
+            830,
+            839,
+            984,
+            945
+        ],
+        "page_idx": 49
+    },
+    {
+        "type": "text",
+        "text": "完善的培训和技术资料 技术支持和客制化开发",
+        "text_level": 1,
+        "bbox": [
+            106,
+            372,
+            500,
+            548
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "image",
+        "img_path": "images/694e8e1eea991cd6633b50a2ec2069b5792215e80d37b6e38f699713c3808e92.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            751,
+            288,
+            990,
+            881
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "header",
+        "text": "ADVANTECH",
+        "bbox": [
+            88,
+            61,
+            202,
+            98
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "header",
+        "text": "Enabling an Intelligent Planet",
+        "bbox": [
+            120,
+            111,
+            250,
+            135
+        ],
+        "page_idx": 50
+    },
+    {
+        "type": "text",
+        "text": "完善的培训和技术资料",
+        "text_level": 2,
+        "bbox": [
+            301,
+            37,
+            695,
+            108
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "51篇中英文手册，覆盖基本功能，数据源，panel,SRP-Frame，Mobile各个功能",
+        "bbox": [
+            50,
+            138,
+            783,
+            177
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "7个视频培训教程，覆盖功能讲解，插件开发，API Server开发",
+        "bbox": [
+            50,
+            180,
+            623,
+            222
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "image",
+        "img_path": "images/0d241a31f4f7ec1822fb7ecb8069841a894b37ad41147a5c17fde7ed91ada697.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            77,
+            241,
+            937,
+            995
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "footer",
+        "text": "ECH",
+        "bbox": [
+            936,
+            938,
+            975,
+            975
+        ],
+        "page_idx": 51
+    },
+    {
+        "type": "text",
+        "text": "快速响应的客户支持服务",
+        "text_level": 2,
+        "bbox": [
+            284,
+            51,
+            712,
+            123
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "image",
+        "img_path": "images/0731b75946c06ebdba76357b15092312e61a5afc8c63c768487ab8fcd5e9e309.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            123,
+            271,
+            475,
+            629
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "— CUSTOMER SUPPORT —",
+        "bbox": [
+            177,
+            686,
+            412,
+            725
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "来源",
+        "text_level": 2,
+        "bbox": [
+            743,
+            180,
+            787,
+            224
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "image",
+        "img_path": "images/4f5cbed0c02c82a891b34b83031fddc70fdb975995c096abbe828caf84585870.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            648,
+            239,
+            856,
+            308
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "image",
+        "img_path": "images/a2833d7e89a62bb33151d2df7b2ce784e9e7991ee24028b056b57ca723f1531e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            648,
+            387,
+            718,
+            513
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "Dashboard SE",
+        "text_level": 2,
+        "bbox": [
+            738,
+            429,
+            869,
+            471
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "多来源的技术支持渠道",
+        "bbox": [
+            602,
+            592,
+            888,
+            641
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "5\\*8的技术问题支持",
+        "bbox": [
+            602,
+            646,
+            855,
+            696
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "问题的持续跟踪直到解决",
+        "bbox": [
+            602,
+            698,
+            913,
+            750
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "问题解决的进版更新通知",
+        "bbox": [
+            602,
+            755,
+            913,
+            802
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            880,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 52
+    },
+    {
+        "type": "text",
+        "text": "Consulting Services 服务",
+        "text_level": 2,
+        "bbox": [
+            269,
+            39,
+            727,
+            116
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "提供Consulting Services 服务，按照需要的人力评估NRE的费用，主要支持以下几类：",
+        "bbox": [
+            41,
+            150,
+            797,
+            195
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "1. 客制化的插件需求开发，技术熟练，可快速交付",
+        "bbox": [
+            41,
+            195,
+            495,
+            234
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "2. 核心功能的客制化需求",
+        "bbox": [
+            41,
+            234,
+            281,
+            274
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "3. 可视化方案评估实施",
+        "bbox": [
+            43,
+            276,
+            263,
+            318
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "image",
+        "img_path": "images/6c5a460b72d523c8acc193293311b23072b22b6a14f5df588e490b7c8a6ed3c0.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "确认清楚需求规格  \n快速评估可行性  \n评估需要开发用时"
+        ],
+        "content": "",
+        "bbox": [
+            123,
+            345,
+            288,
+            965
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "50\nWISE-Point",
+        "bbox": [
+            173,
+            530,
+            237,
+            619
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "980GWDCSS01",
+        "bbox": [
+            165,
+            698,
+            245,
+            728
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "Redeem",
+        "bbox": [
+            180,
+            772,
+            227,
+            800
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "评估",
+        "bbox": [
+            395,
+            585,
+            444,
+            634
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "根据最终需求进行开发按照规格详细测试",
+        "bbox": [
+            656,
+            397,
+            781,
+            459
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "报价",
+        "bbox": [
+            533,
+            585,
+            580,
+            634
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "开发&测试交付",
+        "bbox": [
+            659,
+            575,
+            725,
+            666
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            800,
+            582,
+            850,
+            634
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "根据评估天数进行合理报价价钱讨论敲定",
+        "bbox": [
+            527,
+            780,
+            675,
+            841
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "按时完成交付\n提供高质量的交付成果",
+        "bbox": [
+            798,
+            780,
+            920,
+            841
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "footer",
+        "text": "ADVANTECH",
+        "bbox": [
+            879,
+            940,
+            970,
+            972
+        ],
+        "page_idx": 53
+    },
+    {
+        "type": "text",
+        "text": "Go Together,\nWe Go Far and Grow Big",
+        "bbox": [
+            43,
+            446,
+            559,
+            609
+        ],
+        "page_idx": 54
+    },
+    {
+        "type": "image",
+        "img_path": "images/4f28d45470db0b7d60517878a04b6d8346d6595c77587406758b4e6a40252e6e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            645,
+            88,
+            995,
+            930
+        ],
+        "page_idx": 54
+    }
+]
