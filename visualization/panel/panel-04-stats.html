@@ -1,0 +1,167 @@
+<style>
+:root {
+    --bg-deep: #060b16;
+    --bg-panel: #0c1a2e;
+    --bg-card: #112240;
+    --border: #1a3456;
+    --accent: #00d4ff;
+    --text-primary: #e0ecff;
+    --text-secondary: #5a7da0;
+    --green: #00e676;
+    --orange: #ffab40;
+    --red: #ff3d4f;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.stats-panel {
+    width: 100%; height: 100%;
+    min-height: 110px;
+    background: linear-gradient(180deg, #0c1a2e 0%, #0e1f38 100%);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 2px;
+    padding: 14px 20px;
+    display: flex;
+    gap: 14px;
+    font-family: "Microsoft YaHei", "Source Han Sans CN", "Noto Sans SC", sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg,
+        transparent, rgba(0,212,255,0.4) 30%, rgba(0,212,255,0.4) 70%, transparent);
+}
+
+.stat-card {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    border-radius: 2px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+.stat-card:hover {
+    border-color: rgba(0, 212, 255, 0.35);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.08);
+}
+
+/* 左侧色条 */
+.stat-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10%; bottom: 10%;
+    width: 3px;
+    border-radius: 0 2px 2px 0;
+}
+
+.stat-card.card-low::before    { background: var(--green);  box-shadow: 0 0 8px rgba(0,230,118,0.5); }
+.stat-card.card-medium::before { background: var(--orange); box-shadow: 0 0 8px rgba(255,171,64,0.5); }
+.stat-card.card-high::before   { background: var(--red);    box-shadow: 0 0 8px rgba(255,61,79,0.5); }
+.stat-card.card-total::before  { background: var(--accent); box-shadow: 0 0 8px rgba(0,212,255,0.5); }
+
+.stat-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.stat-value {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.card-low .stat-value    { color: var(--green);  text-shadow: 0 0 12px rgba(0,230,118,0.25); }
+.card-medium .stat-value { color: var(--orange); text-shadow: 0 0 12px rgba(255,171,64,0.25); }
+.card-high .stat-value   { color: var(--red);    text-shadow: 0 0 12px rgba(255,61,79,0.25); }
+.card-total .stat-value  { color: var(--accent); text-shadow: 0 0 12px rgba(0,212,255,0.25); }
+
+.stat-sub {
+    font-size: 11px;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    opacity: 0.7;
+}
+
+/* 总数卡片背景微光 */
+.stat-card.card-total {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(0, 212, 255, 0.04) 100%);
+}
+
+/* 网格背景 */
+.grid-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+        linear-gradient(rgba(0, 212, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+</style>
+
+<div class="stats-panel">
+    <div class="grid-overlay"></div>
+
+    <div class="stat-card card-low">
+        <div class="stat-label">低风险</div>
+        <div class="stat-value" id="sLow">12</div>
+        <div class="stat-sub">LOW RISK</div>
+    </div>
+
+    <div class="stat-card card-medium">
+        <div class="stat-label">中风险</div>
+        <div class="stat-value" id="sMed">5</div>
+        <div class="stat-sub">MEDIUM RISK</div>
+    </div>
+
+    <div class="stat-card card-high">
+        <div class="stat-label">高风险</div>
+        <div class="stat-value" id="sHigh">3</div>
+        <div class="stat-sub">HIGH RISK</div>
+    </div>
+
+    <div class="stat-card card-total">
+        <div class="stat-label">总监测点</div>
+        <div class="stat-value" id="sTotal">20</div>
+        <div class="stat-sub">TOTAL POINTS</div>
+    </div>
+</div>
+
+<script>
+// 确保数据一致性：低+中+高 = 总计
+(function() {
+    const low = 12, med = 5, high = 3;
+    const total = low + med + high;
+    document.getElementById('sLow').textContent = low;
+    document.getElementById('sMed').textContent = med;
+    document.getElementById('sHigh').textContent = high;
+    document.getElementById('sTotal').textContent = total;
+
+    // 数字滚动动画
+    document.querySelectorAll('.stat-value').forEach(el => {
+        const target = parseInt(el.textContent);
+        let current = 0;
+        const step = Math.max(1, Math.floor(target / 30));
+        const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = current;
+        }, 30);
+    });
+})();
+</script>

@@ -1,0 +1,207 @@
+<style>
+:root {
+    --bg-deep: #060b16;
+    --bg-panel: #0c1a2e;
+    --bg-card: #112240;
+    --border: #1a3456;
+    --accent: #00d4ff;
+    --text-primary: #e0ecff;
+    --text-secondary: #5a7da0;
+    --green: #00e676;
+    --orange: #ffab40;
+    --red: #ff3d4f;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.alerts-panel {
+    width: 100%; height: 100%;
+    min-height: 260px;
+    background: linear-gradient(180deg, #0c1a2e 0%, #0e1f38 100%);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 2px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Microsoft YaHei", "Source Han Sans CN", "Noto Sans SC", sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.alerts-panel::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 212, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+
+.panel-title {
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-weight: 500;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+}
+
+/* 柱状图容器 */
+.chart-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 36px;
+}
+
+.bar-label {
+    flex: 0 0 70px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+.bar-track {
+    flex: 1;
+    height: 26px;
+    background: rgba(0, 212, 255, 0.03);
+    border: 1px solid rgba(0, 212, 255, 0.06);
+    border-radius: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 0 2px 2px 0;
+    position: relative;
+    transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+/* 不同区域的渐变色 */
+.bar-fill.green  { background: linear-gradient(90deg, rgba(0,230,118,0.7), rgba(0,230,118,0.35)); }
+.bar-fill.orange { background: linear-gradient(90deg, rgba(255,171,64,0.7), rgba(255,171,64,0.35)); }
+.bar-fill.red    { background: linear-gradient(90deg, rgba(255,61,79,0.7), rgba(255,61,79,0.3)); }
+.bar-fill.cyan   { background: linear-gradient(90deg, rgba(0,212,255,0.7), rgba(0,212,255,0.3)); }
+
+/* 光条扫描效果 */
+.bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: rgba(255,255,255,0.4);
+    animation: barScan 2s ease-in-out infinite;
+}
+@keyframes barScan {
+    0%   { left: 0; opacity: 0; }
+    50%  { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+.bar-value {
+    flex: 0 0 36px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+.bar-value.green  { color: var(--green);  text-shadow: 0 0 8px rgba(0,230,118,0.3); }
+.bar-value.orange { color: var(--orange); text-shadow: 0 0 8px rgba(255,171,64,0.3); }
+.bar-value.red    { color: var(--red);    text-shadow: 0 0 8px rgba(255,61,79,0.3); }
+.bar-value.cyan   { color: var(--accent); text-shadow: 0 0 8px rgba(0,212,255,0.3); }
+
+/* 底部图例 */
+.chart-legend {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 6px;
+    border-top: 1px solid rgba(0, 212, 255, 0.08);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+
+.legend-dot {
+    width: 6px; height: 6px;
+    border-radius: 1px;
+}
+</style>
+
+<div class="alerts-panel">
+    <div class="panel-title">⚠ 告警分布情况</div>
+
+    <div class="chart-body">
+        <div class="bar-row">
+            <span class="bar-label">绿化带</span>
+            <div class="bar-track">
+                <div class="bar-fill green" style="width: 0%" data-width="35%"></div>
+            </div>
+            <span class="bar-value green">3</span>
+        </div>
+
+        <div class="bar-row">
+            <span class="bar-label">车 库</span>
+            <div class="bar-track">
+                <div class="bar-fill orange" style="width: 0%" data-width="65%"></div>
+            </div>
+            <span class="bar-value orange">5</span>
+        </div>
+
+        <div class="bar-row">
+            <span class="bar-label">开阔地带</span>
+            <div class="bar-track">
+                <div class="bar-fill red" style="width: 0%" data-width="90%"></div>
+            </div>
+            <span class="bar-value red">8</span>
+        </div>
+
+        <div class="bar-row">
+            <span class="bar-label">楼 道</span>
+            <div class="bar-track">
+                <div class="bar-fill cyan" style="width: 0%" data-width="50%"></div>
+            </div>
+            <span class="bar-value cyan">4</span>
+        </div>
+    </div>
+
+    <div class="chart-legend">
+        <div class="legend-item"><span class="legend-dot" style="background:var(--green);"></span>低风险</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--orange);"></span>中风险</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--red);"></span>高风险</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--accent);"></span>警告</div>
+    </div>
+</div>
+
+<script>
+// 柱状图入场动画
+setTimeout(() => {
+    document.querySelectorAll('.bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width;
+    });
+}, 200);
+</script>

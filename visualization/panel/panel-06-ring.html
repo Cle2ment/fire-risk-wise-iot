@@ -1,0 +1,265 @@
+<style>
+:root {
+    --bg-deep: #060b16;
+    --bg-panel: #0c1a2e;
+    --bg-card: #112240;
+    --border: #1a3456;
+    --accent: #00d4ff;
+    --text-primary: #e0ecff;
+    --text-secondary: #5a7da0;
+    --green: #00e676;
+    --orange: #ffab40;
+    --red: #ff3d4f;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.ring-panel {
+    width: 100%; height: 100%;
+    min-height: 260px;
+    background: linear-gradient(180deg, #0c1a2e 0%, #0e1f38 100%);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 2px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: "Microsoft YaHei", "Source Han Sans CN", "Noto Sans SC", sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.ring-panel::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 212, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+
+/* 左侧圆环 */
+.ring-chart-wrap {
+    flex: 0 0 auto;
+    position: relative;
+    width: 160px; height: 160px;
+    z-index: 1;
+}
+
+.ring-svg {
+    transform: rotate(-90deg);
+}
+
+.ring-bg {
+    fill: none;
+    stroke: rgba(0, 212, 255, 0.06);
+    stroke-width: 18;
+}
+
+/* 环形段 - 以 stroke-dasharray 和 stroke-dashoffset 控制长度 */
+.ring-segment {
+    fill: none;
+    stroke-width: 18;
+    stroke-linecap: butt;
+    transition: stroke-dashoffset 1.5s ease;
+}
+
+/* 中心文字 */
+.ring-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ring-total {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+}
+.ring-total-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+    margin-top: 2px;
+}
+
+/* 外部发光环 */
+.ring-glow {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 212, 255, 0.08);
+    pointer-events: none;
+}
+
+/* 右侧图例 */
+.ring-legend {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 1;
+}
+
+.legend-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.legend-color {
+    width: 10px; height: 10px;
+    border-radius: 1px;
+    flex-shrink: 0;
+}
+
+.legend-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.legend-name {
+    font-size: 12px;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+
+.legend-count-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.legend-count {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.legend-pct {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.legend-count.green  { color: var(--green);  text-shadow: 0 0 8px rgba(0,230,118,0.25); }
+.legend-count.orange { color: var(--orange); text-shadow: 0 0 8px rgba(255,171,64,0.25); }
+.legend-count.red    { color: var(--red);    text-shadow: 0 0 8px rgba(255,61,79,0.25); }
+
+/* 环形段每段之间有 2px 间隔 */
+.ring-gap {
+    fill: none;
+    stroke: var(--bg-panel);
+    stroke-width: 20;
+}
+</style>
+
+<div class="ring-panel">
+    <!-- 环形图 -->
+    <div class="ring-chart-wrap">
+        <div class="ring-glow"></div>
+        <svg class="ring-svg" width="160" height="160" viewBox="0 0 160 160">
+            <!-- 背景环 -->
+            <circle class="ring-bg" cx="80" cy="80" r="64"/>
+
+            <!-- 间隔 (用背景色覆盖) -->
+            <circle class="ring-gap" cx="80" cy="80" r="64"
+                stroke-dasharray="2 400" stroke-dashoffset="0"/>
+
+            <!-- 低风险: 12/20 = 60%, 绿色, dash: 402.12 * 0.60 = 241.27 -->
+            <circle class="ring-segment" cx="80" cy="80" r="64"
+                stroke="#00e676"
+                stroke-dasharray="402.12"
+                stroke-dashoffset="402.12"
+                id="ringLow"/>
+
+            <!-- 中风险: 5/20 = 25%, 橙色, 起始偏移: 241.27 -->
+            <circle class="ring-segment" cx="80" cy="80" r="64"
+                stroke="#ffab40"
+                stroke-dasharray="402.12"
+                stroke-dashoffset="402.12"
+                id="ringMed"/>
+
+            <!-- 高风险: 3/20 = 15%, 红色 -->
+            <circle class="ring-segment" cx="80" cy="80" r="64"
+                stroke="#ff3d4f"
+                stroke-dasharray="402.12"
+                stroke-dashoffset="402.12"
+                id="ringHigh"/>
+        </svg>
+
+        <div class="ring-center">
+            <div class="ring-total" id="ringCount">20</div>
+            <div class="ring-total-label">监测点</div>
+        </div>
+    </div>
+
+    <!-- 图例 -->
+    <div class="ring-legend">
+        <div class="legend-row">
+            <span class="legend-color" style="background:var(--green);"></span>
+            <div class="legend-info">
+                <span class="legend-name">低风险 · LOW</span>
+                <div class="legend-count-row">
+                    <span class="legend-count green" id="legLow">12</span>
+                    <span class="legend-pct">60%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend-row">
+            <span class="legend-color" style="background:var(--orange);"></span>
+            <div class="legend-info">
+                <span class="legend-name">中风险 · MEDIUM</span>
+                <div class="legend-count-row">
+                    <span class="legend-count orange" id="legMed">5</span>
+                    <span class="legend-pct">25%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend-row">
+            <span class="legend-color" style="background:var(--red);"></span>
+            <div class="legend-info">
+                <span class="legend-name">高风险 · HIGH</span>
+                <div class="legend-count-row">
+                    <span class="legend-count red" id="legHigh">3</span>
+                    <span class="legend-pct">15%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const CIRCUMFERENCE = 2 * Math.PI * 64; // 402.12
+
+    const low  = 12, med = 5, high = 3;
+    const total = low + med + high;
+
+    const lowPct  = low / total;   // 0.60
+    const medPct  = med / total;   // 0.25
+    const highPct = high / total;  // 0.15
+
+    // stroke-dashoffset: 从右端开始画，offset 从 CIRCUMFERENCE 递减
+    // 低风险从 0 开始，占 60%
+    // 中风险从 60% 开始，占 25%
+    // 高风险从 85% 开始，占 15%
+
+    const lowOffset  = CIRCUMFERENCE * (1 - lowPct);             // 160.85
+    const medOffset  = CIRCUMFERENCE * (1 - lowPct - medPct);     // 60.32
+    const highOffset = CIRCUMFERENCE * (1 - lowPct - medPct - highPct); // 0
+
+    setTimeout(() => {
+        document.getElementById('ringLow').style.strokeDashoffset  = lowOffset;
+        document.getElementById('ringMed').style.strokeDashoffset  = medOffset;
+        document.getElementById('ringHigh').style.strokeDashoffset = highOffset;
+    }, 300);
+})();
+</script>
