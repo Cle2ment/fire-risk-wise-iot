@@ -1,0 +1,289 @@
+<style>
+:root {
+    --bg-deep: #060b16;
+    --bg-panel: #0c1a2e;
+    --bg-card: #112240;
+    --border: #1a3456;
+    --accent: #00d4ff;
+    --text-primary: #e0ecff;
+    --text-secondary: #5a7da0;
+    --green: #00e676;
+    --orange: #ffab40;
+    --red: #ff3d4f;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.news-panel {
+    width: 100%; height: 100%;
+    min-height: 320px;
+    background: linear-gradient(180deg, #0c1a2e 0%, #0e1f38 100%);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 2px;
+    padding: 14px 18px;
+    display: flex;
+    gap: 16px;
+    font-family: "Microsoft YaHei", "Source Han Sans CN", "Noto Sans SC", sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-panel::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 212, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+
+/* ========== 左侧图片 ========== */
+.news-image {
+    flex: 0 0 42%;
+    position: relative;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    background: var(--bg-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+.news-image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+}
+
+.news-image-placeholder .ph-icon {
+    font-size: 32px;
+    opacity: 0.4;
+}
+
+.news-image-placeholder .ph-text {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.5;
+}
+
+/* 四角标 */
+.news-image .corner {
+    position: absolute; width: 14px; height: 14px; pointer-events: none; z-index: 2;
+}
+.news-image .corner-tl { top: 6px; left: 6px;   border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+.news-image .corner-tr { top: 6px; right: 6px;  border-top: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+.news-image .corner-bl { bottom: 6px; left: 6px; border-bottom: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+.news-image .corner-br { bottom: 6px; right: 6px; border-bottom: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+
+/* 图片底部标签 */
+.news-image .camera-label {
+    position: absolute;
+    bottom: 8px; left: 8px;
+    background: rgba(0, 20, 40, 0.85);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    padding: 4px 10px;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 1px;
+    border-radius: 1px;
+    z-index: 2;
+}
+
+/* ========== 右侧新闻 ========== */
+.news-feed {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 1;
+}
+
+.news-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+}
+
+.news-header-dot {
+    width: 6px; height: 6px;
+    background: var(--accent);
+    box-shadow: 0 0 6px var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.news-header-text {
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-weight: 500;
+    flex: 1;
+}
+
+.news-header-time {
+    font-size: 11px;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    font-family: "Consolas", monospace;
+}
+
+/* 滚动容器 */
+.news-scroll {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to bottom,
+        transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom,
+        transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.news-track {
+    animation: scrollNews 28s linear infinite;
+}
+
+.news-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollNews {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+/* 新闻条目 */
+.news-item {
+    padding: 8px 10px;
+    border-left: 2px solid rgba(0, 212, 255, 0.15);
+    margin-bottom: 6px;
+    transition: border-color 0.3s;
+}
+.news-item:hover {
+    border-left-color: var(--accent);
+    background: rgba(0, 212, 255, 0.03);
+}
+
+.news-item-time {
+    font-size: 10px;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+    font-family: "Consolas", monospace;
+}
+
+.news-item-title {
+    font-size: 13px;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    margin-bottom: 2px;
+}
+
+.news-item-source {
+    font-size: 10px;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+}
+
+/* 高优先级条目 */
+.news-item.alert .news-item-title {
+    color: var(--orange);
+}
+.news-item.alert {
+    border-left-color: rgba(255, 171, 64, 0.4);
+}
+</style>
+
+<div class="news-panel">
+    <!-- 左侧图片 -->
+    <div class="news-image">
+        <img src="" alt=""
+             onerror="this.style.display='none';this.previousElementSibling.style.display='flex';">
+        <div class="news-image-placeholder" style="display:flex;">
+            <span class="ph-icon">📷</span>
+            <span class="ph-text">现场实时画面</span>
+        </div>
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+        <div class="camera-label">LIVE · 消防监控</div>
+    </div>
+
+    <!-- 右侧新闻 -->
+    <div class="news-feed">
+        <div class="news-header">
+            <span class="news-header-dot"></span>
+            <span class="news-header-text">消防时讯 · FIRE NEWS</span>
+            <span class="news-header-time" id="newsClock">--:--:--</span>
+        </div>
+
+        <div class="news-scroll">
+            <div class="news-track" id="newsTrack">
+                <!-- 由JS动态生成以实现无缝循环 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    // 新闻数据
+    const newsData = [
+        { time: '14:32', title: '住建部印发老旧小区消防通道专项整治方案', source: '住建部', alert: true },
+        { time: '13:15', title: '夏季高温预警：全国多地发布森林火险橙色预警', source: '应急管理部', alert: true },
+        { time: '11:48', title: '智能烟感报警器国家标准修订征求意见稿发布', source: '市场监管总局', alert: false },
+        { time: '10:20', title: '某小区电动车违规充电引发火灾，幸无人员伤亡', source: '消防通报', alert: true },
+        { time: '09:05', title: '城市消防物联网建设指南（2026版）正式实施', source: '工信部', alert: false },
+        { time: '08:00', title: 'AI视觉识别技术在消防隐患排查中的应用前景', source: '科技日报', alert: false },
+        { time: '07:30', title: '社区微型消防站建设三年行动方案推进过半', source: '消防救援局', alert: false },
+        { time: '06:15', title: '消防通道违停监测系统在10个试点城市上线运行', source: '智慧城市', alert: false },
+        { time: '05:00', title: '夜间防火巡查要点：物业安全管理指南更新', source: '消防协会', alert: false },
+        { time: '03:40', title: '高层建筑电缆井火灾隐患专项排查启动', source: '住建部', alert: true },
+        { time: '02:10', title: '便携式红外热成像仪在火场搜救中的实战应用', source: '消防科技', alert: false },
+        { time: '01:00', title: '老旧线路过载引发火情：冬季用电安全再敲警钟', source: '消防通报', alert: true },
+        { time: '00:30', title: '社区消防志愿者培训体系全面升级', source: '应急管理部', alert: false },
+        { time: '23:45', title: '基于IoT的智能消火栓远程监控方案获评优秀案例', source: '智慧消防', alert: false },
+        { time: '22:00', title: '燃气泄漏报警器入户安装惠民政策持续推进', source: '城市管理', alert: false },
+        { time: '21:15', title: '消防通道划线标准与标识规范修订版征求意见', source: '消防标委会', alert: false },
+    ];
+
+    // 生成HTML（复制一份实现无缝循环）
+    const track = document.getElementById('newsTrack');
+    const html = newsData.map(item => `
+        <div class="news-item${item.alert ? ' alert' : ''}">
+            <div class="news-item-time">${item.time}</div>
+            <div class="news-item-title">${item.title}</div>
+            <div class="news-item-source">来源：${item.source}</div>
+        </div>
+    `).join('');
+    track.innerHTML = html + html;
+
+    // 时钟
+    function updateClock() {
+        const now = new Date();
+        document.getElementById('newsClock').textContent =
+            `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+})();
+</script>
