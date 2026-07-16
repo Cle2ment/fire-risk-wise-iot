@@ -1,0 +1,140 @@
+<style>
+:root {
+    --bg-deep:#060b16;--bg-panel:#0c1a2e;--bg-card:#112240;
+    --border:#1a3456;--accent:#00d4ff;--text-primary:#e0ecff;
+    --text-secondary:#5a7da0;--green:#00e676;--orange:#ffab40;--red:#ff3d4f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+
+.device-panel {
+    width:100%;height:100%;min-height:300px;
+    background:linear-gradient(180deg,#0c1a2e 0%,#0e1f38 100%);
+    border:1px solid rgba(0,212,255,0.15);border-radius:2px;
+    padding:14px 18px;font-family:"Microsoft YaHei","Source Han Sans CN","Noto Sans SC",sans-serif;
+    position:relative;overflow:hidden;display:flex;flex-direction:column;gap:10px;
+}
+.device-panel::before {
+    content:'';position:absolute;inset:0;
+    background-image:linear-gradient(rgba(0,212,255,0.015) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,212,255,0.015) 1px,transparent 1px);
+    background-size:40px 40px;pointer-events:none;
+}
+
+.device-header {
+    display:flex;align-items:center;gap:10px;padding-bottom:6px;
+    border-bottom:1px solid rgba(0,212,255,0.12);z-index:1;
+}
+.device-header-dot {width:6px;height:6px;background:var(--green);box-shadow:0 0 6px var(--green);animation:pulse 2s ease-in-out infinite;}
+.device-header-text {font-size:13px;color:var(--accent);letter-spacing:2px;font-weight:500;flex:1;}
+.device-summary {font-size:11px;color:var(--text-secondary);letter-spacing:1px;}
+.device-summary b.online {color:var(--green);}
+.device-summary b.offline {color:var(--red);}
+
+.device-grid {
+    flex:1;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(4,1fr);
+    gap:8px;z-index:1;
+}
+
+.device-node {
+    background:var(--bg-card);border:1px solid rgba(0,212,255,0.08);border-radius:2px;
+    padding:6px 8px;display:flex;align-items:center;gap:6px;
+    transition:border-color 0.3s,box-shadow 0.3s;position:relative;
+}
+.device-node:hover {border-color:rgba(0,212,255,0.3);box-shadow:0 0 10px rgba(0,212,255,0.05);}
+.device-node.online  { border-left:2px solid var(--green); }
+.device-node.offline { border-left:2px solid var(--red); opacity:0.5; }
+.device-node.warning { border-left:2px solid var(--orange); }
+
+.node-dot {
+    width:5px;height:5px;border-radius:50%;flex-shrink:0;
+}
+.device-node.online  .node-dot { background:var(--green); box-shadow:0 0 5px var(--green); }
+.device-node.offline .node-dot { background:var(--red); }
+.device-node.warning .node-dot { background:var(--orange); box-shadow:0 0 5px var(--orange); }
+
+.node-info {flex:1;min-width:0;}
+.node-name {font-size:10px;color:var(--text-primary);letter-spacing:0.5px;}
+.node-type {font-size:9px;color:var(--text-secondary);opacity:0.7;}
+
+/* 类别分组标签 */
+.group-label {
+    grid-column:1/-1;font-size:10px;color:var(--text-secondary);
+    letter-spacing:2px;padding:2px 0;border-bottom:1px solid rgba(0,212,255,0.06);
+    display:flex;align-items:center;gap:6px;
+}
+</style>
+
+<div class="device-panel">
+    <div class="device-header">
+        <span class="device-header-dot"></span>
+        <span class="device-header-text">设备运行状态 · DEVICE STATUS</span>
+        <span class="device-summary"><b class="online">18</b> 在线 / <b class="offline">2</b> 离线</span>
+    </div>
+    <div class="device-grid" id="deviceGrid"></div>
+</div>
+
+<script>
+(function(){
+    const devices = [
+        {name:'CAM-01',type:'深度相机',status:'online'},
+        {name:'CAM-02',type:'深度相机',status:'online'},
+        {name:'CAM-03',type:'深度相机',status:'online'},
+        {name:'CAM-04',type:'深度相机',status:'warning'},
+        {name:'CAM-05',type:'深度相机',status:'online'},
+        {name:'SEN-01',type:'烟雾传感器',status:'online'},
+        {name:'SEN-02',type:'烟雾传感器',status:'online'},
+        {name:'SEN-03',type:'温湿度传感器',status:'online'},
+        {name:'SEN-04',type:'温湿度传感器',status:'offline'},
+        {name:'SEN-05',type:'温湿度传感器',status:'online'},
+        {name:'SEN-06',type:'地磁传感器',status:'online'},
+        {name:'SEN-07',type:'地磁传感器',status:'online'},
+        {name:'SEN-08',type:'地磁传感器',status:'online'},
+        {name:'SEN-09',type:'地磁传感器',status:'offline'},
+        {name:'SEN-10',type:'地磁传感器',status:'online'},
+        {name:'EDG-01',type:'边缘网关',status:'online'},
+        {name:'EDG-02',type:'边缘网关',status:'online'},
+        {name:'ALM-01',type:'声光报警器',status:'online'},
+        {name:'ALM-02',type:'声光报警器',status:'online'},
+        {name:'ALM-03',type:'声光报警器',status:'online'},
+    ];
+
+    let html = '';
+    // 按类型分组
+    const groups = {
+        '📷 视觉感知层': d => d.type === '深度相机',
+        '🌡 环境感知层': d => d.type.includes('传感器'),
+        '⚙ 边缘计算层': d => d.type === '边缘网关',
+        '🔔 告警执行层': d => d.type === '声光报警器',
+    };
+
+    for (const [label, filter] of Object.entries(groups)) {
+        html += `<div class="group-label">${label}</div>`;
+        const items = devices.filter(d => filter(d) || (label.includes('环境') && d.type.includes('传感器')));
+        for (const d of (label === '🌡 环境感知层' ? devices.filter(groups['🌡 环境感知层']) : items)) {
+            if (label !== Object.keys(groups)[1]) break; // skip duplicate
+        }
+    }
+
+    // Simply render all in order
+    html = '';
+    let lastGroup = '';
+    for (const d of devices) {
+        let group = '';
+        if (d.type === '深度相机' && lastGroup !== 'cam') { group = '📷 视觉感知层'; lastGroup = 'cam'; }
+        else if (d.type.includes('传感器') && lastGroup !== 'sen') { group = '🌡 环境感知层'; lastGroup = 'sen'; }
+        else if (d.type === '边缘网关' && lastGroup !== 'edg') { group = '⚙ 边缘计算层'; lastGroup = 'edg'; }
+        else if (d.type === '声光报警器' && lastGroup !== 'alm') { group = '🔔 告警执行层'; lastGroup = 'alm'; }
+
+        if (group) html += `<div class="group-label">${group}</div>`;
+        html += `
+        <div class="device-node ${d.status}">
+            <span class="node-dot"></span>
+            <div class="node-info">
+                <div class="node-name">${d.name}</div>
+                <div class="node-type">${d.type}</div>
+            </div>
+        </div>`;
+    }
+    document.getElementById('deviceGrid').innerHTML = html;
+})();
+</script>

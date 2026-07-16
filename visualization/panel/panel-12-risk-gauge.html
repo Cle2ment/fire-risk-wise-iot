@@ -1,0 +1,136 @@
+<style>
+:root {
+    --bg-deep:#060b16;--bg-panel:#0c1a2e;--bg-card:#112240;
+    --border:#1a3456;--accent:#00d4ff;--text-primary:#e0ecff;
+    --text-secondary:#5a7da0;--green:#00e676;--orange:#ffab40;--red:#ff3d4f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+
+.gauge-panel {
+    width:100%;height:100%;min-height:280px;
+    background:linear-gradient(180deg,#0c1a2e 0%,#0e1f38 100%);
+    border:1px solid rgba(0,212,255,0.15);border-radius:2px;
+    padding:14px 18px;font-family:"Microsoft YaHei","Source Han Sans CN","Noto Sans SC",sans-serif;
+    position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;
+}
+.gauge-panel::before {
+    content:'';position:absolute;inset:0;
+    background-image:linear-gradient(rgba(0,212,255,0.015) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(0,212,255,0.015) 1px,transparent 1px);
+    background-size:40px 40px;pointer-events:none;
+}
+
+.gauge-header {
+    align-self:stretch;display:flex;align-items:center;gap:10px;padding-bottom:6px;
+    border-bottom:1px solid rgba(0,212,255,0.12);z-index:1;margin-bottom:6px;
+}
+.gauge-header-dot {width:6px;height:6px;background:var(--orange);box-shadow:0 0 6px var(--orange);animation:pulse 1.5s ease-in-out infinite;}
+.gauge-header-text {font-size:13px;color:var(--accent);letter-spacing:2px;font-weight:500;flex:1;}
+.gauge-header-time {font-size:11px;color:var(--text-secondary);letter-spacing:1px;}
+
+.gauge-body {flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1;position:relative;}
+
+/* 半圆弧 SVG 仪表 */
+.gauge-svg-wrap {position:relative;width:200px;height:120px;overflow:hidden;}
+
+.gauge-arc-bg {
+    fill:none;stroke:rgba(0,212,255,0.06);stroke-width:22;stroke-linecap:round;
+}
+
+.gauge-arc {
+    fill:none;stroke-width:22;stroke-linecap:round;
+    transition:stroke-dashoffset 1.5s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+/* 仪表刻度标签 */
+.gauge-labels {
+    display:flex;justify-content:space-between;width:210px;margin-top:-8px;z-index:2;
+}
+.gauge-labels span {font-size:10px;color:var(--text-secondary);letter-spacing:0.5px;}
+.gauge-labels span.low {color:var(--green);}
+.gauge-labels span.mid {color:var(--orange);}
+.gauge-labels span.high {color:var(--red);}
+
+/* 中央数值 */
+.gauge-value-wrap {text-align:center;margin-top:2px;}
+.gauge-value {
+    font-size:52px;font-weight:700;letter-spacing:3px;line-height:1;
+    text-shadow:0 0 20px rgba(255,171,64,0.4);
+}
+.gauge-value.low  {color:var(--green); text-shadow:0 0 20px rgba(0,230,118,0.4);}
+.gauge-value.mid  {color:var(--orange);}
+.gauge-value.high {color:var(--red); text-shadow:0 0 20px rgba(255,61,79,0.4);}
+
+.gauge-label {font-size:14px;color:var(--text-secondary);letter-spacing:3px;margin-top:2px;}
+
+.gauge-trend {
+    font-size:11px;color:var(--text-secondary);letter-spacing:1px;margin-top:6px;
+    display:flex;align-items:center;gap:6px;
+}
+.gauge-trend .up {color:var(--red);}
+.gauge-trend .down {color:var(--green);}
+.gauge-trend .arrow {font-size:14px;}
+</style>
+
+<div class="gauge-panel">
+    <div class="gauge-header">
+        <span class="gauge-header-dot"></span>
+        <span class="gauge-header-text">当前风险等级 · RISK LEVEL</span>
+        <span class="gauge-header-time" id="gaugeTime">--:--:--</span>
+    </div>
+
+    <div class="gauge-body">
+        <div class="gauge-svg-wrap">
+            <svg width="200" height="120" viewBox="0 0 200 120">
+                <!-- 半圆轨: cx=100, cy=100, r=80, 从π到0 -->
+                <!-- 绿色段: 0-30 对应角度 π*0.7 到 π -->
+                <path class="gauge-arc-bg" d="M20,100 A80,80 0 0,1 180,100"/>
+                <!-- 实际值的弧 -->
+                <path class="gauge-arc" id="gaugeArc"
+                    d="M20,100 A80,80 0 0,1 180,100"
+                    stroke="#ffab40"
+                    stroke-dasharray="251.3"
+                    stroke-dashoffset="251.3"/>
+            </svg>
+        </div>
+
+        <div class="gauge-labels">
+            <span class="low">0</span><span class="mid">50</span><span class="high">100</span>
+        </div>
+
+        <div class="gauge-value-wrap">
+            <div class="gauge-value mid" id="gaugeValue">42</div>
+            <div class="gauge-label">风险指数</div>
+        </div>
+
+        <div class="gauge-trend">
+            较昨日 <span class="arrow down">↓</span> <span class="down">6</span>
+        </div>
+    </div>
+</div>
+
+<script>
+(function(){
+    // 时钟
+    function tick(){const n=new Date();document.getElementById('gaugeTime').textContent=
+        [n.getHours(),n.getMinutes(),n.getSeconds()].map(v=>String(v).padStart(2,'0')).join(':');}
+    tick();setInterval(tick,1000);
+
+    // 仪表动画: 值42, 半圆弧长=π*80≈251.3
+    // offset = 251.3 * (1 - 0.42) = 145.8
+    const val = 42;
+    const arcLen = Math.PI * 80;
+    const offset = arcLen * (1 - val/100);
+
+    setTimeout(() => {
+        document.getElementById('gaugeArc').style.strokeDashoffset = offset;
+    }, 300);
+
+    // 根据值调整颜色
+    const color = val >= 70 ? 'var(--red)' : val >= 30 ? 'var(--orange)' : 'var(--green)';
+    const level = val >= 70 ? 'high' : val >= 30 ? 'mid' : 'low';
+    document.getElementById('gaugeArc').style.stroke = color;
+    const valEl = document.getElementById('gaugeValue');
+    valEl.className = 'gauge-value ' + level;
+})();
+</script>
