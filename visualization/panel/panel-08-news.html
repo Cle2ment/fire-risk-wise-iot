@@ -106,8 +106,9 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     z-index: 1;
+    min-width: 0;
 }
 
 .news-header {
@@ -156,7 +157,7 @@
 }
 
 .news-track {
-    animation: scrollNews 28s linear infinite;
+    animation: scrollNews 30s linear infinite;
 }
 
 .news-track:hover {
@@ -170,45 +171,43 @@
 
 /* 新闻条目 */
 .news-item {
-    padding: 8px 10px;
-    border-left: 2px solid rgba(0, 212, 255, 0.15);
-    margin-bottom: 6px;
-    transition: border-color 0.3s;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(0, 212, 255, 0.12);
+    border-left: 3px solid transparent;
+    padding-left: 10px;
 }
-.news-item:hover {
-    border-left-color: var(--accent);
-    background: rgba(0, 212, 255, 0.03);
+
+.news-item-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+
+.news-item-desc {
+    font-size: 12px;
+    color: #8ab4d6;
+    line-height: 1.6;
+    margin-bottom: 3px;
 }
 
 .news-item-time {
     font-size: 10px;
     color: var(--text-secondary);
     letter-spacing: 1px;
-    margin-bottom: 3px;
     font-family: "Consolas", monospace;
 }
 
-.news-item-title {
-    font-size: 13px;
-    color: var(--text-primary);
-    letter-spacing: 0.5px;
-    line-height: 1.5;
-    margin-bottom: 2px;
+/* 高优先级条目 — 防御外部 .alert 样式干扰 */
+.news-item.alert {
+    display: block;
+    background: none;
+    border-left-color: rgba(255, 171, 64, 0.5);
 }
-
-.news-item-source {
-    font-size: 10px;
-    color: var(--text-secondary);
-    opacity: 0.6;
-    letter-spacing: 0.5px;
-}
-
-/* 高优先级条目 */
 .news-item.alert .news-item-title {
     color: var(--orange);
-}
-.news-item.alert {
-    border-left-color: rgba(255, 171, 64, 0.4);
 }
 </style>
 
@@ -248,34 +247,25 @@
 (function() {
     // 新闻数据
     const newsData = [
-        { time: '14:32', title: '住建部印发老旧小区消防通道专项整治方案', source: '住建部', alert: true },
-        { time: '13:15', title: '夏季高温预警：全国多地发布森林火险橙色预警', source: '应急管理部', alert: true },
-        { time: '11:48', title: '智能烟感报警器国家标准修订征求意见稿发布', source: '市场监管总局', alert: false },
-        { time: '10:20', title: '某小区电动车违规充电引发火灾，幸无人员伤亡', source: '消防通报', alert: true },
-        { time: '09:05', title: '城市消防物联网建设指南（2026版）正式实施', source: '工信部', alert: false },
-        { time: '08:00', title: 'AI视觉识别技术在消防隐患排查中的应用前景', source: '科技日报', alert: false },
-        { time: '07:30', title: '社区微型消防站建设三年行动方案推进过半', source: '消防救援局', alert: false },
-        { time: '06:15', title: '消防通道违停监测系统在10个试点城市上线运行', source: '智慧城市', alert: false },
-        { time: '05:00', title: '夜间防火巡查要点：物业安全管理指南更新', source: '消防协会', alert: false },
-        { time: '03:40', title: '高层建筑电缆井火灾隐患专项排查启动', source: '住建部', alert: true },
-        { time: '02:10', title: '便携式红外热成像仪在火场搜救中的实战应用', source: '消防科技', alert: false },
-        { time: '01:00', title: '老旧线路过载引发火情：冬季用电安全再敲警钟', source: '消防通报', alert: true },
-        { time: '00:30', title: '社区消防志愿者培训体系全面升级', source: '应急管理部', alert: false },
-        { time: '23:45', title: '基于IoT的智能消火栓远程监控方案获评优秀案例', source: '智慧消防', alert: false },
-        { time: '22:00', title: '燃气泄漏报警器入户安装惠民政策持续推进', source: '城市管理', alert: false },
-        { time: '21:15', title: '消防通道划线标准与标识规范修订版征求意见', source: '消防标委会', alert: false },
+        { time: '2026-07-18 14:32', title: '住建部印发老旧小区消防通道专项整治方案', desc: '住房和城乡建设部正式印发《老旧小区消防通道专项整治三年行动方案》，要求全面清理占用、堵塞消防通道的违规行为，打通生命通道"最后一公里"。', source: '住建部', alert: true },
+        { time: '2026-07-18 13:15', title: '夏季高温预警：全国多地发布森林火险橙色预警', desc: '应急管理部联合气象局发布2026年度夏季森林火险橙色预警，覆盖华南、西南及华北部分地区，提醒各地加强森林防火巡查。', source: '应急管理部', alert: true },
+        { time: '2026-07-18 11:48', title: '智能烟感报警器国家标准修订征求意见稿发布', desc: '市场监管总局就新版《独立式光电感烟火灾探测报警器》国家标准公开征求意见，新标准引入NB-IoT通信能力和自检上报功能。', source: '市场监管总局', alert: false },
+        { time: '2026-07-18 10:20', title: '某小区电动车违规充电引发火灾，幸无人员伤亡', desc: '今日凌晨4时许，城南某小区地下车库因电动自行车违规充电引发火情，物业及时启动喷淋系统控制火势，消防救援站接警后迅速到场处置。', source: '消防通报', alert: true },
+        { time: '2026-07-17 09:05', title: '城市消防物联网建设指南（2026版）正式实施', desc: '工业和信息化部发布的新版城市消防物联网建设指南于7月1日起正式实施，明确了智能烟感、电气火灾监控、消防水系统监测等关键设备的接入标准。', source: '工信部', alert: false },
+        { time: '2026-07-17 08:00', title: 'AI视觉识别技术在消防隐患排查中的应用前景', desc: '中国消防救援学院发布最新研究报告，基于深度学习的视频火灾检测方案在工业园区的误报率已降至0.3%以下，识别响应时间缩短至5秒以内。', source: '科技日报', alert: false },
+        { time: '2026-07-16 07:30', title: '社区微型消防站建设三年行动方案推进过半', desc: '消防救援局通报，截至6月底全国已建成社区微型消防站4.2万个，覆盖率达68%，力争年底前实现80%目标。', source: '消防救援局', alert: false },
     ];
 
     // 生成HTML（复制一份实现无缝循环）
     const track = document.getElementById('newsTrack');
-    const html = newsData.map(item => `
+    const makeItem = item => `
         <div class="news-item${item.alert ? ' alert' : ''}">
-            <div class="news-item-time">${item.time}</div>
             <div class="news-item-title">${item.title}</div>
-            <div class="news-item-source">来源：${item.source}</div>
+            <div class="news-item-desc">${item.desc}</div>
+            <div class="news-item-time">${item.time}</div>
         </div>
-    `).join('');
-    track.innerHTML = html + html;
+    `;
+    track.innerHTML = newsData.map(makeItem).join('') + newsData.map(makeItem).join('');
 
     // 时钟
     function updateClock() {
