@@ -17,6 +17,8 @@ video → Detector(YOLO) → RiskEngine(scoring) → Visualizer(dashboard) → a
 | **ROI Config** | `src/roi_config.py` | Zone polygon definition & hit-test |
 | **Utils** | `src/utils.py` | FPS timer, colour gradient, JSON report writer |
 | **Demo Launcher** | `scripts/run_demo.py` | Convenience CLI with camera / model list support |
+| **MQTT Cloud Publisher (SDK)** | `scripts/sdk_cloud_publisher.py` | DCCS SDK-based upload to WISE-IoT DataHub (recommended) |
+| **MQTT Cloud Publisher (raw)** | `scripts/mqtt_cloud_publisher.py` | paho-mqtt direct upload (backup) |
 
 ## Quick Start
 
@@ -43,6 +45,23 @@ uv run python scripts/run_demo.py --list-models
 uv run python src/main.py --input demo/input/test.mp4 --output demo/output/annotated.mp4 \
   --config configs/default.yaml --model models/yolov8n.pt --device cpu
 ```
+
+## MQTT Cloud Upload
+
+Push pipeline JSON reports to WISE-IoT DataHub for real-time Dashboard visualization.
+
+```bash
+# Dry-run preview (no connection required)
+uv run python scripts/sdk_cloud_publisher.py --report code/data/report.json --dry-run
+
+# Upload via DCCS SDK (recommended)
+uv run python scripts/sdk_cloud_publisher.py --report code/data/report.json
+
+# Upload via direct paho-mqtt (backup)
+uv run python scripts/mqtt_cloud_publisher.py --report code/data/report.json
+```
+
+Configuration: `configs/mqtt_cloud.yaml` (device credentials, topic, property mapping).
 
 ## Risk Scoring
 
@@ -79,25 +98,29 @@ code/
 │   ├── roi_config.py      # ROI zone polygon config
 │   └── utils.py           # Timer, colour, report generation
 ├── scripts/
-│   ├── run_demo.py        # Convenience demo launcher
-│   ├── finetune_pipeline.py # COCO-based auto-label + train
-│   ├── vlm_autolabel.py   # VLM auto-labeling (Gemini 2.5 Flash)
-│   └── vlm_label.py       # VLM→YOLO format converter
-├── tests/                 # TDD test suite (79 tests)
-├── models/                # Model weights (.gitignored)
-├── datasets/              # Training data (.gitignored)
-├── docs/                  # Reference documentation
-└── pyproject.toml         # uv-managed project config
+│   ├── run_demo.py            # Convenience demo launcher
+│   ├── finetune_pipeline.py   # COCO-based auto-label + train
+│   ├── vlm_autolabel.py       # VLM auto-labeling (Gemini 2.5 Flash)
+│   ├── vlm_label.py           # VLM→YOLO format converter
+│   ├── sdk_cloud_publisher.py # WISE-IoT DCCS SDK cloud publisher (recommended)
+│   └── mqtt_cloud_publisher.py # paho-mqtt direct cloud publisher (backup)
+├── tests/                     # TDD test suite (79 tests)
+├── models/                    # Model weights (.gitignored)
+├── datasets/                  # Training data (.gitignored)
+├── data/                      # Pipeline output JSON reports
+├── docs/                      # Reference documentation
+└── pyproject.toml             # uv-managed project config
 ```
 
 ## Dependencies
 
-- Python ≥ 3.10
+- Python >= 3.10
 - `ultralytics` (YOLO inference)
 - `opencv-python` (video I/O + annotation)
 - `numpy`, `pyyaml`
+- `paho-mqtt>=1.4.0` (MQTT client for cloud upload)
+- `wise-paas-datahub-edge-python-sdk>=1.1.7` (WISE-IoT DCCS SDK)
 - `pytest` (dev, for testing)
-
 Managed via `uv` — no conda or pip-tools needed.
 
 

@@ -101,10 +101,21 @@ class SDKCloudPublisher:
         self._agent.sendData(data)
         self._published += 1
 
-    def publish_report(self, report: dict[str, Any]) -> int:
-        frames = report.get("frame_details", [])
+    def publish_report(self, report: dict | list) -> int:
+        """Publish frames from a pipeline JSON report.
+
+        Accepts both:
+        - {'summary': ..., 'frame_details': [...]} (generate_report format)
+        - [{frame_idx, score, level, ...}] (flat list, e.g. risk_timeline.json)
+        """
+        frames = []
+        if isinstance(report, dict):
+            frames = report.get("frame_details", [])
+        if not frames and isinstance(report, list):
+            frames = report
+
         if not frames:
-            logger.warning("No frame_details in report")
+            logger.warning("No frame data found in report")
             return 0
 
         logger.info("Publishing %d frames via DCCS SDK ...", len(frames))
@@ -112,16 +123,16 @@ class SDKCloudPublisher:
         for i, frame in enumerate(frames):
             props = {
                 "frame_idx": frame.get("frame_idx", i),
-                "risk_score": frame.get("score", 0.0),
+                "risk_score": round(frame.get("score", 0.0), 2),
                 "risk_level": frame.get("level", "low"),
-                "detections_count": frame.get("detections_count", 0),
+                "detections_count": frame.get("detection_count", frame.get("detections_count", 0)),
                 "high_risk_count": frame.get("high_risk_count", 0),
                 "fps": frame.get("fps", 0.0),
             }
             self.publish_frame(props)
             if (i + 1) % 100 == 0:
                 logger.info("  %d/%d frames published", i + 1, len(frames))
-            time.sleep(0.05)  # throttle
+            time.sleep(0.05)
 
         logger.info("Done: %d frames published", self._published)
         return self._published
@@ -159,12 +170,18 @@ def main():
         report = json.load(f)
 
     if args.dry_run:
-        summary = report.get("summary", {})
-        frames = report.get("frame_details", [])
+        frames = []
+        summary = {}
+        if isinstance(report, dict):
+            summary = report.get("summary", {})
+            frames = report.get("frame_details", [])
+        if not frames and isinstance(report, list):
+            frames = report
         print(f"=== DRY RUN (SDK) ===")
         print(f"  Device ID: {args.device_id}")
         print(f"  DCCS API:  {args.dccs_api}")
-        print(f"  Report:    {json.dumps(summary, indent=2)}")
+        if summary:
+            print(f"  Summary:   {json.dumps(summary, indent=2)}")
         print(f"  Frames:    {len(frames)}")
         if frames:
             print(f"  Sample frame 0: {json.dumps(frames[0], indent=2)}")

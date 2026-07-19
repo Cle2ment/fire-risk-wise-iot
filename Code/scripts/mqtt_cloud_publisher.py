@@ -183,15 +183,20 @@ class MQTTCloudPublisher:
 
         time.sleep(self._interval)
 
-    def publish_report(self, report: dict[str, Any]) -> int:
+    def publish_report(self, report: dict | list) -> int:
         """Publish all frames from a pipeline JSON report.
+
+        Accepts both:
+        - {'summary': ..., 'frame_details': [...]} (generate_report format)
+        - [{...}] (flat list format, e.g. risk_timeline.json)
 
         Returns the number of frames published.
         """
-        frames = report.get("frame_details", [])
-        if not frames:
-            logger.warning("Report contains no frame_details; nothing to publish")
-            return 0
+        frames = []
+        if isinstance(report, dict):
+            frames = report.get("frame_details", [])
+        if not frames and isinstance(report, list):
+            frames = report
 
         logger.info("Publishing %d frames to %s ...", len(frames), self._topic)
         self._published_count = 0
@@ -202,7 +207,7 @@ class MQTTCloudPublisher:
                 "frame_idx": frame.get("frame_idx", i),
                 "risk_score": round(frame.get("score", 0.0), 2),
                 "risk_level": frame.get("level", "low"),
-                "detections_count": frame.get("detections_count", 0),
+                "detections_count": frame.get("detection_count", frame.get("detections_count", 0)),
                 "high_risk_count": frame.get("high_risk_count", 0),
                 "fps": frame.get("fps", 0.0),
             }

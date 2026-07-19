@@ -10,3 +10,16 @@ demonstration/
 # System files
 .DS_Store
 Thumbs.db
+
+
+# Tool internals (continued)
+.cortexkit/
+
+# Code artifacts
+code/data/
+code/recover.sqlite
+
+# Local scripts
+code/scripts/dashboard_bridge.py
+code/scripts/gen_sim_24h.py
+code/scripts/start_tunnel.ps1

@@ -13,12 +13,14 @@ Single-camera vision-based fire risk identification probe
 ```bash
 uv sync                          # Install dependencies
 uv run pytest tests/ -v          # Run all tests
-uv run python src/main.py --help # CLI usage
 uv run python scripts/run_demo.py --input demo/input/test.mp4 --output demo/output/annotated.mp4
-uv run python scripts/finetune_pipeline.py  # COCO auto-label + train
-uv run python scripts/vlm_autolabel.py    # VLM annotation (Gemini)
-uv run python scripts/vlm_label.py --train # VLM→YOLO→train
+uv run python scripts/finetune_pipeline.py        # COCO auto-label + train
+uv run python scripts/vlm_autolabel.py            # VLM annotation (Gemini)
+uv run python scripts/vlm_label.py --train        # VLM→YOLO→train
 
+# MQTT Cloud Upload (WISE-IoT DataHub)
+uv run python scripts/sdk_cloud_publisher.py --report code/data/report.json --dry-run  # preview
+uv run python scripts/sdk_cloud_publisher.py --report code/data/report.json           # upload via DCCS SDK
 ## Architecture
 ```
 video → Detector(YOLO) → RiskEngine(scoring) → Visualizer(dashboard) → annotated video + JSON report

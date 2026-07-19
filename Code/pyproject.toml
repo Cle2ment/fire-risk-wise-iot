@@ -9,6 +9,8 @@ dependencies = [
     "opencv-python>=4.8.0",
     "numpy>=1.24.0",
     "pyyaml>=6.0",
+    "paho-mqtt>=1.4.0",
+    "wise-paas-datahub-edge-python-sdk>=1.1.7",
 ]
 
 [project.optional-dependencies]

@@ -384,9 +384,11 @@ dependencies = [
     { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
     { name = "numpy", version = "2.5.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
     { name = "opencv-python" },
+    { name = "paho-mqtt" },
     { name = "pyyaml" },
     { name = "torch" },
     { name = "ultralytics" },
+    { name = "wise-paas-datahub-edge-python-sdk" },
 ]
 
 [package.optional-dependencies]
@@ -403,10 +405,12 @@ dev = [
 requires-dist = [
     { name = "numpy", specifier = ">=1.24.0" },
     { name = "opencv-python", specifier = ">=4.8.0" },
+    { name = "paho-mqtt", specifier = ">=1.4.0" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.0.0" },
     { name = "pyyaml", specifier = ">=6.0" },
     { name = "torch", specifier = ">=2.0.0" },
     { name = "ultralytics", specifier = ">=8.3.0" },
+    { name = "wise-paas-datahub-edge-python-sdk", specifier = ">=1.1.7" },
 ]
 provides-extras = ["dev"]
 
@@ -1299,6 +1303,12 @@ wheels = [
 ]
 
 [[package]]
+name = "paho-mqtt"
+version = "1.4.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/25/63/db25e62979c2a716a74950c9ed658dce431b5cb01fde29eb6cba9489a904/paho-mqtt-1.4.0.tar.gz", hash = "sha256:e440a052b46d222e184be3be38676378722072fcd4dfd2c8f509fb861a7b0b79", size = 88626, upload-time = "2018-09-02T11:56:04.016Z" }
+
+[[package]]
 name = "pillow"
 version = "12.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1831,4 +1841,16 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz", hash = "sha256:231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c", size = 433602, upload-time = "2026-05-07T16:13:18.596Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl", hash = "sha256:9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897", size = 131087, upload-time = "2026-05-07T16:13:17.151Z" },
+]
+
+[[package]]
+name = "wise-paas-datahub-edge-python-sdk"
+version = "1.1.7"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "paho-mqtt" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a5/36/9ed89301e2e06cbcaf620675e729f339654379f6fd751de45545d55fd571/WISE_PaaS_DataHub_Edge_Python_SDK-1.1.7.tar.gz", hash = "sha256:4a38c5acb5a2a0595f223c16940f5b537f20a7f7fe021f614526112d68ca3289", size = 9726, upload-time = "2021-09-28T09:51:16.009Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a4/33/7b5257c693278804f8e485884adefc3b1b4c4bfbb769586829a4edc47986/WISE_PaaS_DataHub_Edge_Python_SDK-1.1.7-py3-none-any.whl", hash = "sha256:2ab2255a4ac4602994d2037685feaa0bd1abc677ad5b6d8c9e725359a2f316e2", size = 13007, upload-time = "2021-09-28T09:51:14.889Z" },
 ]
