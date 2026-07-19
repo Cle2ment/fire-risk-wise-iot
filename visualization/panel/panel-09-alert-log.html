@@ -1,60 +1,186 @@
 <style>
-:root {
-    --bg-deep: #060b16; --bg-panel: #0c1a2e; --bg-card: #112240;
-    --border: #1a3456; --accent: #00d4ff; --text-primary: #e0ecff;
-    --text-secondary: #5a7da0; --green: #00e676; --orange: #ffab40; --red: #ff3d4f;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+        --bg-deep: #060b16;
+        --bg-panel: #0c1a2e;
+        --bg-card: #112240;
+        --border: #1a3456;
+        --accent: #00d4ff;
+        --text-primary: #e0ecff;
+        --text-secondary: #5a7da0;
+        --green: #00e676;
+        --orange: #ffab40;
+        --red: #ff3d4f;
+    }
 
-.alert-log-panel {
-    width:100%; height:100%; min-height:380px;
-    background:linear-gradient(180deg,#0c1a2e 0%,#0e1f38 100%);
-    border:1px solid rgba(0,212,255,0.15); border-radius:2px;
-    padding:14px 16px; font-family:"Microsoft YaHei","Source Han Sans CN","Noto Sans SC",sans-serif;
-    position:relative; overflow:hidden; display:flex; flex-direction:column; gap:8px;
-}
-.alert-log-panel::before {
-    content:''; position:absolute; inset:0;
-    background-image:linear-gradient(rgba(0,212,255,0.015) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(0,212,255,0.015) 1px,transparent 1px);
-    background-size:40px 40px; pointer-events:none;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-.log-header {
-    display:flex; align-items:center; gap:10px; padding-bottom:6px;
-    border-bottom:1px solid rgba(0,212,255,0.12); z-index:1;
-}
-.log-header-dot { width:6px; height:6px; background:var(--red); box-shadow:0 0 8px var(--red); animation:pulse 1.5s ease-in-out infinite; }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-.log-header-text { font-size:13px; color:var(--accent); letter-spacing:2px; font-weight:500; flex:1; }
-.log-header-count { font-size:11px; color:var(--red); letter-spacing:1px; }
+    .alert-log-panel {
+        width: 100%;
+        height: 100%;
+        min-height: 380px;
+        background: linear-gradient(180deg, #0c1a2e 0%, #0e1f38 100%);
+        border: 1px solid rgba(0, 212, 255, 0.15);
+        border-radius: 2px;
+        padding: 14px 16px;
+        font-family: "Microsoft YaHei", "Source Han Sans CN", "Noto Sans SC", sans-serif;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
 
-.log-list { flex:1; overflow-y:auto; z-index:1; display:flex; flex-direction:column; gap:4px;
-    scrollbar-width:thin; scrollbar-color:rgba(0,212,255,0.15) transparent; }
-.log-list::-webkit-scrollbar { width:3px; }
-.log-list::-webkit-scrollbar-thumb { background:rgba(0,212,255,0.15); border-radius:2px; }
+    .alert-log-panel::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(0, 212, 255, 0.015) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 212, 255, 0.015) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+    }
 
-.log-entry {
-    display:flex; align-items:flex-start; gap:10px; padding:7px 10px;
-    border-left:2px solid transparent; border-radius:0 2px 2px 0;
-    transition:border-color 0.3s,background 0.3s; font-size:11px;
-}
-.log-entry:hover { background:rgba(0,212,255,0.03); }
-.log-entry.critical { border-left-color:var(--red); }
-.log-entry.warning  { border-left-color:var(--orange); }
-.log-entry.info     { border-left-color:var(--accent); }
+    .log-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+        z-index: 1;
+    }
 
-.log-time { flex:0 0 44px; color:var(--text-secondary); font-family:"Consolas",monospace; font-size:10px; padding-top:1px; }
-.log-level {
-    flex:0 0 36px; font-size:9px; font-weight:700; letter-spacing:1px; padding-top:1px;
-    padding:2px 5px; border-radius:1px; text-align:center;
-}
-.log-level.critical { color:var(--red);    background:rgba(255,61,79,0.1); }
-.log-level.warning  { color:var(--orange); background:rgba(255,171,64,0.1); }
-.log-level.info     { color:var(--green);  background:rgba(0,230,118,0.08); }
+    .log-header-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--red);
+        box-shadow: 0 0 8px var(--red);
+        animation: pulse 1.5s ease-in-out infinite;
+    }
 
-.log-msg { flex:1; color:var(--text-primary); line-height:1.5; }
-.log-loc  { flex:0 0 56px; color:var(--text-secondary); font-size:10px; text-align:right; opacity:0.7; }
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 1
+        }
+
+        50% {
+            opacity: 0.3
+        }
+    }
+
+    .log-header-text {
+        font-size: 13px;
+        color: var(--accent);
+        letter-spacing: 2px;
+        font-weight: 500;
+        flex: 1;
+    }
+
+    .log-header-count {
+        font-size: 11px;
+        color: var(--red);
+        letter-spacing: 1px;
+    }
+
+    .log-list {
+        flex: 1;
+        overflow-y: auto;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 212, 255, 0.15) transparent;
+    }
+
+    .log-list::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .log-list::-webkit-scrollbar-thumb {
+        background: rgba(0, 212, 255, 0.15);
+        border-radius: 2px;
+    }
+
+    .log-entry {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 7px 10px;
+        border-left: 2px solid transparent;
+        border-radius: 0 2px 2px 0;
+        transition: border-color 0.3s, background 0.3s;
+        font-size: 11px;
+    }
+
+    .log-entry:hover {
+        background: rgba(0, 212, 255, 0.03);
+    }
+
+    .log-entry.critical {
+        border-left-color: var(--red);
+    }
+
+    .log-entry.warning {
+        border-left-color: var(--orange);
+    }
+
+    .log-entry.info {
+        border-left-color: var(--accent);
+    }
+
+    .log-time {
+        flex: 0 0 44px;
+        color: var(--text-secondary);
+        font-family: "Consolas", monospace;
+        font-size: 10px;
+        padding-top: 1px;
+    }
+
+    .log-level {
+        flex: 0 0 36px;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding-top: 1px;
+        padding: 2px 5px;
+        border-radius: 1px;
+        text-align: center;
+    }
+
+    .log-level.critical {
+        color: var(--red);
+        background: rgba(255, 61, 79, 0.1);
+    }
+
+    .log-level.warning {
+        color: var(--orange);
+        background: rgba(255, 171, 64, 0.1);
+    }
+
+    .log-level.info {
+        color: var(--green);
+        background: rgba(0, 230, 118, 0.08);
+    }
+
+    .log-msg {
+        flex: 1;
+        color: var(--text-primary);
+        line-height: 1.5;
+    }
+
+    .log-loc {
+        flex: 0 0 56px;
+        color: var(--text-secondary);
+        font-size: 10px;
+        text-align: right;
+        opacity: 0.7;
+    }
 </style>
 
 <div class="alert-log-panel">
@@ -67,28 +193,28 @@
 </div>
 
 <script>
-(function(){
-    const logs = [
-        {time:'14:32:18',level:'critical',loc:'开阔地带',msg:'检测到消防通道严重违停，占用率 92%'},
-        {time:'14:28:05',level:'critical',loc:'车 库',msg:'通道堆放大量杂物，通行宽度不足 1.2m'},
-        {time:'14:15:41',level:'warning', loc:'楼 道',msg:'异常徘徊行为持续超过 15 分钟'},
-        {time:'13:52:30',level:'critical',loc:'开阔地带',msg:'高空抛物事件触发，已自动截图取证'},
-        {time:'13:30:12',level:'warning', loc:'绿化带',msg:'烟雾传感器读数异常升高至 0.8ppm'},
-        {time:'13:05:47',level:'info',    loc:'车 库',msg:'温度传感器超过阈值 42°C，持续监控中'},
-        {time:'12:40:22',level:'warning', loc:'楼 道',msg:'应急照明设备离线，需立即检修'},
-        {time:'12:15:09',level:'info',    loc:'绿化带',msg:'系统自动巡检完成，全部设备正常'},
-        {time:'11:50:33',level:'critical',loc:'开阔地带',msg:'明火疑似检测，热成像温差超过 15°C'},
-        {time:'11:28:16',level:'warning', loc:'车 库',msg:'消防栓被遮挡，距离违规停放车辆仅 0.5m'},
-        {time:'11:05:40',level:'info',    loc:'楼 道',msg:'例行消防设施检查记录已同步至云端'},
-        {time:'10:42:55',level:'warning', loc:'绿化带',msg:'可燃物堆积面积超过 3㎡，建议清理'},
-    ];
-    document.getElementById('logList').innerHTML = logs.map(l => `
+    (function () {
+        const logs = [
+            { time: '14:32:18', level: 'critical', loc: '开阔地带', msg: '检测到消防通道严重违停，占用率 92%' },
+            { time: '14:28:05', level: 'critical', loc: '车 库', msg: '通道堆放大量杂物，通行宽度不足 1.2m' },
+            { time: '14:15:41', level: 'warning', loc: '楼 道', msg: '异常徘徊行为持续超过 15 分钟' },
+            { time: '13:52:30', level: 'critical', loc: '开阔地带', msg: '高空抛物事件触发，已自动截图取证' },
+            { time: '13:30:12', level: 'warning', loc: '绿化带', msg: '烟雾传感器读数异常升高至 0.8ppm' },
+            { time: '13:05:47', level: 'info', loc: '车 库', msg: '温度传感器超过阈值 42°C，持续监控中' },
+            { time: '12:40:22', level: 'warning', loc: '楼 道', msg: '应急照明设备离线，需立即检修' },
+            { time: '12:15:09', level: 'info', loc: '绿化带', msg: '系统自动巡检完成，全部设备正常' },
+            { time: '11:50:33', level: 'critical', loc: '开阔地带', msg: '明火疑似检测，热成像温差超过 15°C' },
+            { time: '11:28:16', level: 'warning', loc: '车 库', msg: '消防栓被遮挡，距离违规停放车辆仅 0.5m' },
+            { time: '11:05:40', level: 'info', loc: '楼 道', msg: '例行消防设施检查记录已同步至云端' },
+            { time: '10:42:55', level: 'warning', loc: '绿化带', msg: '可燃物堆积面积超过 3㎡，建议清理' },
+        ];
+        document.getElementById('logList').innerHTML = logs.map(l => `
         <div class="log-entry ${l.level}">
             <span class="log-time">${l.time}</span>
-            <span class="log-level ${l.level}">${l.level==='critical'?'严重':l.level==='warning'?'警告':'信息'}</span>
+            <span class="log-level ${l.level}">${l.level === 'critical' ? '严重' : l.level === 'warning' ? '警告' : '信息'}</span>
             <span class="log-msg">${l.msg}</span>
             <span class="log-loc">${l.loc}</span>
         </div>
     `).join('');
-})();
+    })();
 </script>

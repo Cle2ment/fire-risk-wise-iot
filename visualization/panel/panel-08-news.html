@@ -1,222 +1,272 @@
 <style>
-:root {
-    --bg-deep: #060b16;
-    --bg-panel: #0c1a2e;
-    --bg-card: #112240;
-    --border: #1a3456;
-    --accent: #00d4ff;
-    --text-primary: #e0ecff;
-    --text-secondary: #5a7da0;
-    --green: #00e676;
-    --orange: #ffab40;
-    --red: #ff3d4f;
-}
+    :root {
+        --bg-deep: #060b16;
+        --bg-panel: #0c1a2e;
+        --bg-card: #112240;
+        --border: #1a3456;
+        --accent: #00d4ff;
+        --text-primary: #e0ecff;
+        --text-secondary: #5a7da0;
+        --green: #00e676;
+        --orange: #ffab40;
+        --red: #ff3d4f;
+    }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-.news-panel {
-    width: 100%; height: 100%;
-    min-height: 320px;
-    background: linear-gradient(180deg, #0c1a2e 0%, #0e1f38 100%);
-    border: 1px solid rgba(0, 212, 255, 0.15);
-    border-radius: 2px;
-    padding: 14px 18px;
-    display: flex;
-    gap: 16px;
-    font-family: "Microsoft YaHei", "Source Han Sans CN", "Noto Sans SC", sans-serif;
-    position: relative;
-    overflow: hidden;
-}
+    .news-panel {
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        background: linear-gradient(180deg, #0c1a2e 0%, #0e1f38 100%);
+        border: 1px solid rgba(0, 212, 255, 0.15);
+        border-radius: 2px;
+        padding: 14px 18px;
+        display: flex;
+        gap: 16px;
+        font-family: "Microsoft YaHei", "Source Han Sans CN", "Noto Sans SC", sans-serif;
+        position: relative;
+        overflow: hidden;
+    }
 
-.news-panel::before {
-    content: '';
-    position: absolute; inset: 0;
-    background-image:
-        linear-gradient(rgba(0, 212, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 212, 255, 0.015) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-}
+    .news-panel::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+            linear-gradient(rgba(0, 212, 255, 0.015) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 212, 255, 0.015) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+    }
 
-/* ========== 左侧图片 ========== */
-.news-image {
-    flex: 0 0 42%;
-    position: relative;
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    border-radius: 2px;
-    overflow: hidden;
-    background: var(--bg-deep);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-}
+    /* ========== 左侧图片 ========== */
+    .news-image {
+        flex: 0 0 42%;
+        position: relative;
+        border: 1px solid rgba(0, 212, 255, 0.2);
+        border-radius: 2px;
+        overflow: hidden;
+        background: var(--bg-deep);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
 
-.news-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-    opacity: 0.85;
-}
+    .news-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        opacity: 0.85;
+    }
 
-.news-image-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-secondary);
-}
+    .news-image-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        color: var(--text-secondary);
+    }
 
-.news-image-placeholder .ph-icon {
-    font-size: 32px;
-    opacity: 0.4;
-}
+    .news-image-placeholder .ph-icon {
+        font-size: 32px;
+        opacity: 0.4;
+    }
 
-.news-image-placeholder .ph-text {
-    font-size: 12px;
-    letter-spacing: 2px;
-    opacity: 0.5;
-}
+    .news-image-placeholder .ph-text {
+        font-size: 12px;
+        letter-spacing: 2px;
+        opacity: 0.5;
+    }
 
-/* 四角标 */
-.news-image .corner {
-    position: absolute; width: 14px; height: 14px; pointer-events: none; z-index: 2;
-}
-.news-image .corner-tl { top: 6px; left: 6px;   border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
-.news-image .corner-tr { top: 6px; right: 6px;  border-top: 2px solid var(--accent); border-right: 2px solid var(--accent); }
-.news-image .corner-bl { bottom: 6px; left: 6px; border-bottom: 2px solid var(--accent); border-left: 2px solid var(--accent); }
-.news-image .corner-br { bottom: 6px; right: 6px; border-bottom: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+    /* 四角标 */
+    .news-image .corner {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        pointer-events: none;
+        z-index: 2;
+    }
 
-/* 图片底部标签 */
-.news-image .camera-label {
-    position: absolute;
-    bottom: 8px; left: 8px;
-    background: rgba(0, 20, 40, 0.85);
-    border: 1px solid rgba(0, 212, 255, 0.25);
-    padding: 4px 10px;
-    font-size: 10px;
-    color: var(--accent);
-    letter-spacing: 1px;
-    border-radius: 1px;
-    z-index: 2;
-}
+    .news-image .corner-tl {
+        top: 6px;
+        left: 6px;
+        border-top: 2px solid var(--accent);
+        border-left: 2px solid var(--accent);
+    }
 
-/* ========== 右侧新闻 ========== */
-.news-feed {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1;
-    min-width: 0;
-}
+    .news-image .corner-tr {
+        top: 6px;
+        right: 6px;
+        border-top: 2px solid var(--accent);
+        border-right: 2px solid var(--accent);
+    }
 
-.news-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid rgba(0, 212, 255, 0.12);
-}
+    .news-image .corner-bl {
+        bottom: 6px;
+        left: 6px;
+        border-bottom: 2px solid var(--accent);
+        border-left: 2px solid var(--accent);
+    }
 
-.news-header-dot {
-    width: 6px; height: 6px;
-    background: var(--accent);
-    box-shadow: 0 0 6px var(--accent);
-    animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-}
+    .news-image .corner-br {
+        bottom: 6px;
+        right: 6px;
+        border-bottom: 2px solid var(--accent);
+        border-right: 2px solid var(--accent);
+    }
 
-.news-header-text {
-    font-size: 13px;
-    color: var(--accent);
-    letter-spacing: 2px;
-    font-weight: 500;
-    flex: 1;
-}
+    /* 图片底部标签 */
+    .news-image .camera-label {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        background: rgba(0, 20, 40, 0.85);
+        border: 1px solid rgba(0, 212, 255, 0.25);
+        padding: 4px 10px;
+        font-size: 10px;
+        color: var(--accent);
+        letter-spacing: 1px;
+        border-radius: 1px;
+        z-index: 2;
+    }
 
-.news-header-time {
-    font-size: 11px;
-    color: var(--text-secondary);
-    letter-spacing: 1px;
-    font-family: "Consolas", monospace;
-}
+    /* ========== 右侧新闻 ========== */
+    .news-feed {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 1;
+        min-width: 0;
+    }
 
-/* 滚动容器 */
-.news-scroll {
-    flex: 1;
-    overflow: hidden;
-    position: relative;
-    mask-image: linear-gradient(to bottom,
-        transparent 0%, black 8%, black 92%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom,
-        transparent 0%, black 8%, black 92%, transparent 100%);
-}
+    .news-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+    }
 
-.news-track {
-    animation: scrollNews 30s linear infinite;
-}
+    .news-header-dot {
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        box-shadow: 0 0 6px var(--accent);
+        animation: pulse 2s ease-in-out infinite;
+    }
 
-.news-track:hover {
-    animation-play-state: paused;
-}
+    @keyframes pulse {
 
-@keyframes scrollNews {
-    0%   { transform: translateY(0); }
-    100% { transform: translateY(-50%); }
-}
+        0%,
+        100% {
+            opacity: 1;
+        }
 
-/* 新闻条目 */
-.news-item {
-    padding: 10px 0;
-    border-bottom: 1px dashed rgba(0, 212, 255, 0.12);
-    border-left: 3px solid transparent;
-    padding-left: 10px;
-}
+        50% {
+            opacity: 0.4;
+        }
+    }
 
-.news-item-title {
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--text-primary);
-    letter-spacing: 0.5px;
-    line-height: 1.5;
-    margin-bottom: 4px;
-}
+    .news-header-text {
+        font-size: 13px;
+        color: var(--accent);
+        letter-spacing: 2px;
+        font-weight: 500;
+        flex: 1;
+    }
 
-.news-item-desc {
-    font-size: 12px;
-    color: #8ab4d6;
-    line-height: 1.6;
-    margin-bottom: 3px;
-}
+    .news-header-time {
+        font-size: 11px;
+        color: var(--text-secondary);
+        letter-spacing: 1px;
+        font-family: "Consolas", monospace;
+    }
 
-.news-item-time {
-    font-size: 10px;
-    color: var(--text-secondary);
-    letter-spacing: 1px;
-    font-family: "Consolas", monospace;
-}
+    /* 滚动容器 */
+    .news-scroll {
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+        mask-image: linear-gradient(to bottom,
+                transparent 0%, black 8%, black 92%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom,
+                transparent 0%, black 8%, black 92%, transparent 100%);
+    }
 
-/* 高优先级条目 — 防御外部 .alert 样式干扰 */
-.news-item.alert {
-    display: block;
-    background: none;
-    border-left-color: rgba(255, 171, 64, 0.5);
-}
-.news-item.alert .news-item-title {
-    color: var(--orange);
-}
+    .news-track {
+        animation: scrollNews 30s linear infinite;
+    }
+
+    .news-track:hover {
+        animation-play-state: paused;
+    }
+
+    @keyframes scrollNews {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-50%);
+        }
+    }
+
+    /* 新闻条目 */
+    .news-item {
+        padding: 10px 0;
+        border-bottom: 1px dashed rgba(0, 212, 255, 0.12);
+        border-left: 3px solid transparent;
+        padding-left: 10px;
+    }
+
+    .news-item-title {
+        font-size: 14px;
+        font-weight: bold;
+        color: var(--text-primary);
+        letter-spacing: 0.5px;
+        line-height: 1.5;
+        margin-bottom: 4px;
+    }
+
+    .news-item-desc {
+        font-size: 12px;
+        color: #8ab4d6;
+        line-height: 1.6;
+        margin-bottom: 3px;
+    }
+
+    .news-item-time {
+        font-size: 10px;
+        color: var(--text-secondary);
+        letter-spacing: 1px;
+        font-family: "Consolas", monospace;
+    }
+
+    /* 高优先级条目 — 防御外部 .alert 样式干扰 */
+    .news-item.alert {
+        display: block;
+        background: none;
+        border-left-color: rgba(255, 171, 64, 0.5);
+    }
+
+    .news-item.alert .news-item-title {
+        color: var(--orange);
+    }
 </style>
 
 <div class="news-panel">
     <!-- 左侧图片 -->
     <div class="news-image">
         <img src="/api/images/楼道1.jpg" alt=""
-             onerror="this.style.display='none';this.previousElementSibling.style.display='flex';">
+            onerror="this.style.display='none';this.previousElementSibling.style.display='flex';">
         <div class="news-image-placeholder" style="display:flex;">
             <span class="ph-icon">📷</span>
             <span class="ph-text">现场实时画面</span>
@@ -245,36 +295,36 @@
 </div>
 
 <script>
-(function() {
-    // 新闻数据
-    const newsData = [
-        { time: '2026-07-13 20:25', title: '太原市消防安全培训活动举行', desc: '2026年太原市消防安全培训活动于7月13日举行，面向全市重点单位消防责任人开展实操培训，内容涵盖火灾隐患排查、初期火灾处置及疏散逃生演练，推动基层消防能力全面提升。', source: '太原广电', alert: false },
-        { time: '2026-07-08 23:33', title: '中国消防协会2026年度火调学术研讨会即将召开', desc: '中国消防协会火灾原因调查专业委员会定于8月14日至16日在兰州召开2026年学术研讨会，主题为"疑难复杂火灾调查案例交流"，聚焦电动自行车火灾、放火嫌疑火灾等精准调查技术。', source: '消防协会', alert: false },
-        { time: '2026-07-02 08:00', title: '2026年全国"安全生产月"排查整治消防安全隐患', desc: '随着夏季气温持续攀升，生产用电负荷增长，消防安全风险同步上升。全国各地针对火灾易发重点文保单位、老旧小区等场所开展消防安全宣传教育专项行动。', source: '新华社', alert: true },
-        { time: '2026-06-26 18:24', title: '宁夏自然资源厅开展消防安全讲座暨火灾应急逃生演练', desc: '宁夏回族自治区自然资源厅举办消防安全专题讲座，结合真实案例讲解办公场所及野外作业火灾预防要点，并组织全体职工进行火灾应急逃生实战演练。', source: '宁夏自然资源厅', alert: false },
-        { time: '2026-06-17 10:46', title: '今年以来全国消防安全形势总体平稳 未发生重特大事故', desc: '国家消防救援局通报：截至6月14日全国共接报火灾45.2万起，亡886人，同比下降17.8%和14.8%。发生较大火灾20起，同比下降41.2%，未发生重大和特别重大事故。', source: '央视网', alert: false },
-        { time: '2026-04-08 10:00', title: '国办印发《关于加强基层消防工作的意见》', desc: '国务院办公厅印发7章21条意见，提出用2年时间构建"党政领导、消防牵头、部门协同、县乡一体、群防群治"的基层消防工作格局。基层火灾占总数的77.1%，亡人数占90.6%。', source: '应急管理部', alert: true },
-        { time: '2026-03-17 10:58', title: '国家消防救援局：2026年春节烟花爆竹引发火灾同比下降14%', desc: '国家消防救援局通报，2026年春节期间火灾形势整体平稳，共接报火灾6.1万起，亡59人，亡人数下降27.2%。因燃放烟花爆竹引发火灾1.2万起，较去年同期下降14%。', source: '中新网', alert: false },
-    ];
+    (function () {
+        // 新闻数据
+        const newsData = [
+            { time: '2026-07-13 20:25', title: '太原市消防安全培训活动举行', desc: '2026年太原市消防安全培训活动于7月13日举行，面向全市重点单位消防责任人开展实操培训，内容涵盖火灾隐患排查、初期火灾处置及疏散逃生演练，推动基层消防能力全面提升。', source: '太原广电', alert: false },
+            { time: '2026-07-08 23:33', title: '中国消防协会2026年度火调学术研讨会即将召开', desc: '中国消防协会火灾原因调查专业委员会定于8月14日至16日在兰州召开2026年学术研讨会，主题为"疑难复杂火灾调查案例交流"，聚焦电动自行车火灾、放火嫌疑火灾等精准调查技术。', source: '消防协会', alert: false },
+            { time: '2026-07-02 08:00', title: '2026年全国"安全生产月"排查整治消防安全隐患', desc: '随着夏季气温持续攀升，生产用电负荷增长，消防安全风险同步上升。全国各地针对火灾易发重点文保单位、老旧小区等场所开展消防安全宣传教育专项行动。', source: '新华社', alert: true },
+            { time: '2026-06-26 18:24', title: '宁夏自然资源厅开展消防安全讲座暨火灾应急逃生演练', desc: '宁夏回族自治区自然资源厅举办消防安全专题讲座，结合真实案例讲解办公场所及野外作业火灾预防要点，并组织全体职工进行火灾应急逃生实战演练。', source: '宁夏自然资源厅', alert: false },
+            { time: '2026-06-17 10:46', title: '今年以来全国消防安全形势总体平稳 未发生重特大事故', desc: '国家消防救援局通报：截至6月14日全国共接报火灾45.2万起，亡886人，同比下降17.8%和14.8%。发生较大火灾20起，同比下降41.2%，未发生重大和特别重大事故。', source: '央视网', alert: false },
+            { time: '2026-04-08 10:00', title: '国办印发《关于加强基层消防工作的意见》', desc: '国务院办公厅印发7章21条意见，提出用2年时间构建"党政领导、消防牵头、部门协同、县乡一体、群防群治"的基层消防工作格局。基层火灾占总数的77.1%，亡人数占90.6%。', source: '应急管理部', alert: true },
+            { time: '2026-03-17 10:58', title: '国家消防救援局：2026年春节烟花爆竹引发火灾同比下降14%', desc: '国家消防救援局通报，2026年春节期间火灾形势整体平稳，共接报火灾6.1万起，亡59人，亡人数下降27.2%。因燃放烟花爆竹引发火灾1.2万起，较去年同期下降14%。', source: '中新网', alert: false },
+        ];
 
-    // 生成HTML（复制一份实现无缝循环）
-    const track = document.getElementById('newsTrack');
-    const makeItem = item => `
+        // 生成HTML（复制一份实现无缝循环）
+        const track = document.getElementById('newsTrack');
+        const makeItem = item => `
         <div class="news-item${item.alert ? ' alert' : ''}">
             <div class="news-item-title">${item.title}</div>
             <div class="news-item-desc">${item.desc}</div>
             <div class="news-item-time">${item.time}</div>
         </div>
     `;
-    track.innerHTML = newsData.map(makeItem).join('') + newsData.map(makeItem).join('');
+        track.innerHTML = newsData.map(makeItem).join('') + newsData.map(makeItem).join('');
 
-    // 时钟
-    function updateClock() {
-        const now = new Date();
-        document.getElementById('newsClock').textContent =
-            `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
-})();
+        // 时钟
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('newsClock').textContent =
+                `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    })();
 </script>
